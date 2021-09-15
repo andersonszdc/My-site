@@ -14,37 +14,49 @@ const cardUp = keyframes`
 `
 
 const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 30px;
-    background-color: ${props => props.theme.colors.text};
-    color: ${props => props.theme.colors.background};
-    width: 100%;
-    height: 300px;
-    border-radius: 6px;
-    cursor: pointer;
-    .card__title {
-        font-size: 30px;
-        font-weight: 700;
-    }
-    .card__verMais {
-        font-weight: 500;
+    display: inline-block;
+    width: 33%;
+    padding: 0 6px;
+    .card__content {
         display: flex;
-        align-items: center;
-        gap: 4px;
+        flex-direction: column;
+        gap: 16px;
+        padding: 30px;
+        background-color: ${props => props.theme.colors.text};
+        color: ${props => props.theme.colors.background};
+        height: 300px;
+        border-radius: 6px;
+        cursor: pointer;
+        .card__title {
+            font-size: 30px;
+            font-weight: 700;
+        }
+        .card__verMais {
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
     }
     :hover p {
         animation: ${cardUp} .4s ease-in-out;
+    }
+    @media (max-width: 800px) {
+        width: 50%;
+    }
+    @media (max-width: 400px) {
+        width: 100%;
     }
 `
 
 const Card: React.FC = () => {
   return (
       <Wrapper>
-          <p className="card__ano">2021</p>
-          <p className="card__title">Title</p>
-          <p className="card__verMais">Ver mais<FaAngleRight/></p>
+          <div className="card__content">
+            <p className="card__ano">2021</p>
+            <p className="card__title">Title</p>
+            <p className="card__verMais">Ver mais<FaAngleRight/></p>
+          </div>
       </Wrapper>
   );
 }

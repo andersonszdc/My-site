@@ -82,6 +82,16 @@ const Wrapper = styled.div<WrapperProps>`
             }
         }
     `}
+    @media (max-width: 600px) {
+        .me {
+            .title {
+                font-size: 18px;
+            }
+            .subtitle {
+                font-size: 12px;
+            }
+        }
+    }
 `
 
 interface HeaderProps {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components'
 import { VscGithub } from 'react-icons/vsc'
 import { GrInstagram } from 'react-icons/gr'
@@ -25,6 +25,14 @@ const Wrapper = styled.div`
     display: flex;
     gap: 28px;
     color: ${props => props.theme.colors.blue}
+  }
+  @media (max-width: 700px) {
+    .function {
+      font-size: 24px;
+    }
+    .description {
+      font-size: 12px;
+    }
   }
 `
 
