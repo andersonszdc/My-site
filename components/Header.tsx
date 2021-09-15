@@ -109,6 +109,14 @@ const Header = ({ toggleTheme }: HeaderProps) => {
         setColor( color === '#FAF8F8'? '#2B2323' : '#FAF8F8')
     }
 
+    useEffect(() => {
+        if(isClicked) {
+            document.body.style.overflow='hidden'
+        } else {
+            document.body.style.overflow='auto'
+        }
+    }, [isClicked])
+
     return (
         <>
             <Wrapper isClicked={isClicked}>

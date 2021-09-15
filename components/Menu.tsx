@@ -12,22 +12,23 @@ const Wrapper = styled.div<MenuProps>`
     transform: translate(-50%, -50%);
     z-index: 5;
 
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 24px;
     align-items: center;
     justify-content: center;
 
     opacity: 0;
-    transition: .25s cubic-bezier(.3,0,.5,1);
+    transition: 5s cubic-bezier(.3,0,.5,1);
     ${({isClicked}) => isClicked && `
         opacity: 1;
+        display: flex;
     `}
     a {
         color: ${props => props.theme.colors.text};
         text-decoration: none;
         font-size: 20px;
-        transition: .25s cubic-bezier(.3,0,.5,1);
+        transition: .35s cubic-bezier(.3,0,.5,1);
         : hover {
             color: ${props => props.theme.colors.blue}
         }
