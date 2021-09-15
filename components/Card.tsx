@@ -23,6 +23,7 @@ const Wrapper = styled.div`
     width: 100%;
     height: 300px;
     border-radius: 6px;
+    cursor: pointer;
     .card__title {
         font-size: 30px;
         font-weight: 700;
@@ -34,7 +35,7 @@ const Wrapper = styled.div`
         gap: 4px;
     }
     :hover p {
-        animation: ${cardUp} .3s ease-in-out;
+        animation: ${cardUp} .4s ease-in-out;
     }
 `
 
