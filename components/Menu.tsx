@@ -27,7 +27,7 @@ const Wrapper = styled.div<MenuProps>`
         color: ${props => props.theme.colors.text};
         text-decoration: none;
         font-size: 20px;
-        transition: .15s cubic-bezier(.3,0,.5,1);
+        transition: .25s cubic-bezier(.3,0,.5,1);
         : hover {
             color: ${props => props.theme.colors.blue}
         }
