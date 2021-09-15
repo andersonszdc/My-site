@@ -2,8 +2,10 @@ const pattern = {
     title: 'pattern',
 
     colors: {
-        text: '#faf8f8',
-        background: '#333',
+        text: '#FAF8F8',
+        background: '#2B2323',
+        blue: '#16D3E4',
+        red: '#F21E0C'
     }
 }
 

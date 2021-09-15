@@ -9,13 +9,20 @@ const Wrapper = styled.div`
     display: block;
     border-top: 1px solid white;
     width: 100%;
+    margin: 45px 0;
   }
   .title {
-    margin-top: 60px;
     margin-bottom: 16px;
+    font-size: 28px;
   }
-  .email {
+  .email,
+  .number {
+    display: flex;
+    align-items: center;
     margin-bottom: 6px;
+    gap: 6px;
+    font-weight: 500;
+    font-size: 20px;
     :before {
       content: '';
       display: flex;
@@ -23,7 +30,7 @@ const Wrapper = styled.div`
       margin: 0;
       width: 20px;
       height: 3px;
-      background-color: white;
+      background-color: ${props => props.theme.colors.blue};
     }
   }
 `
