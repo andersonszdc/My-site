@@ -14,7 +14,7 @@ const Wrapper = styled.div<MenuProps>`
 
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
     align-items: center;
     justify-content: center;
 
@@ -26,6 +26,11 @@ const Wrapper = styled.div<MenuProps>`
     a {
         color: ${props => props.theme.colors.text};
         text-decoration: none;
+        font-size: 20px;
+        transition: .15s cubic-bezier(.3,0,.5,1);
+        : hover {
+            color: ${props => props.theme.colors.blue}
+        }
     }
 `
 
@@ -53,6 +58,8 @@ const Menu = ({ isClicked }: MenuProps) => {
             <Wrapper isClicked={isClicked}>
                 <a href="">Sobre mim</a>
                 <a href="">Blog</a>
+                <a href="">Portfólio</a>
+                <a href="">Contatos</a>
             </Wrapper>
         </>
     )

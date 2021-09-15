@@ -46,45 +46,49 @@ const Wrapper = styled.div<WrapperProps>`
         gap: 6px;
         cursor: pointer;
         z-index: 10;
+        p {
+            font-size: 20px;
+        }
         .burger {
-            content: '';
-            display: block;
-            width: 20px;
-            height: 2px;
-            background-color: ${props => props.theme.colors.text};
-            border-radius: 1px;
-            transition: .5s ease-in-out;
-            :before, :after {
-                position: relative;
-                content: '';
-                display: block;
-                width: 20px;
-                height: 2px;
-                background-color: white;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            transition: all .2s linear;
+            .one,
+            .two,
+            .three {
+                width: 22px;
+                height: 3px;
+                background-color: ${props => props.theme.colors.text};
                 border-radius: 1px;
-                transition: .5s ease-in-out;
+                transition: all .3s linear;
             }
-            :before {
-                bottom: 7px;
-                background-color: ${props => props.theme.colors.text};
+        }
+        :hover {
+            opacity: 0.8;
+        ${({isClicked}) => !isClicked && `
+            .burger {
+                gap: 6px;
             }
-            :after {
-                top: 5px;
-                background-color: ${props => props.theme.colors.text};
-            }
+        `}
         }
     }
     ${({isClicked}) => isClicked && `
         .menu {
             .burger {
-                transform: rotate(45deg);
-                :before {
-                    transform: rotate(90deg);
-                    bottom: 0px;
+                .one {
+                    transform: translateY(6px) rotate(45deg);
                 }
-                :after {
-                    transform: rotate(90deg);
-                    top: -2px;
+                .two {
+                    opacity: 0;
+                }
+                .three {
+                    transform: translateY(-6px) rotate(-45deg);
+                }
+            }
+            :hover {
+                .burger {
+                    transform: rotate(-90deg);
                 }
             }
         }
@@ -137,7 +141,11 @@ const Header = ({ toggleTheme }: HeaderProps) => {
                 </div>
                 <div onClick={handleClick} onClickCapture={toggleTheme} className="menu">
                     <p>menu</p>
-                    <span className="burger"></span>
+                    <div className="burger">
+                        <span className='one'/>
+                        <span className='two'/>
+                        <span className='three'/>
+                    </div>
                 </div>
             </Wrapper>
             <Menu isClicked={isClicked} />
