@@ -1,6 +1,11 @@
 import { createGlobalStyle } from "styled-components"
+import pattern from './themes/pattern'
 
-const Global = createGlobalStyle`
+interface GlobalProps {
+    theme: typeof pattern
+}
+
+const Global = createGlobalStyle<GlobalProps>`
     * {
         padding: 0;
         margin: 0;
@@ -8,7 +13,7 @@ const Global = createGlobalStyle`
 
     body {
         background-color: #333;
-        color: white;
+        color: ${props => props.theme.colors.text};
         font-family: 'Montserrat', sans-serif;
     }
 `
