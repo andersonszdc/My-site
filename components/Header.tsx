@@ -27,6 +27,7 @@ const Wrapper = styled.div<WrapperProps>`
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 6px;
+            transition: .5s cubic-bezier(.3,0,.5,1);
         }
         .subtitle {
             font-size: 16px;

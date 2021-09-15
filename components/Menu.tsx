@@ -1,21 +1,11 @@
 import React from 'react'
-import { createPortal } from 'react-dom';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components'
 
 interface MenuProps {
     isClicked: boolean
 }
 
-const overlayUp = keyframes`
-    from {
-        height: 0;
-    }
-    to {
-        height: 100vh;
-    }
-`
-
-const Wrapper = styled.div`
+const Wrapper = styled.div<MenuProps>`
     position: fixed;
     top: 50%;
     left: 50%;
@@ -27,35 +17,44 @@ const Wrapper = styled.div`
     gap: 16px;
     align-items: center;
     justify-content: center;
+
+    opacity: 0;
+    transition: .25s cubic-bezier(.3,0,.5,1);
+    ${({isClicked}) => isClicked && `
+        opacity: 1;
+    `}
     a {
         color: ${props => props.theme.colors.text};
         text-decoration: none;
     }
 `
 
-const Overlay = styled.div`
+const Overlay = styled.div<MenuProps>`
     position: fixed;
     top: 0;
-    left: 0;
     right: 0;
-    bottom: 0;
     z-index: 5;
     background: #FAF8F8;
-    animation: ${overlayUp} .6s ease-in-out;
+    transition: .5s cubic-bezier(.3,0,.5,1);
+    height: 0;
+    width: 0;
+    border-bottom-left-radius: 100%;
+    ${({isClicked}) => isClicked && `
+        height: 130vh;
+        width: 160vw;
+    `}
 `
 
 const Menu = ({ isClicked }: MenuProps) => {
 
-    if (!isClicked) return null
-    return createPortal(
+    return (
         <>
-            <Overlay />
-            <Wrapper>
+            <Overlay isClicked={isClicked} />
+            <Wrapper isClicked={isClicked}>
                 <a href="">Sobre mim</a>
                 <a href="">Blog</a>
             </Wrapper>
-        </>,
-        document.querySelector('#menu') as HTMLDivElement
+        </>
     )
 }
 

@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   gap: 16px;
   padding: 0 4%;
   min-height: calc(100vh - 105px);
+  transition: .5s cubic-bezier(.3,0,.5,1);
   .name {
     color: ${props => props.theme.colors.blue};
     font-size: 16px;
