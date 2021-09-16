@@ -15,7 +15,7 @@ const cardUp = keyframes`
 
 const Wrapper = styled.div`
     display: inline-block;
-    width: 33%;
+    width: 33.333%;
     padding: 0 6px;
     .card__content {
         display: flex;
