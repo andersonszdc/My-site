@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
     return (
         <Wrapper>
             <h2 className='name'>Anderson Souza</h2>
-            <h2 className='function'>Desenvolvedor Frontend e<br/>User Interface Designer</h2>
+            <h2 className='function'>Desenvolvedor Front-End e<br/>User Interface Designer</h2>
             <p className='description'>Um estudante que relata sua trajetória e<br/>descobertas por este mundo.</p>
             <div className='icons'>
                 <GrInstagram />

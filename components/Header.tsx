@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Logo from './Logo'
 import Menu from './Menu'
+import Link from 'next/Link'
 
 interface WrapperProps {
     isClicked: boolean
@@ -18,6 +19,7 @@ const Wrapper = styled.div<WrapperProps>`
         align-items: center;
         gap: 16px;
         z-index: 10;
+        cursor: pointer;
         .title {
             font-size: 24px;
             font-weight: 700;
@@ -95,7 +97,7 @@ const Wrapper = styled.div<WrapperProps>`
 `
 
 interface HeaderProps {
-  toggleTheme: (event: React.MouseEvent<HTMLDivElement>) => void
+  toggleTheme: () => void
 }
 
 const Header = ({ toggleTheme }: HeaderProps) => {
@@ -106,6 +108,7 @@ const Header = ({ toggleTheme }: HeaderProps) => {
     function handleClick() {
         setIsClicked( isClicked? false : true)
         setColor( color === '#FAF8F8'? '#2B2323' : '#FAF8F8')
+        toggleTheme()
     }
 
     useEffect(() => {
@@ -119,14 +122,16 @@ const Header = ({ toggleTheme }: HeaderProps) => {
     return (
         <>
             <Wrapper isClicked={isClicked}>
-                <div className="me">
-                    <Logo width="40px" color={color} />
-                    <div>
-                        <h1 className="title">Anderson Souza</h1>
-                        <h2 className="subtitle">Front End & UI Designer</h2>
+                <Link href='/'>
+                    <div className="me">
+                        <Logo width="40px" color={color} />
+                        <div>
+                            <h1 className="title">Anderson Souza</h1>
+                            <h2 className="subtitle">Front-End & UI Designer</h2>
+                        </div>
                     </div>
-                </div>
-                <div onClick={handleClick} onClickCapture={toggleTheme} className="menu">
+                </Link>
+                <div onClick={handleClick} className="menu">
                     <p>menu</p>
                     <div className="burger">
                         <span className='one'/>
@@ -135,7 +140,7 @@ const Header = ({ toggleTheme }: HeaderProps) => {
                     </div>
                 </div>
             </Wrapper>
-            <Menu isClicked={isClicked} />
+            <Menu handleClick={handleClick} isClicked={isClicked} />
         </>
     );
 }

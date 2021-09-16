@@ -1,8 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import Link from 'next/Link'
 
 interface MenuProps {
-    isClicked: boolean
+    isClicked: boolean,
+    handleClick?: () => void
 }
 
 const Wrapper = styled.div<MenuProps>`
@@ -52,16 +54,24 @@ const Overlay = styled.div<MenuProps>`
     `}
 `
 
-const Menu = ({ isClicked }: MenuProps) => {
+const Menu = ({ isClicked, handleClick }: MenuProps) => {
 
     return (
         <>
             <Overlay isClicked={isClicked} />
             <Wrapper isClicked={isClicked}>
-                <a href="">Sobre mim</a>
-                <a href="">Blog</a>
-                <a href="">Portfólio</a>
-                <a href="">Contatos</a>
+                <Link href='/sobre-mim'>
+                    <a onClick={handleClick}>Sobre mim</a>
+                </Link>
+                <Link  href="/blog">
+                    <a onClick={handleClick}>Blog</a>
+                </Link>
+                <Link href='/portfolio'>
+                    <a onClick={handleClick}>Portfólio</a>
+                </Link>
+                <Link href='/contatos'>
+                    <a onClick={handleClick}>Contatos</a>
+                </Link>
             </Wrapper>
         </>
     )

@@ -30,6 +30,7 @@ const Wrapper = styled.div<WrapperProps>`
             .angleLeft,
             .angleRight {
                 cursor: pointer;
+                transition: .5s ease-in-out;
             }
             .angleLeft {
                 ${({leftIsActive}) => !leftIsActive && `
