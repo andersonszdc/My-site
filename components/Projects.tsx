@@ -33,11 +33,13 @@ const Wrapper = styled.div<WrapperProps>`
             }
             .angleLeft {
                 ${({leftIsActive}) => !leftIsActive && `
+                    cursor: default;
                     opacity: 0.2;
                 `}
             }
             .angleRight {
                 ${({rightIsActive}) => !rightIsActive && `
+                    cursor: default;
                     opacity: 0.2;
                 `}
             }
@@ -51,18 +53,24 @@ const Projects: React.FC = () => {
     const [ leftIsActive, setleftIsActive ] = useState(true)
     const [ rightIsActive, setRightIsActive ] = useState(true)
     const [ width, setWidth ] = useState(0)
+    const [ scrollwidth, setScrollsetWidth ] = useState(0)
     const slider = useRef<HTMLDivElement>(null)
 
     function handleRight() {
-        setTranslate(translate - width)
+        if(rightIsActive===true) {
+            setTranslate(translate - width)
+        }
     }
 
     function handleLeft() {
-        setTranslate(translate + width)
+        if (leftIsActive===true) {
+            setTranslate(translate + width)
+        }
     }
 
     useLayoutEffect(() => {
         if(null !== slider.current) {
+            setScrollsetWidth(slider.current.scrollWidth)
             setWidth(slider.current.clientWidth)
             slider.current.style.transform = `translateX(${translate}px)`
         }
@@ -70,10 +78,13 @@ const Projects: React.FC = () => {
     }, [slider, translate])
 
     useEffect(() => {
-        if(width === 0) {
-            setleftIsActive(false)
-        }
-    }, [width])
+            setleftIsActive(translate===0?false:true)
+            if(width <= -translate && -translate <= scrollwidth) {
+                setRightIsActive(false)
+            } else {
+                setRightIsActive(true)
+            }
+    }, [translate, width, scrollwidth])
 
     return (
         <Wrapper rightIsActive={rightIsActive} leftIsActive={leftIsActive} >
