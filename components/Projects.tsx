@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import React, { useLayoutEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import Card from './Card'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
@@ -74,10 +74,9 @@ const Projects: React.FC = () => {
             setWidth(slider.current.clientWidth)
             slider.current.style.transform = `translateX(${translate}px)`
         }
-        console.log(slider)
     }, [slider, translate])
 
-    useEffect(() => {
+    useLayoutEffect(() => {
             setleftIsActive(translate===0?false:true)
             if(width <= -translate && -translate <= scrollwidth) {
                 setRightIsActive(false)
