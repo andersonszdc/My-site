@@ -32,6 +32,7 @@ const Content = styled.div`
 `
 
 const Blog: JSX.Element = ({posts}: PropTypes) => {
+  console.log(posts)
   return (
     <Wrapper>
       <Content>
@@ -39,7 +40,7 @@ const Blog: JSX.Element = ({posts}: PropTypes) => {
           <Link
           href={{
             pathname: '/blog/[id]',
-            query: {id: 'typescript'},
+            query: {id: `${post.uid}`},
           }}
             key={post.id}>
             <div className='card'>
