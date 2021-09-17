@@ -9,7 +9,7 @@ import Image from 'next/image'
 import Link from 'next/Link'
 
 interface PropTypes {
-  post?: ApiSearchResponse
+  posts?: ApiSearchResponse
 }
 
 const Wrapper = styled.div`
@@ -31,9 +31,9 @@ const Content = styled.div`
   }
 `
 
-const Blog: JSX.Element = ({posts}: PropTypes) => {
+const Blog = ({posts}: PropTypes) => {
   console.log(posts)
-  return (
+  return posts && (
     <Wrapper>
       <Content>
         {posts.results.map((post: any) => (

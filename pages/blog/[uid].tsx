@@ -3,22 +3,22 @@ import { Client } from '../../utils/prismic-config'
 import Prismic from '@prismicio/client'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { RichText } from 'prismic-reactjs'
+import {Document} from '@prismicio/client/types/documents'
 
 interface PathProps {
-    params: {
-        uid: string
-    }
-}
-
-interface BlogProps {
+  params: {
     uid: string
+  }
+}
+interface BlogProps {
+  post: Document
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
 
     const posts = await Client.query(Prismic.Predicates.at('document.type', 'post-blog'))
 
-    const allBlogPosts = []
+    const allBlogPosts: any[] = []
 
     posts.results.map((post) => (
       allBlogPosts.push({params: {uid: post.uid} })
@@ -30,7 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }: PathProps) => {
+export const getStaticProps = async ({ params }: PathProps) => {
     const post = await Client.getByUID('post-blog', params.uid, {
       lang: 'pt-br'
     })
@@ -44,9 +44,9 @@ export const getStaticProps: GetStaticProps = async ({ params }: PathProps) => {
 
 
 
-const Post: JSX.Element = ({ post }: BlogProps) => {
+const Post = ({ post }: BlogProps) => {
   console.log(post)
-  return (
+  return post && (
       <div>
         {RichText.render(post.data.title)}
         {RichText.render(post.data.content)}
