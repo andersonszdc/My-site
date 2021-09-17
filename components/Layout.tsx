@@ -3,7 +3,7 @@ import Footer from './Footer';
 import Header from './Header';
 
 interface LayoutProps {
-  toggleTheme: (event: React.MouseEvent<HTMLDivElement>) => void
+  toggleTheme: () => void
   children: React.ReactNode
 }
 
