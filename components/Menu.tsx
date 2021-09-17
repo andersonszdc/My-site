@@ -60,7 +60,7 @@ const Menu = ({ isClicked, handleClick }: MenuProps) => {
         <>
             <Overlay isClicked={isClicked} />
             <Wrapper isClicked={isClicked}>
-                <Link href='/sobre-mim'>
+                <Link href='/sobreMim'>
                     <a onClick={handleClick}>Sobre mim</a>
                 </Link>
                 <Link  href="/blog">
