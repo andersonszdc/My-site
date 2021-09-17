@@ -6,33 +6,37 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 45px 4% 16px 4%;
+  span {
+    display: block;
+    border-top: 1px solid white;
+    width: 100%;
+    margin: 45px 0;
+  }
   .content {
-    span {
-      display: block;
-      border-top: 1px solid white;
-      width: 100%;
-      margin: 45px 0;
-    }
-    .title {
-      margin-bottom: 16px;
-      font-size: 24px;
-    }
-    .email,
-    .number {
-      display: flex;
-      align-items: center;
-      margin-bottom: 6px;
-      gap: 6px;
-      font-weight: 500;
-      font-size: 20px;
-      :before {
-        content: '';
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .box {
+      .title {
+        margin-bottom: 16px;
+        font-size: 24px;
+      }
+      .item {
         display: flex;
-        position: relative;
-        margin: 0;
-        width: 20px;
-        height: 3px;
-        background-color: ${props => props.theme.colors.blue};
+        align-items: center;
+        margin-bottom: 6px;
+        gap: 6px;
+        font-weight: 500;
+        font-size: 20px;
+        :before {
+          content: '';
+          display: flex;
+          position: relative;
+          margin: 0;
+          width: 20px;
+          height: 3px;
+          background-color: ${props => props.theme.colors.blue};
+        }
       }
     }
   }
@@ -51,11 +55,23 @@ const Wrapper = styled.div`
 const Footer: React.FC = () => {
   return (
     <Wrapper>
+      <span></span>
       <div className='content'>
-        <span></span>
-        <h3 className='title'>Contatos</h3>
-        <p className='email'>andersonszdc@gmail.com</p>
-        <p className='number'>+55 (21) 97351-2104</p>
+        <ul className='box'>
+          <h3 className='title'>Contatos</h3>
+          <li className='item'>andersonszdc@gmail.com</li>
+          <li className='item'>+55 (21) 97351-2104</li>
+        </ul>
+        <ul className='box'>
+          <h3 className='title'>Posts recentes</h3>
+          <li className='item'>Next.js - Meu resumo...</li>
+          <li className='item'>TypeScript - Meu resumo...</li>
+        </ul>
+        <ul className='box'>
+          <h3 className='title'>Minhas redes</h3>
+          <li className='item'>Instagram</li>
+          <li className='item'>GitHub</li>
+        </ul>
       </div>
       <div className='credit'>
         <Logo width="25px" color="#FAF8F8" />
