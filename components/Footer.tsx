@@ -5,12 +5,12 @@ import Logo from './Logo';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 45px 4% 16px 4%;
+  padding: 0 4% 16px 4%;
   span {
     display: block;
     border-top: 1px solid white;
     width: 100%;
-    margin: 45px 0;
+    margin-bottom: 45px;
   }
   .content {
     display: flex;
@@ -27,7 +27,7 @@ const Wrapper = styled.div`
         margin-bottom: 6px;
         gap: 6px;
         font-weight: 500;
-        font-size: 20px;
+        font-size: 16px;
         :before {
           content: '';
           display: flex;
@@ -36,12 +36,13 @@ const Wrapper = styled.div`
           width: 20px;
           height: 3px;
           background-color: ${props => props.theme.colors.blue};
+          border-radius: 12px;
         }
       }
     }
   }
   .credit {
-    margin-top: 30px;
+    margin-top: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
