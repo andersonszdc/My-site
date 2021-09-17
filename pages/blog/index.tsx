@@ -6,7 +6,7 @@ import { GetStaticProps } from 'next'
 import ApiSearchResponse from '@prismicio/client/types/ApiSearchResponse'
 import { RichText } from 'prismic-reactjs'
 import Image from 'next/image'
-import Link from 'next/Link'
+import Link from 'next/link'
 
 interface PropTypes {
   posts?: ApiSearchResponse
@@ -38,6 +38,7 @@ const Blog = ({posts}: PropTypes) => {
       <Content>
         {posts.results.map((post: any) => (
           <Link
+          passHref
           href={{
             pathname: '/blog/[id]',
             query: {id: `${post.uid}`},

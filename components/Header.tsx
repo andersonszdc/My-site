@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Logo from './Logo'
 import Menu from './Menu'
-import Link from 'next/Link'
+import Link from 'next/link'
 
 interface WrapperProps {
     isClicked: boolean
@@ -122,7 +122,7 @@ const Header = ({ toggleTheme }: HeaderProps) => {
     return (
         <>
             <Wrapper isClicked={isClicked}>
-                <Link href='/'>
+                <Link passHref href='/'>
                     <div className="me">
                         <Logo width="40px" color={color} />
                         <div>
