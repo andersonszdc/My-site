@@ -19,13 +19,14 @@ const Wrapper = styled.div<MenuProps>`
     gap: 24px;
     align-items: center;
     justify-content: center;
-
+    visibility: hidden;
 
     opacity: 0;
     transition: opacity .25s ease-out;
     ${({isClicked}) => isClicked && `
         opacity: 1;
-    transition: opacity .25s ease-out .25s;
+        transition: opacity .25s ease-out .25s;
+        visibility: visible;
     `}
     a {
         color: ${props => props.theme.colors.text};
