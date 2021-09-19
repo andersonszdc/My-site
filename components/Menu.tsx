@@ -14,24 +14,25 @@ const Wrapper = styled.div<MenuProps>`
     transform: translate(-50%, -50%);
     z-index: 5;
 
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 24px;
     align-items: center;
     justify-content: center;
 
+
     opacity: 0;
-    transition: 5s cubic-bezier(.3,0,.5,1);
+    transition: opacity .25s ease-out;
     ${({isClicked}) => isClicked && `
         opacity: 1;
-        display: flex;
+    transition: opacity .25s ease-out .25s;
     `}
     a {
         color: ${props => props.theme.colors.text};
         text-decoration: none;
         font-size: 20px;
         font-weight: 500;
-        transition: .35s cubic-bezier(.3,0,.5,1);
+        transition: .35s ease-out;
         : hover {
             color: ${props => props.theme.colors.blue}
         }
