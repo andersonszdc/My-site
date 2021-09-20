@@ -48,7 +48,7 @@ const Wrapper = styled.div<WrapperProps>`
     }
 `
 
-const Projects: React.FC = () => {
+const Projects = ({handleClick}: any) => {
 
     const [ translate, setTranslate ] = useState(0)
     const [ leftIsActive, setleftIsActive ] = useState(true)
@@ -91,7 +91,7 @@ const Projects: React.FC = () => {
             <h2 className="projects__title">Projetos</h2>
             <div className="projects__cards">
                 <div ref={slider} className="projects__slider">
-                    <Card />
+                    <Card handleClick={handleClick} />
                     <Card />
                     <Card />
                     <Card />

@@ -33,17 +33,23 @@ const Wrapper = styled.div`
         padding: 30px;
         color: ${props => props.theme.colors.text};
         height: 300px;
-        cursor: pointer;
+        cursor: default;
+        .card__ano {
+            font-weight: 500;
+            color: #ccc;
+        }
         .card__title {
             white-space: normal;
             font-size: 24px;
             font-weight: 700;
         }
         .card__verMais {
+            cursor: pointer;
             font-weight: 500;
             display: flex;
             align-items: center;
             gap: 4px;
+            display: none;
         }
     }
     .card__mockup {
@@ -60,6 +66,9 @@ const Wrapper = styled.div`
         p {
             animation: ${cardUp} .4s ease-in-out;
         }
+        .card__verMais {
+            display: inline-flex;
+        }
         .card__mockup {
             opacity: 0.3;
             img {
@@ -75,14 +84,14 @@ const Wrapper = styled.div`
     }
 `
 
-const Card: React.FC = () => {
+const Card = ({handleClick}: any) => {
     return (
         <Link passHref href='/'>
             <Wrapper>
                 <div className="card__content">
                     <p className="card__ano">2021</p>
                     <p className="card__title">Netflix - Layout responsivo</p>
-                    <p className="card__verMais">Ver mais<FaAngleRight/></p>
+                    <p onClick={handleClick} className="card__verMais">Ver mais<FaAngleRight/></p>
                 </div>
                 <div className="card__mockup">
                     <Image className='card__image' layout='responsive' src={netflix} alt='mockup' />
