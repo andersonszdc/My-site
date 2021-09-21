@@ -48,8 +48,7 @@ const Wrapper = styled.div<WrapperProps>`
     }
 `
 
-const Projects = ({handleClick}: any) => {
-
+const Projects = ({handleClick, projects}: any) => {
     const [ translate, setTranslate ] = useState(0)
     const [ leftIsActive, setleftIsActive ] = useState(true)
     const [ rightIsActive, setRightIsActive ] = useState(true)
@@ -91,10 +90,9 @@ const Projects = ({handleClick}: any) => {
             <h2 className="projects__title">Projetos</h2>
             <div className="projects__cards">
                 <div ref={slider} className="projects__slider">
-                    <Card handleClick={handleClick} />
-                    <Card handleClick={handleClick}/>
-                    <Card handleClick={handleClick}/>
-                    <Card handleClick={handleClick}/>
+                    {projects.results.map((project: any) => (
+                        <Card data={project.data} handleClick={handleClick} key={project.id} />
+                    ))}
                 </div>
                 <div className="angles">
                     <FaAngleLeft className="angleLeft" onClick={handleLeft} />
