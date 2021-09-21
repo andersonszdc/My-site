@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { FaAngleRight } from 'react-icons/fa'
 import Image from 'next/image'
-import netflix from '../assets/netflix-mockup.jpg'
+import Link from 'next/link'
 
 const cardUp = keyframes`
     from {
@@ -83,13 +83,21 @@ const Wrapper = styled.div`
     }
 `
 
-const Card = ({data}: any) => {
+const Card = ({data, uid}: any) => {
+    console.log(uid)
     return (
             <Wrapper>
                 <div className="card__content">
                     <p className="card__ano">{data.year}</p>
                     <p className="card__title">{data.title[0].text}</p>
-                    <p className="card__verMais">Ver mais<FaAngleRight/></p>
+                    <Link
+                    passHref
+                    href={{
+                        pathname: '/[projeto]',
+                        query: {projeto: `${uid}`},
+                    }}>
+                        <p className="card__verMais">Ver mais<FaAngleRight/></p>
+                    </Link>
                 </div>
                 <div className="card__mockup">
                     <Image width={data.cover.dimensions.width} height={data.cover.dimensions.height} className='card__image' layout='responsive' src={data.cover.url} alt='mockup' />

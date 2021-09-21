@@ -91,7 +91,7 @@ const Projects = ({projects}: any) => {
             <div className="projects__cards">
                 <div ref={slider} className="projects__slider">
                     {projects.results.map((project: any) => (
-                        <Card data={project.data} key={project.id} />
+                        <Card data={project.data} uid={project.uid} key={project.id} />
                     ))}
                 </div>
                 <div className="angles">
