@@ -68,9 +68,6 @@ const Menu = ({ isClicked, handleClick }: MenuProps) => {
                 <Link  href="/blog">
                     <a onClick={handleClick}>Blog</a>
                 </Link>
-                <Link href='/portfolio'>
-                    <a onClick={handleClick}>Portfólio</a>
-                </Link>
                 <Link href='/contatos'>
                     <a onClick={handleClick}>Contatos</a>
                 </Link>

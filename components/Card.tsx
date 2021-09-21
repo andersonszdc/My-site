@@ -21,7 +21,7 @@ const Wrapper = styled.div`
     width: 33.333%;
     padding: 0 6px;
     .card__content {
-        width: 80%;
+        width: 90%;
         z-index: 2;
         position: absolute;
         top: 0;
