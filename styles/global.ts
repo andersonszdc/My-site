@@ -16,6 +16,7 @@ const Global = createGlobalStyle<GlobalProps>`
         background-color: #2B2323;
         color: ${props => props.theme.colors.text};
         font-family: 'Montserrat', sans-serif;
+        overflow: scroll;
         ::-webkit-scrollbar {
             width: 2px;
           }
