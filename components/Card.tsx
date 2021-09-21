@@ -83,13 +83,13 @@ const Wrapper = styled.div`
     }
 `
 
-const Card = ({handleClick, data}: any) => {
+const Card = ({data}: any) => {
     return (
             <Wrapper>
                 <div className="card__content">
                     <p className="card__ano">{data.year}</p>
                     <p className="card__title">{data.title[0].text}</p>
-                    <p onClick={handleClick} className="card__verMais">Ver mais<FaAngleRight/></p>
+                    <p className="card__verMais">Ver mais<FaAngleRight/></p>
                 </div>
                 <div className="card__mockup">
                     <Image width={data.cover.dimensions.width} height={data.cover.dimensions.height} className='card__image' layout='responsive' src={data.cover.url} alt='mockup' />
