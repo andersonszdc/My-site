@@ -111,14 +111,6 @@ const Header = ({ toggleTheme }: HeaderProps) => {
         toggleTheme()
     }
 
-    useEffect(() => {
-        if(isClicked) {
-            document.body.style.overflow='hidden'
-        } else {
-            document.body.style.overflow='auto'
-        }
-    }, [isClicked])
-
     return (
         <>
             <Wrapper isClicked={isClicked}>
