@@ -92,9 +92,9 @@ const Projects = ({handleClick}: any) => {
             <div className="projects__cards">
                 <div ref={slider} className="projects__slider">
                     <Card handleClick={handleClick} />
-                    <Card />
-                    <Card />
-                    <Card />
+                    <Card handleClick={handleClick}/>
+                    <Card handleClick={handleClick}/>
+                    <Card handleClick={handleClick}/>
                 </div>
                 <div className="angles">
                     <FaAngleLeft className="angleLeft" onClick={handleLeft} />

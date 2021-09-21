@@ -2,7 +2,6 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import { FaAngleRight } from 'react-icons/fa'
 import Image from 'next/image'
-import Link from 'next/link'
 import netflix from '../assets/netflix-mockup.jpg'
 
 const cardUp = keyframes`
@@ -86,7 +85,6 @@ const Wrapper = styled.div`
 
 const Card = ({handleClick}: any) => {
     return (
-        <Link passHref href='/'>
             <Wrapper>
                 <div className="card__content">
                     <p className="card__ano">2021</p>
@@ -97,7 +95,6 @@ const Card = ({handleClick}: any) => {
                     <Image className='card__image' layout='responsive' src={netflix} alt='mockup' />
                 </div>
             </Wrapper>
-        </Link>
     );
 }
 
