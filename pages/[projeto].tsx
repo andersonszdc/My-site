@@ -81,10 +81,59 @@ const Wrapper = styled.div`
         margin-top: 45px;
         width: 100%;
     }
+    .project__box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .section {
+            max-width: 800px;
+            margin: 60px 0;
+            h3 {
+                font-weight: 700;
+                font-size: 24px;
+                color: ${props => props.theme.colors.blue};
+            }
+            h4 {
+                margin-top: 16px;
+                font-weight: 400;
+                font-size: 16px;
+            }
+            .image {
+                margin-top: 16px;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
 `
 
 const Projeto = ({projeto}: ProjectProps) => {
 console.log(projeto)
+
+    const projectContent = projeto.data.body.map((slice: any, index: any) => {
+
+        
+
+            const galleryContent = slice.items.map((item: any, itemIndex: any) => (
+                <div key={itemIndex} className='section'>
+                    {RichText.render(item.text)}
+                    {item.image.url &&
+                    <div className='image'>
+                        <Image src={item.image.url} width={item.image.dimensions.width} height={item.image.dimensions.height} alt='' />
+                    </div>
+                    }
+                </div>
+            ))
+            return (
+                <div className='project__box' key={index}>
+                <div>
+                    {galleryContent}
+                </div>
+                </div>
+            )
+        
+    })
+
     return (
         <Wrapper>
             <div className='description'>
@@ -103,6 +152,7 @@ console.log(projeto)
             <div className='content'>
                 <Image width={projeto.data.frame.dimensions.width} height={projeto.data.frame.dimensions.height} src={projeto.data.frame.url} alt='' />
             </div>
+            {projectContent}
         </Wrapper>
     )
 }
