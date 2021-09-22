@@ -41,6 +41,12 @@ const Wrapper = styled.div`
       width: 300px;
     }
   }
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 30px;
+    margin-top: 45px;
+  }
   @media (max-width: 700px) {
     .informations {
       .function {

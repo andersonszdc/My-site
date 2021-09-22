@@ -75,8 +75,22 @@ const Wrapper = styled.div`
             }
         }
     }
+    @media (max-width: 1000px) {
+        .card__content {
+            .card__title {
+                font-size: 18px;
+            }
+        }
+    }
     @media (max-width: 800px) {
         width: 50%;
+    }
+    @media (max-width: 650px) {
+        .card__content {
+            .card__title {
+                font-size: 8px;
+            }
+        }
     }
     @media (max-width: 400px) {
         width: 100%;

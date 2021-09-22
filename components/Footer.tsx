@@ -51,28 +51,36 @@ const Wrapper = styled.div`
       color: #878a8f;
     }
   }
+  @media (max-width: 900px) {
+    .content {
+      flex-direction: column;
+      gap: 45px;
+    }
+  }
 `
 
 const Footer: React.FC = () => {
   return (
     <Wrapper>
       <span></span>
-      <div className='content'>
-        <ul className='box'>
-          <h3 className='title'>Contatos</h3>
-          <li className='item'>andersonszdc@gmail.com</li>
-          <li className='item'>+55 (21) 97351-2104</li>
-        </ul>
-        <ul className='box'>
-          <h3 className='title'>Posts recentes</h3>
-          <li className='item'>Next.js - Meu resumo...</li>
-          <li className='item'>TypeScript - Meu resumo...</li>
-        </ul>
-        <ul className='box'>
-          <h3 className='title'>Minhas redes</h3>
-          <li className='item'>Instagram</li>
-          <li className='item'>GitHub</li>
-        </ul>
+      <div>
+        <div className='content'>
+          <ul className='box'>
+            <h3 className='title'>Contatos</h3>
+            <li className='item'>andersonszdc@gmail.com</li>
+            <li className='item'>+55 (21) 97351-2104</li>
+          </ul>
+          <ul className='box'>
+            <h3 className='title'>Posts recentes</h3>
+            <li className='item'>Next.js - Meu resumo...</li>
+            <li className='item'>TypeScript - Meu resumo...</li>
+          </ul>
+          <ul className='box'>
+            <h3 className='title'>Minhas redes</h3>
+            <li className='item'>Instagram</li>
+            <li className='item'>GitHub</li>
+          </ul>
+        </div>
       </div>
       <div className='credit'>
         <Logo width="25px" color="#FAF8F8" />
