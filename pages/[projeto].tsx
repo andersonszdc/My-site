@@ -121,11 +121,8 @@ const Wrapper = styled.div`
 `
 
 const Projeto = ({projeto}: ProjectProps) => {
-console.log(projeto)
 
     const projectContent = projeto.data.body.map((slice: any, index: any) => {
-
-        
 
             const galleryContent = slice.items.map((item: any, itemIndex: any) => (
                 <div key={itemIndex} className='section'>

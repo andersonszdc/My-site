@@ -98,7 +98,6 @@ const Wrapper = styled.div`
 `
 
 const Card = ({data, uid}: any) => {
-    console.log(uid)
     return (
             <Wrapper>
                 <div className="card__content">

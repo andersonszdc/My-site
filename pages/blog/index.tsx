@@ -32,7 +32,6 @@ const Content = styled.div`
 `
 
 const Blog = ({posts}: PropTypes) => {
-  console.log(posts)
   return posts && (
     <Wrapper>
       <Content>
