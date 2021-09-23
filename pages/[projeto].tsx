@@ -95,13 +95,26 @@ const Wrapper = styled.div`
             }
             h4 {
                 margin-top: 16px;
-                font-weight: 400;
+                font-weight: 500;
                 font-size: 16px;
             }
             .image {
                 margin-top: 16px;
                 display: flex;
                 justify-content: center;
+            }
+        }
+    }
+    @media (max-width: 750px) {
+        .description {
+            flex-direction: column;
+            gap: 45px;
+            .left {
+                width: 100%;
+            }
+            .right {
+                margin-left: 0;
+                width: 100%;
             }
         }
     }

@@ -88,11 +88,11 @@ const Wrapper = styled.div`
     @media (max-width: 650px) {
         .card__content {
             .card__title {
-                font-size: 8px;
+                font-size: 12px;
             }
         }
     }
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
         width: 100%;
     }
 `
