@@ -47,6 +47,9 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     gap: 6px;
+    .logo {
+      width: 25px;
+    }
     p {
       color: #878a8f;
     }
@@ -83,7 +86,9 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className='credit'>
-        <Logo width="25px" color="#FAF8F8" />
+        <div className='logo'>
+          <Logo color="#FAF8F8" />
+        </div>
         <p>
         © 2021 Andersonszdc.<br/>Made for me in RJ, Brasil.
         </p>
