@@ -20,6 +20,9 @@ const Wrapper = styled.div<WrapperProps>`
         gap: 16px;
         z-index: 10;
         cursor: pointer;
+        .logo {
+            width: 40px;
+        }
         .title {
             font-size: 24px;
             font-weight: 700;
@@ -94,6 +97,19 @@ const Wrapper = styled.div<WrapperProps>`
             }
         }
     }
+    @media (max-width: 400px) {
+        .me {
+            .logo {
+                width: 25px;
+            }
+            .title {
+                font-size: 12px;
+            }
+            .subtitle {
+                font-size: 8px;
+            }
+        }
+    }
 `
 
 interface HeaderProps {
@@ -116,7 +132,9 @@ const Header = ({ toggleTheme }: HeaderProps) => {
             <Wrapper isClicked={isClicked}>
                 <Link passHref href='/'>
                     <div className="me">
-                        <Logo width="40px" color={color} />
+                        <div className='logo'>
+                            <Logo color={color} />
+                        </div>
                         <div>
                             <h1 className="title">Anderson Souza</h1>
                             <h2 className="subtitle">Front-End & UI Designer</h2>

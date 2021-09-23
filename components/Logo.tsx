@@ -2,26 +2,19 @@ import React from 'react'
 import styled from 'styled-components';
 
 interface LogoProps {
-  color: string,
-  width: string
+  color: string
 }
 
-interface WrapperProps {
-  width: string
-}
-
-const Wrapper = styled.div<WrapperProps>`
+const Wrapper = styled.svg`
   display: flex;
-  width: ${props => props.width};
   #path-fill {
     transition: .5s cubic-bezier(.3,0,.5,1);
   }
 `
 
-const Logo = ({color, width}: LogoProps) => {
+const Logo = ({color}: LogoProps) => {
   return (
-    <Wrapper width={width}>
-        <svg viewBox="0 0 918 1150" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <Wrapper viewBox="0 0 918 1150" fill="none" xmlns="http://www.w3.org/2000/svg">
             <mask id="mask0" style={{maskType:'alpha'}} maskUnits="userSpaceOnUse" x="392" y="50" width="467" height="1040">
                 <path d="M857.933 1070.28L533.965 63.8716C531.304 55.6047 523.612 50 514.927 50H402.244C395.456 50 390.64 56.6185 392.729 63.0771L705.548 1030.37C707.414 1036.14 711.798 1040.75 717.465 1042.91L838.321 1088.9C850.078 1093.37 861.788 1082.26 857.933 1070.28Z" fill="#16D3E4"/>
             </mask>
@@ -44,8 +37,7 @@ const Logo = ({color, width}: LogoProps) => {
             </g>
             <path d="M855.554 1071.05L531.586 64.6377C529.257 57.4041 522.526 52.5 514.927 52.5H402.244C397.153 52.5 393.541 57.4639 395.108 62.3078L707.927 1029.6C709.56 1034.65 713.395 1038.69 718.354 1040.57L839.21 1086.56C849.007 1090.29 858.766 1081.03 855.554 1071.05Z" stroke="#16D3E4" strokeWidth="5"/>
             <path id="path-fill" d="M59.5665 1070.28L383.535 63.8716C386.196 55.6047 393.888 50 402.573 50H515.261C522.047 50 526.863 56.616 524.777 63.074L335.5 649H584.5L627.5 782H292.5L211.956 1030.38C210.087 1036.15 205.706 1040.75 200.044 1042.91L79.1794 1088.9C67.4223 1093.37 55.7119 1082.26 59.5665 1070.28Z" fill={color} stroke="#16D3E4" strokeWidth="5"/>
-        </svg> 
-    </Wrapper>
+        </Wrapper> 
   );
 }
 
