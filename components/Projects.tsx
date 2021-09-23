@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import Card from './Card'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
@@ -68,7 +68,7 @@ const Projects = ({projects}: any) => {
         }
     }
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if(null !== slider.current) {
             setScrollsetWidth(slider.current.scrollWidth)
             setWidth(slider.current.clientWidth)
@@ -76,7 +76,7 @@ const Projects = ({projects}: any) => {
         }
     }, [slider, translate])
 
-    useLayoutEffect(() => {
+    useEffect(() => {
             setleftIsActive(translate===0?false:true)
             if(width <= -translate && -translate <= scrollwidth) {
                 setRightIsActive(false)
