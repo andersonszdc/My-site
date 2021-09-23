@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import ReCAPTCHA from 'react-google-recaptcha'
 
 const Wrapper = styled.div`
   display: flex;
@@ -51,23 +50,22 @@ const Contatos: React.FC = () => {
     console.log(value)
   }
 
+  async function handleSubmit(e: any) {
+    e.preventDefault()
+  }
   return (
-      <Wrapper>
-        <div className='forms'>
-          <h2>Fale comigo!</h2>
-          <form action="">
-            <input className='inputs' placeholder="nome" type="text" />
-            <input className='inputs' placeholder="e-mail" type="text" />
-            <textarea style={{resize: 'none'}} className='inputs' placeholder="mensagem" cols={30} rows={10}></textarea>
-            <ReCAPTCHA
-              sitekey={process.env.NEXT_PUBLIC_KEY_SITE!}
-              onChange={onChange}
-            />
-            <input className='send' type="submit" />
-          </form>
-        </div>
-      </Wrapper>
-  );
+    <Wrapper>
+      <div className='forms'>
+        <h2>Fale comigo!</h2>
+        <form onSubmit={handleSubmit} action="">
+          <input className='inputs' placeholder="nome" type="text" />
+          <input className='inputs' placeholder="e-mail" type="text" />
+          <textarea style={{resize: 'none'}} className='inputs' placeholder="mensagem" cols={30} rows={10}></textarea>
+          <input className='send' type="submit" />
+        </form>
+      </div>
+    </Wrapper>
+  )
 }
 
 export default Contatos;
