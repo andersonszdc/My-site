@@ -34,6 +34,36 @@ const Wrapper = styled.div`
         transition: .4s ease-in-out;
         border-radius: 6px;
     }
+    @media (max-width: 800px) {
+        .call-one {
+            font-size: 15px;
+        }
+        .call-two {
+            h2 {
+                font-size: 36px;
+            }
+        }
+    }
+    @media (max-width: 600px) {
+        .call-one {
+            font-size: 12px;
+        }
+        .call-two {
+            h2 {
+                font-size: 24px;
+            }
+        }
+    }
+    @media (max-width: 400px) {
+        .call-one {
+            font-size: 10px;
+        }
+        .call-two {
+            h2 {
+                font-size: 20px;
+            }
+        }
+    }
 `
 
 const CallMe: React.FC = () => {
