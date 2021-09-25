@@ -1,11 +1,12 @@
 import { GetStaticPaths } from 'next'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Client } from '../utils/prismic-config'
 import Prismic from '@prismicio/client'
 import {Document} from '@prismicio/client/types/documents'
 import styled from 'styled-components'
 import Image from 'next/image'
 import { RichText } from 'prismic-reactjs'
+import ReactMarkdown from 'react-markdown'
 
 interface PathProps {
     params: {
@@ -19,12 +20,12 @@ interface ProjectProps {
 
 export const getStaticPaths: GetStaticPaths = async () => {
 
-    const projects = await Client.query(Prismic.predicates.at('document.type', 'projetos'))
+    const projects = await Client.query(Prismic.predicates.at('document.type', 'markdown'))
 
     const allProjects: any[] = []
 
     projects.results.map((post) => (
-        allProjects.push({params: {projeto: post.uid} })
+        allProjects.push({params: {projeto: 'champs'} })
       ))
 
     return {
@@ -34,7 +35,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({params}: PathProps) => {
-    const projeto = await Client.getByUID('projetos', params.projeto, {
+    const projeto = await Client.getByUID('markdown', 'example-md', {
         lang: 'pt-br'
     })
 
@@ -49,120 +50,45 @@ export const getStaticProps = async ({params}: PathProps) => {
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 90px 4%;
-    a {
-        color: #ccc;
-        text-decoration: none;
-        border-bottom: 1px solid #ccc;
+    margin: 60px auto;
+    padding: 0 30px;
+    max-width: 700px;
+    gap: 30px;
+    h2 {
+        color: ${props => props.theme.colors.blue};
+        font-weight: 600;
+    }
+    h2:not(:first-child) {
+        margin-top: 30px;
+    }
+    p {
         font-weight: 500;
-    }
-    .description {
-        display: flex;
-        .left {
-            width: 50%;
-            .role {
-                margin-top: 45px;
-            }
-        }
-        .right {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-left: 16%;
-            width: 50%;
-            p {
-                display: inline-flex;
-                color: #ccc;
-                font-weight: 500;
-            }
-        }
-    }
-    .content {
-        margin-top: 45px;
-        width: 100%;
-    }
-    .project__box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .section {
-            max-width: 800px;
-            margin: 60px 0;
-            h3 {
-                font-weight: 700;
-                font-size: 24px;
-                color: ${props => props.theme.colors.blue};
-            }
-            h4 {
-                margin-top: 16px;
-                font-weight: 500;
-                font-size: 16px;
-            }
-            .image {
-                margin-top: 16px;
-                display: flex;
-                justify-content: center;
-            }
-        }
-    }
-    @media (max-width: 750px) {
-        .description {
-            flex-direction: column;
-            gap: 45px;
-            .left {
-                width: 100%;
-            }
-            .right {
-                margin-left: 0;
-                width: 100%;
-            }
-        }
     }
 `
 
 const Projeto = ({projeto}: ProjectProps) => {
 
-    const projectContent = projeto.data.body.map((slice: any, index: any) => {
+    const rawMarkdown = RichText.asText(projeto.data.markdown)
 
-            const galleryContent = slice.items.map((item: any, itemIndex: any) => (
-                <div key={itemIndex} className='section'>
-                    {RichText.render(item.text)}
-                    {item.image.url &&
-                    <div className='image'>
-                        <Image src={item.image.url} width={item.image.dimensions.width} height={item.image.dimensions.height} alt='' />
-                    </div>
-                    }
-                </div>
-            ))
-            return (
-                <div className='project__box' key={index}>
-                <div>
-                    {galleryContent}
-                </div>
-                </div>
-            )
-        
-    })
+    const renderers = {
+        img: (image: any) => {
+            console.log(image)
+            return <Image className='imagem' src={image.src} alt={image.alt} height="800" width="1600" />
+        },
+        p: (paragraph: any) => {
+            const { node } = paragraph;
+            if (node.children[0].tagName === "img") {
+              return paragraph.children
+            }
+            return <p>{paragraph.children}</p>
+          }
+      }
 
     return (
         <Wrapper>
-            <div className='description'>
-                <div className='left'>
-                    <h1>{projeto.data.title[0].text}</h1>
-                    <h3><a href={projeto.data.link[0].text}>ver o projeto no ar</a></h3>
-                    <h3 className='role'>MINHA FUNÇÃO</h3>
-                    <h4>Designer</h4>
-                    <h3 className='role'>ANO</h3>
-                    <h4>{projeto.data.year}</h4>
-                </div>
-                <div className='right'>
-                    {RichText.render(projeto.data.content)}
-                </div>
-            </div>
-            <div className='content'>
-                <Image width={projeto.data.frame.dimensions.width} height={projeto.data.frame.dimensions.height} src={projeto.data.frame.url} alt='' />
-            </div>
-            {projectContent}
+            <ReactMarkdown components={renderers}>
+                {rawMarkdown}
+            </ReactMarkdown>
         </Wrapper>
     )
 }

@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['images.prismic.io'],
+    domains: ['images.prismic.io', 'images2.imgbox.com'],
   },
 }
