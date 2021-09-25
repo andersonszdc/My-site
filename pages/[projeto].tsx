@@ -25,7 +25,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const allProjects: any[] = []
 
     projects.results.map((post) => (
-        allProjects.push({params: {projeto: 'champs'} })
+        allProjects.push({params: {projeto: post.uid} })
       ))
 
     return {
@@ -35,7 +35,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({params}: PathProps) => {
-    const projeto = await Client.getByUID('markdown', 'example-md', {
+    const projeto = await Client.getByUID('markdown', params.projeto, {
         lang: 'pt-br'
     })
 
@@ -50,29 +50,60 @@ export const getStaticProps = async ({params}: PathProps) => {
 const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 60px auto;
-    padding: 0 30px;
-    max-width: 700px;
-    gap: 30px;
-    h2 {
-        color: ${props => props.theme.colors.blue};
-        font-weight: 600;
+    margin: 60px 4%;
+    .portf__header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
-    h2:not(:first-child) {
-        margin-top: 30px;
+    .portf__info {
+        a {
+            color: ${props => props.theme.colors.blue};
+        }
+        h3:first-child {
+            margin-top: 42px;
+        }
+        h3 {
+            margin-top: 30px;
+            color: #ccc;
+            font-weight: 300;
+        }
+        h4 {
+            padding: 6px 0;
+            font-weight: 500;
+        }
     }
-    p {
-        font-weight: 500;
+    .content {
+        h3:not(:first-child) {
+            margin-top: 30px;
+        }
+    }
+    .markdown {
+        display: flex;
+        flex-direction: column;
+        margin: 90px auto;
+        padding: 0 30px;
+        max-width: 700px;
+        gap: 30px;
+        h2 {
+            color: ${props => props.theme.colors.blue};
+            font-weight: 600;
+        }
+        h2:not(:first-child) {
+            margin-top: 30px;
+        }
+        p {
+            font-weight: 500;
+        }
     }
 `
 
 const Projeto = ({projeto}: ProjectProps) => {
-
+console.log(projeto)
     const rawMarkdown = RichText.asText(projeto.data.markdown)
+    const rawContent = RichText.asText(projeto.data.content)
 
     const renderers = {
         img: (image: any) => {
-            console.log(image)
             return <Image className='imagem' src={image.src} alt={image.alt} height="800" width="1600" />
         },
         p: (paragraph: any) => {
@@ -86,9 +117,28 @@ const Projeto = ({projeto}: ProjectProps) => {
 
     return (
         <Wrapper>
-            <ReactMarkdown components={renderers}>
-                {rawMarkdown}
-            </ReactMarkdown>
+            <div className='portf__header'>
+                <div className='portf__info'>
+                    {RichText.render(projeto.data.title)}
+                    <a target='_blank' rel='noreferrer' href={projeto.data.link.url}>Ver o projeto no ar</a>
+                    <h3>FUNÇÕES</h3>
+                    {RichText.render(projeto.data.role)}
+                    <h3>ANO</h3>
+                    <h4>{projeto.data.year}</h4>
+                    <h3>CLIENTE</h3>
+                    {RichText.render(projeto.data.client)}
+                </div>
+                <div className='content'>
+                    <ReactMarkdown>
+                        {rawContent}
+                    </ReactMarkdown>
+                </div>
+            </div>
+            <div className='markdown'>
+                <ReactMarkdown components={renderers}>
+                    {rawMarkdown}
+                </ReactMarkdown>
+            </div>
         </Wrapper>
     )
 }

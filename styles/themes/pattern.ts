@@ -5,7 +5,8 @@ const pattern = {
         text: '#FAF8F8',
         background: '#2B2323',
         blue: '#16D3E4',
-        red: '#F21E0C'
+        red: '#F21E0C',
+        gray: '#CCC'
     }
 }
 
