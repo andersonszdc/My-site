@@ -56,6 +56,9 @@ const Wrapper = styled.div`
         grid-template-columns: 1fr 1fr;
     }
     .portf__info {
+        h1 {
+            font-weight: 600;
+        }
         a {
             color: ${props => props.theme.colors.blue};
         }
@@ -75,6 +78,9 @@ const Wrapper = styled.div`
     .content {
         h3:not(:first-child) {
             margin-top: 30px;
+        }
+        h3 {
+            font-weight: 500;
         }
     }
     .markdown {
