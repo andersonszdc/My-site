@@ -105,7 +105,7 @@ const Wrapper = styled.div`
 `
 
 const Projeto = ({projeto}: ProjectProps) => {
-console.log(projeto)
+
     const rawMarkdown = RichText.asText(projeto.data.markdown)
     const rawContent = RichText.asText(projeto.data.content)
 
