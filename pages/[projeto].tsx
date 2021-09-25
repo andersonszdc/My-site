@@ -57,6 +57,7 @@ const Wrapper = styled.div`
     }
     .portf__info {
         h1 {
+            margin-bottom: 4px;
             font-weight: 600;
         }
         a {
@@ -89,7 +90,7 @@ const Wrapper = styled.div`
         margin: 90px auto;
         padding: 0 30px;
         max-width: 700px;
-        gap: 30px;
+        gap: 18px;
         h2 {
             color: ${props => props.theme.colors.blue};
             font-weight: 600;
