@@ -20,7 +20,9 @@ const Wrapper = styled.div`
     display: inline-block;
     width: 33.333%;
     padding: 0 6px;
+    cursor: pointer;
     .card__content {
+        cursor: pointer;
         width: 90%;
         z-index: 2;
         position: absolute;
@@ -32,7 +34,6 @@ const Wrapper = styled.div`
         padding: 30px;
         color: ${props => props.theme.colors.text};
         height: 300px;
-        cursor: default;
         .card__ano {
             font-weight: 500;
             color: #ccc;
@@ -99,23 +100,23 @@ const Wrapper = styled.div`
 
 const Card = ({data, uid}: any) => {
     return (
+                <Link
+                passHref
+                href={{
+                    pathname: '/[projeto]',
+                    query: {projeto: `${uid}`},
+                }}>
             <Wrapper>
-                <div className="card__content">
-                    <p className="card__ano">{data.year}</p>
-                    <p className="card__title">{data.title[0].text}</p>
-                    <Link
-                    passHref
-                    href={{
-                        pathname: '/[projeto]',
-                        query: {projeto: `${uid}`},
-                    }}>
+                    <div className="card__content">
+                        <p className="card__ano">{data.year}</p>
+                        <p className="card__title">{data.title[0].text}</p>
                         <p className="card__verMais">Ver mais<FaAngleRight/></p>
-                    </Link>
-                </div>
-                <div className="card__mockup">
-                    <Image width={data.cover.dimensions.width} height={data.cover.dimensions.height} className='card__image' layout='responsive' src={data.cover.url} alt='mockup' />
-                </div>
+                    </div>
+                    <div className="card__mockup">
+                        <Image width={data.cover.dimensions.width} height={data.cover.dimensions.height} className='card__image' layout='responsive' src={data.cover.url} alt='mockup' />
+                    </div>
             </Wrapper>
+                </Link>
     );
 }
 
