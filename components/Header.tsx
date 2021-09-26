@@ -127,11 +127,19 @@ const Header = ({ toggleTheme }: HeaderProps) => {
         toggleTheme()
     }
 
+    function handleLogoClick() {
+        if (isClicked === true) {
+            setIsClicked(false)
+            setColor( color === '#FAF8F8'? '#2B2323' : '#FAF8F8')
+            toggleTheme()
+        }
+    }
+
     return (
         <>
             <Wrapper isClicked={isClicked}>
                 <Link passHref href='/'>
-                    <div className="me">
+                    <div onClick={handleLogoClick} className="me">
                         <div className='logo'>
                             <Logo color={color} />
                         </div>
