@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react'
 import styled from 'styled-components'
 import { VscGithub } from 'react-icons/vsc'
+import { FaLinkedin } from 'react-icons/fa'
 import { GrInstagram } from 'react-icons/gr'
 import Image from 'next/image'
 import Anderson from '../assets/hero-anderson.png'
@@ -31,7 +32,11 @@ const Wrapper = styled.div`
       font-size: 32px;
       display: flex;
       gap: 28px;
-      color: ${props => props.theme.colors.blue}
+      a {
+        display: inline-flex;
+        color: ${props => props.theme.colors.blue};
+        text-decoration: none;
+      }
     }
   }
   .wrapper__img {
@@ -67,8 +72,15 @@ const Hero: React.FC = () => {
             <h2 className='function'>Desenvolvedor Front-End e<br/>User Interface Designer</h2>
             <p className='description'>Um estudante que relata sua trajetória e<br/>descobertas por este mundo.</p>
             <div className='icons'>
+              <a href="https://www.instagram.com/andersonszdc/">
                 <GrInstagram />
+              </a>
+              <a href="https://github.com/andersonszdc">
                 <VscGithub />
+              </a>
+              <a href="https://www.linkedin.com/in/anderson-souza-b28431198/">
+                <FaLinkedin />
+              </a>
             </div>
           </div>
           <div className='wrapper__img'>
