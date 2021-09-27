@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import Document, { DocumentContext, DocumentInitialProps } from "next/document";
 import { ReactElement } from "react";
 import { ServerStyleSheet } from "styled-components";
