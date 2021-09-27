@@ -72,14 +72,14 @@ const Hero: React.FC = () => {
             <h2 className='function'>Desenvolvedor Front-End e<br/>User Interface Designer</h2>
             <p className='description'>Um estudante que relata sua trajetória e<br/>descobertas por este mundo.</p>
             <div className='icons'>
-              <a href="https://www.instagram.com/andersonszdc/">
-                <GrInstagram />
+              <a title='Ir para o Instagram (link externo)' target='_blank' rel='noreferrer' href="https://www.instagram.com/andersonszdc/">
+                <GrInstagram title='ícone Github' />
               </a>
-              <a href="https://github.com/andersonszdc">
-                <VscGithub />
+              <a title='Ir para o Github (link externo)' target='_blank' rel='noreferrer' href="https://github.com/andersonszdc">
+                <VscGithub title='ícone Github' />
               </a>
-              <a href="https://www.linkedin.com/in/anderson-souza-b28431198/">
-                <FaLinkedin />
+              <a title='Ir para o Linkedin (link externo)' target='_blank' rel='noreferrer' href="https://www.linkedin.com/in/anderson-souza-b28431198/">
+                <FaLinkedin title='ícone Github' />
               </a>
             </div>
           </div>
