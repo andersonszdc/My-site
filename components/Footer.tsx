@@ -16,11 +16,11 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     width: 100%;
+    .title {
+      margin-bottom: 16px;
+      font-size: 24px;
+    }
     .box {
-      .title {
-        margin-bottom: 16px;
-        font-size: 24px;
-      }
       .item {
         display: flex;
         align-items: center;
@@ -51,7 +51,8 @@ const Wrapper = styled.div`
       width: 25px;
     }
     p {
-      color: #878a8f;
+      font-size: 14px;
+      color: ${props => props.theme.colors.blue};
     }
   }
   @media (max-width: 900px) {
@@ -68,21 +69,27 @@ const Footer: React.FC = () => {
       <span></span>
       <div>
         <div className='content'>
-          <ul className='box'>
+          <div>
             <h3 className='title'>Contatos</h3>
-            <li className='item'>andersonszdc@gmail.com</li>
-            <li className='item'>+55 (21) 97351-2104</li>
-          </ul>
-          <ul className='box'>
+            <ul className='box'>
+              <li className='item'>andersonszdc@gmail.com</li>
+              <li className='item'>+55 (21) 97351-2104</li>
+            </ul>
+          </div>
+          <div>
             <h3 className='title'>Posts recentes</h3>
-            <li className='item'>Next.js - Meu resumo...</li>
-            <li className='item'>TypeScript - Meu resumo...</li>
-          </ul>
-          <ul className='box'>
+            <ul className='box'>
+              <li className='item'>Next.js - Meu resumo...</li>
+              <li className='item'>TypeScript - Meu resumo...</li>
+            </ul>
+          </div>
+          <div>
             <h3 className='title'>Minhas redes</h3>
-            <li className='item'>Instagram</li>
-            <li className='item'>GitHub</li>
-          </ul>
+            <ul className='box'>
+              <li className='item'>Instagram</li>
+              <li className='item'>GitHub</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div className='credit'>
