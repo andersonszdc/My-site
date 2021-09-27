@@ -8,20 +8,19 @@ interface MenuProps {
 }
 
 const Wrapper = styled.div<MenuProps>`
+    opacity: 0;
+    visibility: hidden;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 5;
-
     display: flex;
     flex-direction: column;
     gap: 24px;
     align-items: center;
     justify-content: center;
-    visibility: hidden;
 
-    opacity: 0;
     transition: opacity .25s ease-out;
     ${({isClicked}) => isClicked && `
         opacity: 1;
@@ -42,13 +41,13 @@ const Wrapper = styled.div<MenuProps>`
 
 const Overlay = styled.div<MenuProps>`
     position: fixed;
+    height: 0;
+    width: 0;
     top: 0;
     right: 0;
     z-index: 5;
     background: #FAF8F8;
-    transition: .5s cubic-bezier(.3,0,.5,1);
-    height: 0;
-    width: 0;
+    transition: height .5s cubic-bezier(.3,0,.5,1), width .5s cubic-bezier(.3,0,.5,1);
     border-bottom-left-radius: 100%;
     ${({isClicked}) => isClicked && `
         height: 130vh;
