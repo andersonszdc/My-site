@@ -13,7 +13,6 @@ const Wrapper = styled.div<WrapperProps>`
     align-items: center;
     justify-content: space-between;
     padding: 20px 4%;
-    transition: .5s cubic-bezier(.3,0,.5,1);
     .me {
         display: flex;
         align-items: center;
