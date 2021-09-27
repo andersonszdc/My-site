@@ -8,7 +8,7 @@ interface LogoProps {
 const Wrapper = styled.svg`
   display: flex;
   #path-fill {
-    transition: .5s cubic-bezier(.3,0,.5,1);
+    transition: fill .5s cubic-bezier(.3,0,.5,1);
   }
 `
 
