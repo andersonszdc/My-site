@@ -42,6 +42,8 @@ export default class MyDocument extends Document {
       <Html lang="pt-BR">
         <Head>
           <meta charSet="utf-8" />
+          <meta name="keyword" content="Desenvolvedor Front-end, Programador, Javascript, JS, CSS, UI Designer, UX Designer, UI/UX"/>
+          <meta name="description" content="Desenvolvedor Front-end e UI/UX Designer, conheça o meu trabalho" />
         </Head>
         <body>
           <Main />
