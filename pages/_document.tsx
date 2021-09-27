@@ -1,5 +1,8 @@
 /* eslint-disable react/display-name */
-import Document, { DocumentContext, DocumentInitialProps } from "next/document";
+import Document, { DocumentContext, DocumentInitialProps, Html,
+  Head,
+  Main,
+  NextScript } from "next/document";
 import { ReactElement } from "react";
 import { ServerStyleSheet } from "styled-components";
 
@@ -32,5 +35,19 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal();
     }
+  }
+
+  render(): JSX.Element {
+    return (
+      <Html lang="pt-BR">
+        <Head>
+          <meta charSet="utf-8" />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    )
   }
 }
