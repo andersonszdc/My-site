@@ -5,11 +5,15 @@ import Hero from '../components/Hero'
 import Projects from '../components/Projects'
 import { Client } from '../utils/prismic-config'
 import Prismic from '@prismicio/client'
+import Head from 'next/head'
 
 const Home: NextPage = ({projects}: any) => {
 
   return (
     <>
+      <Head>
+        <title>Andersonszdc</title>
+      </Head>
       <Hero />
       <Projects projects={projects} />
       <CallMe />
