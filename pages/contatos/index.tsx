@@ -1,46 +1,33 @@
 import React from 'react'
 import styled from 'styled-components'
+import Forms from '../../components/Forms'
 
 const Wrapper = styled.div`
   display: flex;
+  gap: 112px;
   justify-content: center;
+  align-items: center;
   padding: 0 4%;
-  margin: 60px 0;
-  .forms {
+  margin: 60px 0 90px 0;
+`
+
+const Infos = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  .infos_item {
     display: flex;
     flex-direction: column;
-    padding: 45px;
-    width: 600px;
-    background-color: #9D9797;
-    border-radius: 20px;
+    list-style: none;
+    gap: 8px;
     h2 {
-      font-size: 32px;
-      margin-bottom: 30px;
-      text-align: center;
-      // color: ${props => props.theme.colors.blue};
+      font-size: 24px;
+      font-weight: 700;
+      color: ${props => props.theme.colors.blue};
     }
-    form {
-      display: flex;
-      gap: 8px;
-      flex-direction: column;
-      .inputs {
-        border-radius: 3px;
-        border: none;
-        padding: 14px;
-        font-family: 'Montserrat';
-        font-size: 14px;
-      }
-      .send {
-        width: 50%;
-        border: none;
-        padding: 12px;
-        border-radius: 8px;
-        font-size: 16px;
-        margin: 16px auto 0 auto;
-        font-weight: 600;
-        background-color: ${props => props.theme.colors.blue};
-        cursor: pointer;
-      }
+    h3 {
+      font-size: 16px;
+      font-weight: 400;
     }
   }
 `
@@ -55,15 +42,21 @@ const Contatos: React.FC = () => {
   }
   return (
     <Wrapper>
-      <div className='forms'>
-        <h2>Fale comigo!</h2>
-        <form onSubmit={handleSubmit} action="">
-          <input className='inputs' placeholder="nome" type="text" />
-          <input className='inputs' placeholder="e-mail" type="text" />
-          <textarea style={{resize: 'none'}} className='inputs' placeholder="mensagem" cols={30} rows={10}></textarea>
-          <input className='send' type="submit" />
-        </form>
-      </div>
+      <Infos>
+        <li className="infos_item">
+          <h2>E-mail</h2>
+          <h3>andersonszdc@gmail.com</h3>
+        </li>
+        <li className="infos_item">
+          <h2>Celular</h2>
+          <h3>+55 (21) 97351-2104</h3>
+        </li>
+        <li className="infos_item">
+          <h2>Cidade</h2>
+          <h3>Rio de Janeiro - RJ</h3>
+        </li>
+      </Infos>
+      <Forms />
     </Wrapper>
   )
 }
