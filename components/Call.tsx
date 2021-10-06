@@ -17,6 +17,9 @@ const Wrapper = styled.div`
         justify-content: center;
         gap: .6rem;
         cursor: pointer;
+        :hover span {
+            background-color: ${props => props.theme.colors.blue};
+        }
     }
     .call-action {
         display: inline-flex;
@@ -28,9 +31,6 @@ const Wrapper = styled.div`
         font-size: 3.6rem;
         font-weight: 700;
 
-        :hover span {
-            background-color: ${props => props.theme.colors.blue};
-        }
     }
     span {
         display: block;
