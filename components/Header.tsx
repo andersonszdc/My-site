@@ -113,6 +113,14 @@ const Header = ({ toggleTheme }: HeaderProps) => {
         toggleTheme()
     }
 
+    function handleLogoClick() {
+        if (isClicked === true) {
+            setIsClicked(false)
+            setColor( color === '#FAF8F8'? '#2B2323' : '#FAF8F8')
+            toggleTheme()
+        }
+    }
+
     useEffect(() => {
         if (isClicked) {
             document.body.style.overflow = 'hidden'
@@ -125,7 +133,7 @@ const Header = ({ toggleTheme }: HeaderProps) => {
         <>
             <Wrapper isClicked={isClicked}>
                 <Link passHref href='/'>
-                    <Me>
+                    <Me onClick={handleLogoClick}>
                         <div className='logo'>
                             <Logo color={color} />
                         </div>
