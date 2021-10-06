@@ -20,7 +20,7 @@ interface ProjectProps {
 
 export const getStaticPaths: GetStaticPaths = async () => {
 
-    const projects = await Client.query(Prismic.predicates.at('document.type', 'markdown'))
+    const projects = await Client.query(Prismic.predicates.at('document.type', 'project'))
 
     const allProjects: any[] = []
 
@@ -35,7 +35,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({params}: PathProps) => {
-    const projeto = await Client.getByUID('markdown', params.projeto, {
+    const projeto = await Client.getByUID('project', params.projeto, {
         lang: 'pt-br'
     })
 
@@ -51,67 +51,64 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     margin: 60px 4%;
-    .portf__header {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-    .portf__info {
-        h1 {
-            margin-bottom: 4px;
-            font-weight: 600;
-        }
-        a {
-            color: ${props => props.theme.colors.blue};
-        }
-        h3:first-child {
-            margin-top: 42px;
-        }
-        h3 {
-            margin-top: 30px;
-            color: #ccc;
-            font-weight: 300;
-        }
-        h4 {
-            padding: 6px 0;
-            font-weight: 500;
+`
+
+const Markdown = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 40px auto;
+    padding: 0 30px;
+    max-width: 700px;
+    gap: 16px;
+    h2 {
+        color: ${props => props.theme.colors.blue};
+        font-weight: 500;
+        :not(:first-child) {
+            margin-top: 24px;
         }
     }
-    .content {
-        h3:not(:first-child) {
-            margin-top: 30px;
-        }
-        h3 {
-            font-weight: 500;
-        }
+    p {
+        font-weight: 400;
     }
-    .markdown {
+`
+
+const ProjectHeader = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+    width: 100%;
+    max-width: 700px;
+    align-self: center;
+    h1 {
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+    a {
+        color: ${props => props.theme.colors.blue};
+    }
+    h3 {
+        margin-top: 24px;
+        color: ${props => props.theme.colors.blue};
+        font-weight: 400;
+        font-size: 16px;
+    }
+    h4 {
+        padding: 6px 0;
+        font-weight: 500;
+    }
+    .project_infos {
         display: flex;
-        flex-direction: column;
-        margin: 90px auto;
-        padding: 0 30px;
-        max-width: 700px;
-        gap: 18px;
-        h2 {
-            color: ${props => props.theme.colors.blue};
-            font-weight: 600;
-        }
-        h2:not(:first-child) {
-            margin-top: 30px;
-        }
-        p {
-            font-weight: 500;
-        }
+        gap: 40px;
     }
 `
 
 const Projeto = ({projeto}: ProjectProps) => {
 
-    const rawMarkdown = RichText.asText(projeto.data.markdown)
-    const rawContent = RichText.asText(projeto.data.content)
+    const rawMarkdown = RichText.asText(projeto.data.content)
 
     const renderers = {
         img: (image: any) => {
-            return <Image className='imagem' src={image.src} alt={image.alt} height="800" width="1600" />
+            return <Image className='imagem' src={image.src} alt={image.alt} height="800" width="1280" />
         },
         p: (paragraph: any) => {
             const { node } = paragraph;
@@ -120,32 +117,29 @@ const Projeto = ({projeto}: ProjectProps) => {
             }
             return <p>{paragraph.children}</p>
           }
-      }
+    }
 
     return (
         <Wrapper>
-            <div className='portf__header'>
-                <div className='portf__info'>
+                <ProjectHeader>
                     {RichText.render(projeto.data.title)}
                     <a target='_blank' rel='noreferrer' href={projeto.data.link.url}>Ver o projeto no ar</a>
-                    <h3>FUNÇÕES</h3>
-                    {RichText.render(projeto.data.role)}
-                    <h3>ANO</h3>
-                    <h4>{projeto.data.year}</h4>
-                    <h3>CLIENTE</h3>
-                    {RichText.render(projeto.data.client)}
-                </div>
-                <div className='content'>
-                    <ReactMarkdown>
-                        {rawContent}
+                    <div className="project_infos">
+                        <div>
+                            <h3>CLIENTE</h3>
+                            {RichText.render(projeto.data.clientone)}
+                        </div>
+                        <div>
+                            <h3>ANO</h3>
+                            <h4>{projeto.data.year}</h4>
+                        </div>
+                    </div>
+                </ProjectHeader>
+                <Markdown>
+                    <ReactMarkdown components={renderers}>
+                        {rawMarkdown}
                     </ReactMarkdown>
-                </div>
-            </div>
-            <div className='markdown'>
-                <ReactMarkdown components={renderers}>
-                    {rawMarkdown}
-                </ReactMarkdown>
-            </div>
+                </Markdown>
         </Wrapper>
     )
 }
