@@ -25,7 +25,7 @@ export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
 
-  const projects = await Client.query(Prismic.Predicates.at('document.type', 'markdown'))
+  const projects = await Client.query(Prismic.Predicates.at('document.type', 'project'))
 
   return {
     props: {
