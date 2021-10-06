@@ -51,6 +51,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     margin: 60px 4%;
+    transition: .5s cubic-bezier(.3,0,.5,1);
 `
 
 const Markdown = styled.div`
@@ -59,16 +60,26 @@ const Markdown = styled.div`
     margin: 40px auto;
     padding: 0 30px;
     max-width: 700px;
-    gap: 16px;
+    gap: 1.6rem;
     h2 {
         color: ${props => props.theme.colors.blue};
-        font-weight: 500;
+        font-weight: 600;
+        font-size: 2.4rem;
         :not(:first-child) {
-            margin-top: 24px;
+            margin-top: 2.4rem;
         }
     }
     p {
         font-weight: 400;
+        font-size: 1.8rem;
+    }
+    @media (max-width: 600px) {
+        h2 {
+            font-size: 2rem;
+        }
+        p {
+            font-size: 1.6rem;
+        }
     }
 `
 
@@ -81,24 +92,35 @@ const ProjectHeader = styled.div`
     align-self: center;
     h1 {
         margin-bottom: 8px;
-        font-weight: 600;
+        font-weight: 700;
+        font-size: 3.6rem;
     }
     a {
         color: ${props => props.theme.colors.blue};
+        font-size: 1.6rem;
     }
     h3 {
         margin-top: 24px;
         color: ${props => props.theme.colors.blue};
         font-weight: 400;
-        font-size: 16px;
+        font-size: 1.6rem;
     }
     h4 {
+        font-size: 1.6rem;
         padding: 6px 0;
         font-weight: 500;
     }
     .project_infos {
         display: flex;
         gap: 40px;
+    }
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 2.8rem;
+        }
+        h3, h4 {
+            font-size: 1.4rem;
+        }
     }
 `
 

@@ -5,24 +5,29 @@ import Link from 'next/link'
 
 const Wrapper = styled.div`
     text-align: center;
-    margin: 90px 0;
+    margin: 9rem 0;
     .call-one {
-        font-size: 18px;
+        font-size: 1.6rem;
+        font-weight: 600;
     }
     .call-two {
         color: ${props => props.theme.colors.blue};
         display: inline-flex;
         flex-direction: column;
         justify-content: center;
-        gap: 6px;
+        gap: .6rem;
         cursor: pointer;
-        h2 {
-            display: inline-flex;
-            align-items: center;
-            font-size: 45px;
-            margin-top: 12px;
-            gap: 12px;
-        }
+    }
+    .call-action {
+        display: inline-flex;
+        align-items: center;
+        gap: 1.2rem;
+
+        margin-top: 1.2rem;
+
+        font-size: 3.6rem;
+        font-weight: 700;
+
         :hover span {
             background-color: ${props => props.theme.colors.blue};
         }
@@ -30,38 +35,27 @@ const Wrapper = styled.div`
     span {
         display: block;
         width: 100%;
-        height: 5px;
+        height: .5rem;
         transition: .4s ease-in-out;
-        border-radius: 6px;
+        border-radius: .6rem;
     }
-    @media (max-width: 800px) {
-        .call-one {
-            font-size: 15px;
-        }
-        .call-two {
-            h2 {
-                font-size: 36px;
-            }
-        }
-    }
+
     @media (max-width: 600px) {
         .call-one {
-            font-size: 12px;
+            font-size: 1.4rem;
         }
-        .call-two {
-            h2 {
-                font-size: 24px;
-            }
+        .call-action {
+            font-size: 2.4rem;
         }
     }
+
     @media (max-width: 400px) {
+        margin: 3.2rem 0;
         .call-one {
-            font-size: 10px;
+            font-size: 1.2rem;
         }
-        .call-two {
-            h2 {
-                font-size: 20px;
-            }
+        .call-action {
+            font-size: 1.8rem;
         }
     }
 `
@@ -72,7 +66,7 @@ const CallMe: React.FC = () => {
           <h2 className='call-one'>Curtiu o meu trabalho?</h2>
           <Link href='/contatos' passHref>
             <div className='call-two'>
-                <h2>Vamos Trabalhar juntos<BsArrowRight/></h2>
+                <h2 className="call-action">Vamos trabalhar juntos<BsArrowRight/></h2>
                 <span/>
             </div>
           </Link>

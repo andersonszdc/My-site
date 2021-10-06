@@ -20,11 +20,11 @@ const Wrapper = styled.div<MenuProps>`
     gap: 24px;
     align-items: center;
     justify-content: center;
-
-    transition: opacity .25s ease-out;
+    transition: .25s ease-out;
+    
     ${({isClicked}) => isClicked && `
         opacity: 1;
-        transition: opacity .25s ease-out .25s;
+        transition: .25s ease-out .25s;
         visibility: visible;
     `}
     a {
@@ -47,7 +47,7 @@ const Overlay = styled.div<MenuProps>`
     right: 0;
     z-index: 5;
     background: #FAF8F8;
-    transition: height .5s cubic-bezier(.3,0,.5,1), width .5s cubic-bezier(.3,0,.5,1);
+    transition: .5s cubic-bezier(.3,0,.5,1);
     border-bottom-left-radius: 100%;
     ${({isClicked}) => isClicked && `
         height: 130vh;

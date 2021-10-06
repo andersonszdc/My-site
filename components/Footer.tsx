@@ -2,63 +2,82 @@ import React from 'react'
 import styled from 'styled-components'
 import Logo from './Logo';
 
-const Wrapper = styled.div`
+const Wrapper = styled.footer`
   display: flex;
   flex-direction: column;
-  padding: 0 4% 16px 4%;
+  padding: 0 4% 1.6rem 4%;
   span {
     display: block;
-    border-top: 1px solid white;
+    border-top: 0.1rem solid white;
     width: 100%;
-    margin-bottom: 45px;
+    margin-bottom: 9rem;
   }
   .content {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    .title {
-      margin-bottom: 16px;
-      font-size: 24px;
-    }
-    .box {
-      .item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 6px;
-        gap: 6px;
-        font-weight: 500;
-        font-size: 16px;
-        :before {
-          content: '';
-          display: flex;
-          position: relative;
-          margin: 0;
-          width: 20px;
-          height: 3px;
-          background-color: ${props => props.theme.colors.blue};
-          border-radius: 12px;
-        }
-      }
+  }
+  .title {
+    margin-bottom: 2.4rem;
+    font-size: 2.4rem;
+  }
+  .box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+  .item {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-weight: 500;
+    font-size: 1.6rem;
+
+    :before {
+      content: '';
+      display: flex;
+      position: relative;
+      margin: 0;
+      width: 2rem;
+      height: .3rem;
+      background-color: ${props => props.theme.colors.blue};
+      border-radius: 1.2rem;
     }
   }
   .credit {
-    margin-top: 60px;
+    margin-top: 6rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    .logo {
-      width: 25px;
-    }
+    gap: .6rem;
     p {
-      font-size: 14px;
+      font-size: 1.4rem;
       color: ${props => props.theme.colors.blue};
     }
   }
+  .logo {
+    width: 2.5rem;
+  }
+
   @media (max-width: 900px) {
     .content {
       flex-direction: column;
-      gap: 45px;
+      gap: 4.5rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    span {
+      margin-bottom: 3.2rem;
+    }
+    .content {
+      gap: 3.2rem;
+    }
+    .title {
+      font-size: 1.8rem;
+    }
+    .item {
+      font-size: 1.2rem;
     }
   }
 `

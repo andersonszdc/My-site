@@ -12,10 +12,15 @@ const Global = createGlobalStyle<GlobalProps>`
         box-sizing: border-box;
     }
 
+    html {
+        font-size: 10px;
+    }
+
     body {
         background-color: #2B2323;
-        color: ${props => props.theme.colors.text};
+        color: ${props => props.theme.colors.white};
         font-family: 'Montserrat', sans-serif;
+
         ::-webkit-scrollbar {
             width: 2px;
           }

@@ -3,49 +3,63 @@ import styled from 'styled-components'
 import Card from './Card'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 
-interface WrapperProps {
-    rightIsActive: boolean,
-    leftIsActive: boolean,
+interface StyledProps {
+    rightIsActive?: boolean,
+    leftIsActive?: boolean
 }
 
-const Wrapper = styled.div<WrapperProps>`
-    padding: 0 4%;
-    .projects__title {
-        margin-bottom: 45px;
+const Wrapper = styled.div`
+    padding: 40px 4%;
+
+    .projects_title {
+        font-size: 2.4rem;
+        margin-bottom: 4rem;
     }
+
     .projects__cards {
         display: block;
         white-space: nowrap;
         overflow: hidden;
-        .projects__slider {
-            display: block;
-            transition: 0.6s ease-in-out;
-        }
-        .angles {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            font-size: 40px;
-            margin-top: 24px;
-            .angleLeft,
-            .angleRight {
-                cursor: pointer;
-                transition: opacity .5s ease-in-out;
-            }
-            .angleLeft {
-                ${({leftIsActive}) => !leftIsActive && `
-                    cursor: default;
-                    opacity: 0.2;
-                `}
-            }
-            .angleRight {
-                ${({rightIsActive}) => !rightIsActive && `
-                    cursor: default;
-                    opacity: 0.2;
-                `}
-            }
+    }
+
+    .projects__slider {
+        display: block;
+        transition: 0.6s ease-in-out;
+    }
+
+    @media (max-width: 400px) {
+        .projects_title {
+            font-size: 1.8rem;
+            margin-bottom: 2.4rem;
         }
     }
+`
+
+const AnglesBtn = styled.div<StyledProps>`
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    font-size: 40px;
+    margin-top: 24px;
+
+    .angleLeft, .angleRight {
+        cursor: pointer;
+        transition: opacity .5s ease-in-out;
+    }
+
+    ${({leftIsActive}) => !leftIsActive && `
+        .angleLeft {
+            cursor: default;
+            opacity: 0.2;
+        }
+    `}
+
+    ${({rightIsActive}) => !rightIsActive && `
+        .angleRight {
+            cursor: default;
+            opacity: 0.2;
+        }
+    `}
 `
 
 const Projects = ({projects}: any) => {
@@ -78,7 +92,7 @@ const Projects = ({projects}: any) => {
 
     useEffect(() => {
             setleftIsActive(translate===0?false:true)
-            if(width <= -translate && -translate <= scrollwidth) {
+            if((scrollwidth <= width - translate)) {
                 setRightIsActive(false)
             } else {
                 setRightIsActive(true)
@@ -86,18 +100,18 @@ const Projects = ({projects}: any) => {
     }, [translate, width, scrollwidth])
 
     return (
-        <Wrapper rightIsActive={rightIsActive} leftIsActive={leftIsActive} >
-            <h2 className="projects__title">Projetos</h2>
+        <Wrapper>
+            <h2 className="projects_title">Projetos</h2>
             <div className="projects__cards">
                 <div ref={slider} className="projects__slider">
                     {projects.results.map((project: any) => (
                         <Card data={project.data} uid={project.uid} key={project.id} />
                     ))}
                 </div>
-                <div className="angles">
+                <AnglesBtn rightIsActive={rightIsActive} leftIsActive={leftIsActive} >
                     <FaAngleLeft className="angleLeft" onClick={handleLeft} />
                     <FaAngleRight className="angleRight" onClick={handleRight} />
-                </div>
+                </AnglesBtn>
             </div>
         </Wrapper>
     );

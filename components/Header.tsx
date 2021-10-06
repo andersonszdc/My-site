@@ -4,111 +4,98 @@ import Logo from './Logo'
 import Menu from './Menu'
 import Link from 'next/link'
 
-interface WrapperProps {
+interface StyledProps {
     isClicked: boolean
 }
 
-const Wrapper = styled.div<WrapperProps>`
+const Wrapper = styled.div<StyledProps>`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 4%;
-    .me {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        z-index: 10;
-        cursor: pointer;
+    padding: 1.6rem 4%;
+`
+
+const Me = styled.div`
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    z-index: 10;
+    cursor: pointer;
+    .logo {
+        width: 4rem;
+    }
+    .title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: .6rem;
+        transition: .5s cubic-bezier(.3,0,.5,1);
+        color: ${props => props.theme.colors.text};
+    }
+    .subtitle {
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #16D3E4;
+    }
+    @media (max-width: 400px) {
         .logo {
-            width: 40px;
+            width: 2.4rem;
         }
         .title {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 6px;
+            font-size: 1.2rem;
         }
         .subtitle {
-            font-size: 16px;
-            font-weight: 500;
-            color: #16D3E4;
+            font-size: .9rem;
         }
     }
-    .menu {
+`
+
+const MenuBtn = styled.div<StyledProps>`
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    cursor: pointer;
+    z-index: 10;
+    p {
+        color: ${props => props.theme.colors.text};
+        transition: .5s cubic-bezier(.3,0,.5,1);
+        font-size: 2rem;
+    }
+    .burger {
         display: flex;
-        align-items: center;
-        gap: 6px;
-        cursor: pointer;
-        z-index: 10;
-        p {
-            font-size: 20px;
-        }
-        .burger {
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-            transition: all .2s linear;
-            .one,
-            .two,
-            .three {
-                width: 22px;
-                height: 3px;
-                background-color: ${props => props.theme.colors.text};
-                border-radius: 1px;
-                transition: all .3s linear;
-            }
-        }
-        :hover {
-            opacity: 0.8;
-        ${({isClicked}) => !isClicked && `
-            .burger {
-                gap: 6px;
-            }
-        `}
-        }
+        flex-direction: column;
+        gap: .3rem;
+        transition: all .2s linear;
     }
+    .one, .two, .three {
+        width: 2.2rem;
+        height: .3rem;
+        background-color: ${props => props.theme.colors.text};
+        border-radius: .1rem;
+        transition: all .3s linear;
+    }
+    :hover {
+        opacity: 0.8;
+    }
+    ${({isClicked}) => !isClicked && `
+        :hover .burger {
+            gap: .6rem;
+        }
+    `}
     ${({isClicked}) => isClicked && `
-        .menu {
-            .burger {
-                .one {
-                    transform: translateY(6px) rotate(45deg);
-                }
-                .two {
-                    opacity: 0;
-                }
-                .three {
-                    transform: translateY(-6px) rotate(-45deg);
-                }
-            }
-            :hover {
-                .burger {
-                    transform: rotate(-90deg);
-                }
+        .one {
+            transform: translateY(.6rem) rotate(45deg);
+        }
+        .two {
+            opacity: 0;
+        }
+        .three {
+            transform: translateY(-.6rem) rotate(-45deg);
+        }
+        :hover .burger {
+                transform: rotate(-90deg);
             }
         }
     `}
-    @media (max-width: 600px) {
-        .me {
-            .title {
-                font-size: 18px;
-            }
-            .subtitle {
-                font-size: 12px;
-            }
-        }
-    }
-    @media (max-width: 400px) {
-        .me {
-            .logo {
-                width: 25px;
-            }
-            .title {
-                font-size: 12px;
-            }
-            .subtitle {
-                font-size: 8px;
-            }
-        }
-    }
 `
 
 interface HeaderProps {
@@ -126,19 +113,19 @@ const Header = ({ toggleTheme }: HeaderProps) => {
         toggleTheme()
     }
 
-    function handleLogoClick() {
-        if (isClicked === true) {
-            setIsClicked(false)
-            setColor( color === '#FAF8F8'? '#2B2323' : '#FAF8F8')
-            toggleTheme()
+    useEffect(() => {
+        if (isClicked) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'auto'
         }
-    }
+    },[isClicked])
 
     return (
         <>
             <Wrapper isClicked={isClicked}>
                 <Link passHref href='/'>
-                    <div onClick={handleLogoClick} className="me">
+                    <Me>
                         <div className='logo'>
                             <Logo color={color} />
                         </div>
@@ -146,16 +133,16 @@ const Header = ({ toggleTheme }: HeaderProps) => {
                             <h1 className="title">Anderson Souza</h1>
                             <h2 className="subtitle">Front-End & UI Designer</h2>
                         </div>
-                    </div>
+                    </Me>
                 </Link>
-                <div onClick={handleClick} className="menu">
+                <MenuBtn isClicked={isClicked} onClick={handleClick}>
                     <p>menu</p>
                     <div className="burger">
                         <span className='one'/>
                         <span className='two'/>
                         <span className='three'/>
                     </div>
-                </div>
+                </MenuBtn>
             </Wrapper>
             <Menu handleClick={handleClick} isClicked={isClicked} />
         </>

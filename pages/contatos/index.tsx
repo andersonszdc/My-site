@@ -4,42 +4,47 @@ import Forms from '../../components/Forms'
 
 const Wrapper = styled.div`
   display: flex;
-  gap: 112px;
+  gap: 11.2rem;
   justify-content: center;
   align-items: center;
-  padding: 0 4%;
-  margin: 60px 0 90px 0;
+  padding: 0 7%;
+  margin: 4.8rem 0 9rem 0;
+
+  @media (max-width: 1000px) {
+    flex-direction: column-reverse;
+    gap: 4.8rem;
+  }
+
+  @media (max-width: 400px) {
+    margin-bottom: 3.2rem;
+  }
 `
 
 const Infos = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 3.2rem;
   .infos_item {
     display: flex;
     flex-direction: column;
     list-style: none;
-    gap: 8px;
+    gap: .8rem;
+
     h2 {
-      font-size: 24px;
+      font-size: 2.4rem;
       font-weight: 700;
       color: ${props => props.theme.colors.blue};
     }
+    
     h3 {
-      font-size: 16px;
+      font-size: 1.6rem;
       font-weight: 400;
     }
   }
 `
 
 const Contatos: React.FC = () => {
-  const onChange = (value: any) => {
-    console.log(value)
-  }
 
-  async function handleSubmit(e: any) {
-    e.preventDefault()
-  }
   return (
     <Wrapper>
       <Infos>
