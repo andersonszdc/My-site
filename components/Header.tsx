@@ -73,12 +73,16 @@ const MenuBtn = styled.div<StyledProps>`
         border-radius: .1rem;
         transition: all .3s linear;
     }
-    :hover {
-        opacity: 0.8;
+    @media ( pointer: fine ) {
+        :hover {
+            opacity: 0.8;
+        }
     }
     ${({isClicked}) => !isClicked && `
-        :hover .burger {
-            gap: .6rem;
+        @media ( pointer: fine ) {
+            :hover .burger {
+                gap: .6rem;
+            }
         }
     `}
     ${({isClicked}) => isClicked && `
