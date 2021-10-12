@@ -91,8 +91,10 @@ const MenuBtn = styled.div<StyledProps>`
         .three {
             transform: translateY(-.6rem) rotate(-45deg);
         }
-        :hover .burger {
-                transform: rotate(-90deg);
+        @media ( pointer: fine ) {
+            :hover .burger {
+                    transform: rotate(-90deg);
+                }
             }
         }
     `}
