@@ -22,6 +22,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       res.status(400).json({message: 'Nome/mensagem faltando'})
       return resolve
     }
+
+    const data = fs.readFileSync(__dirname + '../../../../../emailAuto.html')
+
+    res.status(200).json(data)
   
     // const transporter = nodemailer.createTransport({
     //   host: 'smtp.gmail.com',
@@ -51,51 +55,51 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     //   return resolve
     // })
   
-    readFile(__dirname + '../../../../../emailAuto.html', (err, html) => {
+    // readFile(__dirname + '../../../../../emailAuto.html', (err, html) => {
   
-      if (err) throw err
+    //   if (err) throw err
       
-      res.status(200).json({message: 'test 7 enviada!'})
+    //   res.status(200).json({message: 'test 7 enviada!'})
 
-      // const template = handlebars.compile(`${html}`);
-      // const context = { name, to };
-      // const htmlToSend = template(context);
+    //   // const template = handlebars.compile(`${html}`);
+    //   // const context = { name, to };
+    //   // const htmlToSend = template(context);
   
-      // transporter.sendMail({
+    //   // transporter.sendMail({
     
-      //   from: 'contato@andersonszdc.com',
-      //   to,
-      //   subject: "Oba! Você me enviou uma mensagem",
-      //   html: htmlToSend
+    //   //   from: 'contato@andersonszdc.com',
+    //   //   to,
+    //   //   subject: "Oba! Você me enviou uma mensagem",
+    //   //   html: htmlToSend
     
-      // }).then(info => {
+    //   // }).then(info => {
         
-      //   transporter.sendMail({
+    //   //   transporter.sendMail({
           
-      //     from: 'contato@andersonszdc.com',
-      //     to: 'contato@andersonszdc.com',
-      //     replyTo: to,
-      //     subject: "Você recebeu mensagem do seu forms",
-      //     html: `
-      //     <p>${name}</p>
-      //     <p>${to}</p>
-      //     <p>${message}</p>
-      //     `
+    //   //     from: 'contato@andersonszdc.com',
+    //   //     to: 'contato@andersonszdc.com',
+    //   //     replyTo: to,
+    //   //     subject: "Você recebeu mensagem do seu forms",
+    //   //     html: `
+    //   //     <p>${name}</p>
+    //   //     <p>${to}</p>
+    //   //     <p>${message}</p>
+    //   //     `
           
-      //   }).then(info => {
-      //       res.status(200).json({message: 'Mensagem enviada!', info})
-      //       return resolve
-      //     }).catch(error => {
-      //       res.status(400).json({message: 'Erro no aviso!', error})
-      //       return resolve
-      //     })
+    //   //   }).then(info => {
+    //   //       res.status(200).json({message: 'Mensagem enviada!', info})
+    //   //       return resolve
+    //   //     }).catch(error => {
+    //   //       res.status(400).json({message: 'Erro no aviso!', error})
+    //   //       return resolve
+    //   //     })
   
-      // }).catch(error => {
-      //   res.status(400).json({message: 'Erro na mensagem!', error})
-      //   return resolve
-      // })
+    //   // }).catch(error => {
+    //   //   res.status(400).json({message: 'Erro na mensagem!', error})
+    //   //   return resolve
+    //   // })
   
-    })
+    // })
 
   })
 
