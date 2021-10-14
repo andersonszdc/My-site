@@ -63,7 +63,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           `
           
         }).then(info => {
-            res.status(200).json({message: 'Mensagem enviada!', info})
+            res.status(200).json({sucess: 'Mensagem enviada!', info})
             return resolve
           }).catch(error => {
             res.status(400).json({message: 'Erro no aviso!', error})

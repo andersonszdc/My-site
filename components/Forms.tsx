@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+interface WrapperProps {
+  loading: boolean
+}
+
+const Wrapper = styled.div<WrapperProps>`
     display: flex;
     flex-direction: column;
     padding: 4.5rem;
@@ -44,6 +48,19 @@ const Wrapper = styled.div`
       background-color: ${props => props.theme.colors.blue};
       cursor: pointer;
       box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 1), -3px -3px 6px 0px rgba(255, 255, 255, 0.3);
+      ${({loading}) => loading ? 'opacity: 0.5' : 'opacity: 1'};
+    }
+    
+    .sucess {
+      margin-top: 1.6rem;
+      font-size: 1.6rem;
+      color: ${props => props.theme.colors.blue};
+    }
+
+    .error {
+      margin-top: 1.6rem;
+      font-size: 1.6rem;
+      color: #F21E0C;
     }
 
     @media (max-width: 400px) {
@@ -55,14 +72,21 @@ const Wrapper = styled.div`
 
 const Forms: React.FC = () => {
 
-    const [form, setForm] = useState({
+    const [ form, setForm ] = useState({
       name: '',
       to: '',
       message: ''
     })
 
+    const [ error, setError ] = useState()
+    const [ sucess, setSucess ] = useState()
+    const [ valueInput, setValueInput ] = useState("Enviar")
+    const [ loading, setLoading ] = useState(false)
+
     async function handleSubmit(e: any) {
         e.preventDefault()
+        setLoading(true)
+        setValueInput("Enviando...")
         fetch(process.env.NEXT_PUBLIC_API_URL_EMAIL!, {
           method: 'POST',
           headers: {
@@ -70,7 +94,12 @@ const Forms: React.FC = () => {
           },
           body: JSON.stringify(form)
         }).then(res => res.json())
-        .then(json => console.log(json))
+        .then(json => {
+          setError(json.message)
+          setSucess(json.sucess)
+          setLoading(false)
+          setValueInput("Enviar")
+        })
     }
 
     const handleInputChange = (e: any) => {
@@ -83,7 +112,7 @@ const Forms: React.FC = () => {
     }
 
     return (
-        <Wrapper>
+        <Wrapper loading={loading} >
             <h2>Fale comigo!</h2>
             <form onSubmit={handleSubmit}>
               <input
@@ -109,7 +138,9 @@ const Forms: React.FC = () => {
               rows={7}
               onChange={handleInputChange}
               />
-              <input className='send' type="submit" />
+              {error && <p className="error">{error}</p>}
+              {sucess && <p className="sucess">{sucess}</p>}
+              <input className='send' type="submit" value={valueInput} />
             </form>
         </Wrapper>
     );
