@@ -4,8 +4,12 @@ import handlebars from 'handlebars'
 import isEmailValid from '../../utils/isEmailValid'
 
 import type { NextApiRequest, NextApiResponse } from 'next'
+import next from 'next'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 
   const { name, to, message } = req.body
 
