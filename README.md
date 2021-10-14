@@ -15,9 +15,10 @@
 
 ### Features
 
-- [x] Posts em markdown do blog requisitados do Prismic
+- [x] Posts em markdown do blog requisitados ao Prismic
 - [x] Totalmente responsivo
 - [x] Troca de tema ao abrir o menu
+- [x] Envio de e-mail automático e recebimento de mensagens na minha caixa principal
 
 ### Pré-requisitos
 
@@ -58,6 +59,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [React-Markdown](https://github.com/remarkjs/react-markdown#readme)
 - [Eslint](https://eslint.org/)
 - [Commitizen](https://github.com/commitizen/cz-cli)
+- [Nodemailer](https://nodemailer.com/about/)
+- [Handlebars](https://handlebarsjs.com/)
 
 
 ---
