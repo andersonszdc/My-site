@@ -52,16 +52,18 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   
       if (err) throw err
   
-      const template = handlebars.compile(`${html}`);
-      const context = { name, to };
-      const htmlToSend = template(context);
+      // const template = handlebars.compile(`${html}`);
+      // const context = { name, to };
+      // const htmlToSend = template(context);
   
       transporter.sendMail({
     
         from: 'contato@andersonszdc.com',
         to,
         subject: "Oba! Você me enviou uma mensagem",
-        html: html
+        html: `
+        <p>teste 4</p>
+        `
     
       }).then(info => {
         
@@ -84,7 +86,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         //     res.status(400).json({message: 'Erro no aviso!', error})
         //     return resolve
         //   })
-        res.status(200).json({message: "teste 3 enviado!"})
+        res.status(200).json({message: "teste 4 enviado!"})
         return resolve
   
       }).catch(error => {
