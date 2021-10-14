@@ -11,6 +11,7 @@
   <img alt="MySite" title="MySite" src="./github/cover-site.png" height="300" />
 </h1>
 
+<a href="https://andersonszdc.com">Ver o projeto no ar</a>
 
 ### Features
 
