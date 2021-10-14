@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -55,17 +55,60 @@ const Wrapper = styled.div`
 
 const Forms: React.FC = () => {
 
+    const [form, setForm] = useState({
+      name: '',
+      to: '',
+      message: ''
+    })
+
     async function handleSubmit(e: any) {
         e.preventDefault()
+        fetch(process.env.NEXT_PUBLIC_API_URL_EMAIL!, {
+          method: 'POST',
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(form)
+        }).then(res => res.json())
+        .then(json => console.log(json))
+    }
+
+    const handleInputChange = (e: any) => {
+      console.log(e.target.name)
+      const {name, value} = e.target
+      setForm({
+        ...form,
+        [name]: value
+      })
     }
 
     return (
         <Wrapper>
             <h2>Fale comigo!</h2>
-            <form onSubmit={handleSubmit} action="">
-              <input className='inputs' placeholder="nome" type="text" />
-              <input className='inputs' placeholder="e-mail" type="text" />
-              <textarea style={{resize: 'none'}} className='inputs' placeholder="mensagem" rows={7}></textarea>
+            <form onSubmit={handleSubmit}>
+              <input
+              className='inputs'
+              placeholder="nome"
+              type="text" name="name"
+              value={form.name}
+              onChange={handleInputChange}
+              />
+              <input
+              className='inputs'
+              placeholder="e-mail"
+              type="text" name="to"
+              value={form.to}
+              onChange={handleInputChange}
+              />
+              <textarea
+              style={{resize: 'none'}}
+              className='inputs'
+              placeholder="mensagem"
+              name="message"
+              value={form.message}
+              rows={7}
+              onChange={handleInputChange}
+              />
               <input className='send' type="submit" />
             </form>
         </Wrapper>
