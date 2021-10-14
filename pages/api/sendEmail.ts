@@ -61,9 +61,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         from: 'contato@andersonszdc.com',
         to,
         subject: "Oba! Você me enviou uma mensagem",
-        html: `
-        <p>teste 4</p>
-        `
+        text: "teste 5"
+        // html: `
+        // <p>teste 4</p>
+        // `
     
       }).then(info => {
         
@@ -86,7 +87,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         //     res.status(400).json({message: 'Erro no aviso!', error})
         //     return resolve
         //   })
-        res.status(200).json({message: "teste 4 enviado!"})
+        res.status(200).json({message: "teste 5 enviado!"})
         return resolve
   
       }).catch(error => {
