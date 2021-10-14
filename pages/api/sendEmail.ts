@@ -11,12 +11,16 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const { name, to, message } = req.body
 
+  return new Promise(resolve => {
+
     if (isEmailValid(to) === false) {
       res.status(400).json({message: 'E-mail incorreto'})
+      return resolve
     }
   
     if (!name || !message) {
       res.status(400).json({message: 'Nome/mensagem faltando'})
+      return resolve
     }
   
     const transporter = nodemailer.createTransport({
@@ -31,7 +35,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   
     readFile(__dirname + '../../../../../emailAuto.html', (err, html) => {
   
-      if (err) throw {message: "failed", err}
+      if (err) throw err
   
       const template = handlebars.compile(`${html}`);
       const context = { name, to };
@@ -59,15 +63,20 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           `
           
         }).then(info => {
-            res.status(200).json({message: 'Mensagem enviada!'})
+            res.status(200).json({message: 'Mensagem enviada!', info})
+            return resolve
           }).catch(error => {
             res.status(400).json({message: 'Erro no aviso!', error})
+            return resolve
           })
   
       }).catch(error => {
         res.status(400).json({message: 'Erro na mensagem!', error})
+        return resolve
       })
   
     })
+
+  })
 
 }
