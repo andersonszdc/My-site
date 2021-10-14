@@ -4,9 +4,6 @@
 
 ---
 
-<br>
-
-
 <h1 align="center">
   <img alt="MySite" title="MySite" src="./github/cover-site.png" height="300" />
 </h1>
@@ -14,7 +11,6 @@
 <a href="https://andersonszdc.com">Ver o projeto no ar</a>
 
 ### Features
-
 - [x] Posts em markdown do blog requisitados ao Prismic
 - [x] Totalmente responsivo
 - [x] Troca de tema ao abrir o menu
