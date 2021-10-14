@@ -31,7 +31,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   
     readFile(__dirname + '../../../../../emailAuto.html', (err, html) => {
   
-      if (err) throw err
+      if (err) throw {message: "failed", err}
   
       const template = handlebars.compile(`${html}`);
       const context = { name, to };
