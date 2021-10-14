@@ -2,9 +2,7 @@ import nodemailer from 'nodemailer'
 import {readFile} from 'fs'
 import handlebars from 'handlebars'
 import isEmailValid from '../../utils/isEmailValid'
-
 import type { NextApiRequest, NextApiResponse } from 'next'
-import next from 'next'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 
@@ -16,12 +14,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   return new Promise(resolve => {
 
     if (isEmailValid(to) === false) {
-      res.status(400).send({message: 'E-mail incorreto'})
+      res.status(400).json({message: 'E-mail incorreto'})
       return resolve
     }
   
     if (!name || !message) {
-      res.status(400).send({message: 'Nome/mensagem faltando'})
+      res.status(400).json({message: 'Nome/mensagem faltando'})
       return resolve
     }
   
@@ -65,15 +63,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           `
           
         }).then(info => {
-            res.status(200).send({message: 'Mensagem e aviso enviados!', info})
+            res.status(200).json({message: 'Mensagem enviada!', info})
             return resolve
           }).catch(error => {
-            res.status(400).send({message: 'Erro no aviso!', error})
+            res.status(400).json({message: 'Erro no aviso!', error})
             return resolve
           })
   
       }).catch(error => {
-        res.status(400).send({message: 'Erro na mensagem!', error})
+        res.status(400).json({message: 'Erro na mensagem!', error})
         return resolve
       })
   
