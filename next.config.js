@@ -4,4 +4,7 @@ module.exports = {
   images: {
     domains: ['images.prismic.io', 'images2.imgbox.com'],
   },
+  experimental: {
+    nftTracing: true
+  }
 }

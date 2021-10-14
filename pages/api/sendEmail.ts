@@ -23,7 +23,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return resolve
     }
 
-    const data = fs.readFileSync(__dirname + '../../../../../example.txt')
+    const data = fs.readFileSync(process.cwd() + '/emailAuto.html')
 
     res.status(200).json(data)
   
