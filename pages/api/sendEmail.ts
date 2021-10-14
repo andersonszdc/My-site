@@ -22,19 +22,31 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       res.status(400).json({message: 'Nome/mensagem faltando'})
       return resolve
     }
-
-    res.status(200).json({message: "teste enviado!"})
-    return resolve
   
-    // const transporter = nodemailer.createTransport({
-    //   host: 'smtp.gmail.com',
-    //   port: 587,
-    //   secure: false,
-    //   auth: {
-    //     user: process.env.GMAIL_USER,
-    //     pass: process.env.GMAIL_PASS
-    //   }
-    // })
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 587,
+      secure: false,
+      auth: {
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS
+      }
+    })
+
+    transporter.sendMail({
+    
+          from: 'contato@andersonszdc.com',
+          to,
+          subject: "Oba! Você me enviou uma mensagem",
+          text: 'test'
+
+    }).then(info => {
+      res.status(200).json({message: "teste 2 enviado!"})
+      return resolve
+    }).catch(error => {
+      res.status(400).json({message: "teste não enviado!"})
+      return resolve
+    })
   
     // readFile(__dirname + '../../../../../emailAuto.html', (err, html) => {
   
