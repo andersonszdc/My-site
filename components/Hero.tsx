@@ -132,17 +132,7 @@ const Hero: React.FC = () => {
             </div>
           </HeroInfo>
           <HeroImage>
-            <div>
-              <svg width="100%" viewBox="0 0 368 409" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-                <mask id="mask0_337:85" style={{maskType:'alpha'}} maskUnits="userSpaceOnUse" x="0" y="0" width="100%">
-                  <path d="M350.924 155.13C374.511 261.393 377.151 312.584 324.652 364.663C271.772 416.743 149.179 430.42 79.1799 364.663C9.18077 298.906 -11.5107 274.837 7.89128 176.991C27.2932 79.1441 106.916 -5.50634 186.806 0.280275C266.316 6.0669 327.337 49.3922 350.924 155.13Z" fill="#16D3E4"/>
-                </mask>
-                <g mask="url(#mask0_337:85)">
-                  <path d="M350.924 155.13C374.511 261.393 377.151 312.584 324.652 364.663C271.772 416.743 149.179 430.42 79.1799 364.663C9.18077 298.906 -11.5107 274.837 7.89128 176.991C27.2932 79.1441 106.916 -5.50634 186.806 0.280275C266.316 6.0669 327.337 49.3922 350.924 155.13Z" fill="#16D3E4"/>
-                  <image id="image0_337:85" height="100%" href="https://images2.imgbox.com/b6/43/x5drzTnV_o.png"/>
-                </g>
-              </svg>
-            </div>
+                  <Image alt="img" src={anderson}  />
           </HeroImage>
       </Wrapper>
     );
