@@ -60,7 +60,7 @@ const Skill: React.FC<SkillProps> = (props) => {
         setIsActive(isActive ? false : true)
     }
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         if (techsRef.current && wrapperRef.current && angleRef.current) {
             if (isActive) {
                 techsRef.current.style.opacity = '0'

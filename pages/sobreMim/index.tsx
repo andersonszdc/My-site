@@ -1,5 +1,5 @@
 import React from 'react'
-import aboutImg from '../../assets/aboutme-anderson.png'
+import aboutImg from '../../assets/aboutme.png'
 import Image from 'next/image'
 import styled from 'styled-components'
 import Skill from '../../components/Skill'
@@ -40,6 +40,16 @@ const Intro = styled.div`
     line-height: 133%;
   }
 
+  .about_card {
+    display: inline-flex;
+    box-shadow: rgb(0 0 0) 4px 4px 8px 0px, rgb(255 255 255 / 30%) -4px -4px 8px 0px;
+    border-radius: 16px;
+  }
+
+  .about_img {
+      border-radius: 16px;
+  }
+
   @media (max-width: 800px) {
   grid-template-columns: 1fr;
   }
@@ -50,7 +60,9 @@ const sobreMim: React.FC = () => {
       <Wrapper>
         <h2>Sobre mim</h2>
         <Intro>
-          <Image alt='Anderson' src={aboutImg} />
+          <div className="about_card">
+            <Image className="about_img" alt='Anderson' src={aboutImg} />
+          </div>
           <p className="about_text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vel dui vitae, urna duis ut gravida placerat. Nunc rhoncus id ornare neque sed sagittis. Eget leo leo fermentum, velit. Varius habitant sit convallis viverra non dolor massa augue.
           </p>
