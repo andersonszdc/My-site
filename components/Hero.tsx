@@ -137,7 +137,7 @@ const Hero: React.FC = () => {
                 </mask>
                 <g mask="url(#mask0_337:85)">
                   <path d="M350.924 155.13C374.511 261.393 377.151 312.584 324.652 364.663C271.772 416.743 149.179 430.42 79.1799 364.663C9.18077 298.906 -11.5107 274.837 7.89128 176.991C27.2932 79.1441 106.916 -5.50634 186.806 0.280275C266.316 6.0669 327.337 49.3922 350.924 155.13Z" fill="#16D3E4"/>
-                  <image id="image0_337:85" height="100%" xlinkHref="https://lh3.googleusercontent.com/A2SQc8DxIK2SMVe2X02f4yQYZI8C30cfnWiE02jJdOftXv47ssxuStWc96InqOGZ4_3OmSp5b4Afd4E9FiWDK0DssGZ71nPnhe3UmfRCyQnX_XdwcwnzjCvQ-AcrJ-zDHmSqEjDciAfACG3pC4I2vLl1cuCubjtjQNPYAUoFgAlGV5vT-_haMip416u1PGSKoloDpSBKGgqFErIXxtDH7o3yqqSiNnr83Ma5e_F68dcGa6sAUwCBkpDcnjMB1M9AUXi0ErCtMuN2sOZCSsMnZL9-vvPGnBdpcjQ1dyxfTcut_UkxdTYWvCl_sAq3P5wvVYemCD_45GSExqptY8tZ87w4d7Af2RJV7bbWPM-l20nWHIOiAqp7v13SG48HRW4H40SjUd5G58Ry5PkdAvQ8b4pXOXFvBtf-GczpLJceyqvFQOQO7xcFSEK3WfgeH8aP4_Pw08ZG5qGdh1JBloJp7Bqmkd2vlTxMNwJ96XJFflNIJ_Xd_rwElhulNPzrAPaq5QzbfGtJU1Xyr4OZvvup5hPZv1iCS138ivfnmvZiBYpPe-Pvl4bj13p9B5pmjYMgE5ugVrrGJ6vCfmsngyOzUhqmG8VO0K2VFG06Xg5kO7rtXR6kUL2jN3FD1q08XufCfi5IPvVPkcByaj0nqWWCVwDE5n50-T_cbZD_r9SOEGMO6nD8a1mJie0btSQ3U57wr4CQJwDGKpfq00lvMIEdEw4=w939-h995-no?authuser=0"/>
+                  <image id="image0_337:85" height="100%" xlinkHref="https://images2.imgbox.com/b6/43/x5drzTnV_o.png"/>
                 </g>
               </svg>
             </div>
