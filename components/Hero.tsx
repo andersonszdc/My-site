@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { VscGithub } from 'react-icons/vsc'
 import { FaLinkedin } from 'react-icons/fa'
 import { GrInstagram } from 'react-icons/gr'
+import anderson from '../assets/hero-anderson.png'
+import Image from 'next/image'
 
 const Wrapper = styled.div`
   display: grid;
@@ -137,7 +139,7 @@ const Hero: React.FC = () => {
                 </mask>
                 <g mask="url(#mask0_337:85)">
                   <path d="M350.924 155.13C374.511 261.393 377.151 312.584 324.652 364.663C271.772 416.743 149.179 430.42 79.1799 364.663C9.18077 298.906 -11.5107 274.837 7.89128 176.991C27.2932 79.1441 106.916 -5.50634 186.806 0.280275C266.316 6.0669 327.337 49.3922 350.924 155.13Z" fill="#16D3E4"/>
-                  <image id="image0_337:85" height="100%" xlinkHref="https://images2.imgbox.com/b6/43/x5drzTnV_o.png"/>
+                  <image id="image0_337:85" height="100%" href="https://images2.imgbox.com/b6/43/x5drzTnV_o.png"/>
                 </g>
               </svg>
             </div>
