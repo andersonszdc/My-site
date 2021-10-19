@@ -43,7 +43,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   
       transporter.sendMail({
     
-        from: 'contato@andersonszdc.com',
+        from: 'Anderson Souza <contato@andersonszdc.com>',
         to,
         subject: "Oba! Você me enviou uma mensagem",
         html: htmlToSend
