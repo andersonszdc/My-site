@@ -95,18 +95,18 @@ const HeroImage = styled.div`
   display: inline-flex;
   justify-content: center;
 
-  > div {
+  div {
     width: 500px;
   }
 
   @media (max-width: 1500px) {
-    > div {
+    div {
       width: 300px;
     }
   }
 
   @media (max-width: 500px) {
-    > div {
+    div {
       width: 200px;
     }
   }
@@ -132,7 +132,9 @@ const Hero: React.FC = () => {
             </div>
           </HeroInfo>
           <HeroImage>
-                  <Image alt="img" src={anderson}  />
+            <div>
+              <Image alt="img" src={anderson}  />
+            </div>
           </HeroImage>
       </Wrapper>
     );
