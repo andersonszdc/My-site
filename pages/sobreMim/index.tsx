@@ -31,7 +31,8 @@ const Wrapper = styled.div`
 `
 
 const Intro = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 64px;
 
   .about_text {
@@ -53,7 +54,7 @@ const Intro = styled.div`
   }
 
   @media (max-width: 1000px) {
-  flex-direction: column;
+    grid-template-columns: 1fr;
   }
 `
 
