@@ -11,6 +11,7 @@
 <a href="https://andersonszdc.com">Ver o projeto no ar</a>
 
 ### Features
+- [x] ISR (incremental static regeneration)
 - [x] Posts em markdown do blog requisitados ao Prismic
 - [x] Totalmente responsivo
 - [x] Troca de tema ao abrir o menu
