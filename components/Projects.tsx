@@ -2,6 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import Card from './Card'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
+import deliveryCover from '../assets/delivery-cover.png';
+import siteCover from '../assets/site-cover.png';
+import platformCover from '../assets/platform-cover.png';
 
 interface StyledProps {
     rightIsActive?: boolean,
@@ -62,7 +65,7 @@ const AnglesBtn = styled.div<StyledProps>`
     `}
 `
 
-const Projects = ({projects}: any) => {
+const Projects = () => {
     const [ translate, setTranslate ] = useState(0)
     const [ leftIsActive, setleftIsActive ] = useState(true)
     const [ rightIsActive, setRightIsActive ] = useState(true)
@@ -99,13 +102,34 @@ const Projects = ({projects}: any) => {
             }
     }, [translate, width, scrollwidth])
 
+    const projects = [
+        {
+            title: 'My-site',
+            ano: '2021',
+            cover: siteCover,
+            link: '/projects/my-site'
+        },
+        {
+            title: 'My-delivery',
+            ano: '2021',
+            cover: deliveryCover,
+            link: '/projects/my-delivery'
+        },
+        {
+            title: 'My-platform',
+            ano: '2021',
+            cover: platformCover,
+            link: '/projects/my-platform'
+        }
+    ]
+
     return (
         <Wrapper>
             <h2 className="projects_title">Projetos</h2>
             <div className="projects__cards">
                 <div ref={slider} className="projects__slider">
-                    {projects.results.map((project: any) => (
-                        <Card data={project.data} uid={project.uid} key={project.id} />
+                    {projects.map((project, index) => (
+                        <Card data={project} key={index} />
                     ))}
                 </div>
                 <AnglesBtn rightIsActive={rightIsActive} leftIsActive={leftIsActive} >

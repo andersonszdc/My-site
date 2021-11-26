@@ -3,6 +3,8 @@ import styled, { keyframes } from 'styled-components'
 import { FaAngleRight } from 'react-icons/fa'
 import Image from 'next/image'
 import Link from 'next/link'
+import deliveryCover from '../assets/delivery-cover.png';
+import siteCover from '../assets/site-cover.png';
 
 const cardUp = keyframes`
     from {
@@ -24,10 +26,8 @@ const Wrapper = styled.div`
 
     .card__mockup {
         transition: .2s ease-in-out;
-        div {
-            border-radius: .6rem;
-        }
         img {
+            border-radius: .6rem;
             transition: .2s ease-in-out;
         }
     }
@@ -71,9 +71,9 @@ const CardContent = styled.div`
     height: 30rem;
 
     .card__ano {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         font-weight: 500;
-        color: #ccc;
+        color: ${props => props.theme.colors.blue};
     }
     .card__title {
         white-space: normal;
@@ -127,25 +127,20 @@ const CardContent = styled.div`
     }
 `
 
-const Card = ({data, uid}: any) => {
+const Card = ({data}: any) => {
     return (
-                <Link
-                passHref
-                href={{
-                    pathname: '/[projeto]',
-                    query: {projeto: `${uid}`},
-                }}>
+        <Link passHref href={data.link}>
             <Wrapper>
-                    <CardContent>
-                        <p className="card__ano">{data.year}</p>
-                        <p className="card__title">{data.title[0].text}</p>
-                        <p className="card__verMais">Ver mais<FaAngleRight/></p>
-                    </CardContent>
-                    <div className="card__mockup">
-                        <Image width={data.cover.dimensions.width} height={data.cover.dimensions.height} className='card__image' layout='responsive' src={data.cover.url} alt='mockup' />
-                    </div>
+                <CardContent>
+                    <p className="card__ano">{data.ano}</p>
+                    <p className="card__title">{data.title}</p>
+                    <p className="card__verMais">Ver mais<FaAngleRight/></p>
+                </CardContent>
+                <div className="card__mockup">
+                    <Image className='card__image' layout='responsive' src={data.cover} alt='mockup' />
+                </div>
             </Wrapper>
-                </Link>
+        </Link>
     );
 }
 
