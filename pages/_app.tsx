@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import Global from '../styles/global'
 import pattern from '../styles/themes/pattern'
 import menu from '../styles/themes/menu'
+import '../styles/mdx.css'
 
 interface Itheme {
   title: string,

@@ -1,21 +1,18 @@
 import type { GetStaticProps, NextPage } from 'next'
-import { useEffect, useState } from 'react'
 import CallMe from '../components/Call'
 import Hero from '../components/Hero'
 import Projects from '../components/Projects'
-import { Client } from '../utils/prismic-config'
-import Prismic from '@prismicio/client'
 import Head from 'next/head'
+import { getAllFilesFrontmatter, getFeatured, getTeste } from '../lib/mdx'
 
-const Home: NextPage = ({projects}: any) => {
-
+const Home: NextPage = ({projects, featuredProjects}: any) => {
   return (
     <>
       <Head>
         <title>Andersonszdc</title>
       </Head>
       <Hero />
-      <Projects projects={projects} />
+      <Projects projects={featuredProjects} />
       <CallMe />
     </>
   )
@@ -25,11 +22,15 @@ export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
 
-  const projects = await Client.query(Prismic.Predicates.at('document.type', 'project'))
+  const projects = await getAllFilesFrontmatter('projects')
+
+  const featuredProjects = getFeatured(projects, [
+    'my-platform',
+    'my-site',
+    'my-delivery'
+  ])
 
   return {
-    props: {
-      projects
-    }
+    props: { featuredProjects }
   }
 }
