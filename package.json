@@ -10,6 +10,7 @@
     "commit": "cz"
   },
   "dependencies": {
+    "firebase": "^9.5.0",
     "gray-matter": "^4.0.3",
     "handlebars": "^4.7.7",
     "lodash": "^4.17.21",

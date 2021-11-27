@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FaAngleRight } from 'react-icons/fa'
-import Image from 'next/image'
 import Link from 'next/link'
 import TechIcons, { TechListType } from './TechIcons'
-import UnstyledLink from './links/UnstyledLink'
+import { FirebaseImg } from './images/firebaseImg'
 
 const Wrapper = styled.div`
     display: flex;
@@ -47,14 +46,13 @@ const Wrapper = styled.div`
 `
 
 const Card = ({data}: any) => {
-    console.log(data)
     return (
-        <Link passHref href={data.link}>
+        <Link passHref href={`/projects/${data.slug}`}>
             <Wrapper>
                     <p className="card__title">{data.title}</p>
                     <p className="card__description">{data.description}</p>
                     <TechIcons techs={data.techs.split(',') as Array<TechListType>} />
-                    <Image className='card__image' width={400} height={250} layout='responsive' src={data.url} alt='mockup' />
+                    <FirebaseImg fileName={data.cover} classname="card__image" width={400} height={300} layout='responsive' />
                     <p className="card__ver">Ver mais<FaAngleRight/></p>
             </Wrapper>
         </Link>

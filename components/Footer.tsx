@@ -9,6 +9,8 @@ const Wrapper = styled.footer`
   flex-direction: column;
   margin: 0 4% 1.6rem 4%;
   align-items: center;
+  border-top: 1px solid white;
+  padding-top: 3.6rem;
 
   span {
     display: block;
@@ -76,7 +78,6 @@ const Wrapper = styled.footer`
 const Footer: React.FC = () => {
   return (
     <Wrapper>
-      <span></span>
       <ul className="footer__abas">
         <li className="abas__item">Contatos</li>
         <li className="abas__item">Projetos</li>

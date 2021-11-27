@@ -10,6 +10,7 @@ import CustomLink from '../../components/links/CustomLink';
 import { SiGithub } from 'react-icons/si';
 import { HiLink } from 'react-icons/hi';
 import Image from 'next/image';
+import { FirebaseImg } from '../../components/images/firebaseImg';
 
 const StyledSection = styled.section`
     display: grid;
@@ -98,7 +99,7 @@ const ProjectPage: React.FC = ({code, frontmatter}: any) => {
     return (
         <ProjectAll>
             <Frontmatter>
-                <Image className="cover__img" alt="cover" src={frontmatter.url} layout="responsive" width={1200} height={400} />
+                <FirebaseImg classname="cover__img" fileName={frontmatter.cover} layout="responsive" width={1200} height={400} />
                 <h1 className='front__title'>{frontmatter.title}</h1>
                 <p className='front__description'>
                     {frontmatter.description}

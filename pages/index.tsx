@@ -3,9 +3,9 @@ import CallMe from '../components/Call'
 import Hero from '../components/Hero'
 import Projects from '../components/Projects'
 import Head from 'next/head'
-import { getAllFilesFrontmatter, getFeatured, getTeste } from '../lib/mdx'
+import { getAllFilesFrontmatter, getFeatured } from '../lib/mdx'
 
-const Home: NextPage = ({projects, featuredProjects}: any) => {
+const Home: NextPage = ({ featuredProjects }: any) => {
   return (
     <>
       <Head>
