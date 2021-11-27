@@ -18,7 +18,7 @@ const Wrapper = styled.div`
         gap: .6rem;
         cursor: pointer;
         :hover span {
-            background-color: ${props => props.theme.colors.blue};
+            width: 100%;
         }
     }
     .call-action {
@@ -33,8 +33,9 @@ const Wrapper = styled.div`
 
     }
     span {
+        background-color: ${props => props.theme.colors.blue};
         display: block;
-        width: 100%;
+        width: 0%;
         height: .5rem;
         transition: .4s ease-in-out;
         border-radius: .6rem;
