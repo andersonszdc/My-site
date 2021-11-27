@@ -96,13 +96,7 @@ const HeroImage = styled.div`
   justify-content: center;
 
   div {
-    width: 500px;
-  }
-
-  @media (max-width: 1500px) {
-    div {
-      width: 300px;
-    }
+    width: 350px;
   }
 
   @media (max-width: 500px) {

@@ -10,9 +10,14 @@ interface StyledProps {
 
 const Wrapper = styled.div<StyledProps>`
     display: flex;
+    position: sticky;
+    background-color: ${props => props.theme.colors.background};
+    top: 0;
+    transition: .5s ease-in-out;
     align-items: center;
     justify-content: space-between;
     padding: 1.6rem 4%;
+    z-index: 10;
 `
 
 const Me = styled.div`

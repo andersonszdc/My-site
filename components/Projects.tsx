@@ -65,7 +65,7 @@ const AnglesBtn = styled.div<StyledProps>`
     `}
 `
 
-const Projects = () => {
+const Projects = ({projects}: any) => {
     const [ translate, setTranslate ] = useState(0)
     const [ leftIsActive, setleftIsActive ] = useState(true)
     const [ rightIsActive, setRightIsActive ] = useState(true)
@@ -102,33 +102,12 @@ const Projects = () => {
             }
     }, [translate, width, scrollwidth])
 
-    const projects = [
-        {
-            title: 'My-site',
-            ano: '2021',
-            cover: siteCover,
-            link: '/projects/my-site'
-        },
-        {
-            title: 'My-delivery',
-            ano: '2021',
-            cover: deliveryCover,
-            link: '/projects/my-delivery'
-        },
-        {
-            title: 'My-platform',
-            ano: '2021',
-            cover: platformCover,
-            link: '/projects/my-platform'
-        }
-    ]
-
     return (
         <Wrapper>
             <h2 className="projects_title">Projetos</h2>
             <div className="projects__cards">
                 <div ref={slider} className="projects__slider">
-                    {projects.map((project, index) => (
+                    {projects.map((project: any, index: number) => (
                         <Card data={project} key={index} />
                     ))}
                 </div>

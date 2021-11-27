@@ -128,19 +128,20 @@ const CardContent = styled.div`
 `
 
 const Card = ({data}: any) => {
+    console.log(data)
     return (
-        <Link passHref href={data.link}>
+        // <Link passHref href={data.link}>
             <Wrapper>
                 <CardContent>
-                    <p className="card__ano">{data.ano}</p>
+                    <p className="card__ano">{data.slug}</p>
                     <p className="card__title">{data.title}</p>
                     <p className="card__verMais">Ver mais<FaAngleRight/></p>
                 </CardContent>
-                <div className="card__mockup">
+                {/* <div className="card__mockup">
                     <Image className='card__image' layout='responsive' src={data.cover} alt='mockup' />
-                </div>
+                </div> */}
             </Wrapper>
-        </Link>
+        // </Link>
     );
 }
 
