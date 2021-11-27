@@ -52,7 +52,7 @@ const Card = ({data}: any) => {
                     <p className="card__title">{data.title}</p>
                     <p className="card__description">{data.description}</p>
                     <TechIcons techs={data.techs.split(',') as Array<TechListType>} />
-                    <FirebaseImg fileName={data.cover} classname="card__image" width={400} height={300} layout='responsive' />
+                    <FirebaseImg fileName={data.cover} classname="card__image" width={1300} height={650} layout='responsive' />
                     <p className="card__ver">Ver mais<FaAngleRight/></p>
             </Wrapper>
         </Link>

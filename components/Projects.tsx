@@ -1,10 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import Card from './Card'
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa'
-import deliveryCover from '../assets/delivery-cover.png';
-import siteCover from '../assets/site-cover.png';
-import platformCover from '../assets/platform-cover.png';
 
 interface StyledProps {
     rightIsActive?: boolean,
@@ -23,6 +19,18 @@ const Wrapper = styled.div`
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2.4rem;
+    }
+
+    @media (max-width: 800px) {
+        .projects__cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .projects__cards {
+            grid-template-columns: 1fr;
+        }
     }
 
     @media (max-width: 400px) {

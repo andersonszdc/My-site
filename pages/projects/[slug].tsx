@@ -99,7 +99,7 @@ const ProjectPage: React.FC = ({code, frontmatter}: any) => {
     return (
         <ProjectAll>
             <Frontmatter>
-                <FirebaseImg classname="cover__img" fileName={frontmatter.cover} layout="responsive" width={1200} height={400} />
+                <FirebaseImg classname="cover__img" fileName={frontmatter.cover} layout="responsive" width={1300} height={650} />
                 <h1 className='front__title'>{frontmatter.title}</h1>
                 <p className='front__description'>
                     {frontmatter.description}
