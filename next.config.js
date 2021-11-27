@@ -2,7 +2,7 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['images.prismic.io', 'images2.imgbox.com', 'my-site-andersonszdc.s3.sa-east-1.amazonaws.com', 'cdn.jsdelivr.net'],
+    domains: ['my-site-andersonszdc.s3.sa-east-1.amazonaws.com', 'images.unsplash.com'],
   },
   experimental: {
     nftTracing: true
