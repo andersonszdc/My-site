@@ -1,29 +1,36 @@
 ---
 title: 'My-delivery'
-description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+description: 'Web App para deliverys.'
 publishedAt: '2021-02-24'
-techs: 'nextjs,styledComponents'
+techs: 'nextjs,styledComponents,mongodb'
 cover: 'my-delivery-cover.png'
 github: 'https://github.com/andersonszdc/My-delivery'
-link: 'https://andersonszdc.com'
+link: 'https://my-delivery-pi.vercel.app'
 ---
 
-> ## Short Explanation
+> ## Introdução
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor nisi et sollicitudin accumsan. Quisque fringilla sem a commodo varius. Morbi rutrum rutrum felis, id commodo sapien pretium porta. Integer at odio libero. Nam et suscipit tellus. Sed faucibus, erat ut lacinia congue, purus risus faucibus dolor, sed pretium nisl nisl sed diam. Mauris auctor sed neque non congue.
+Este projeto web foi desenvolvido para delivery's que querem ter um web app de vendas e informações sobre a loja. 
 
-Donec non aliquet nibh. Ut rutrum, est sed sodales porta, lorem lacus elementum urna, vel tincidunt nisl felis quis nunc. Pellentesque pulvinar orci ac sapien blandit, ut vulputate magna vehicula. Nulla facilisi. Nunc condimentum est a ipsum malesuada interdum ac et dui. Suspendisse tincidunt aliquet rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam purus orci, sagittis et eros ut, tempus euismod leo. Etiam vehicula felis vitae mollis vestibulum.
+<blockquote className="with-icons">
+    ## Tecnologias utilizadas
+    <TechIcons techs={['nextjs', 'styledComponents', 'mongodb']}/>
+</blockquote>
 
-> ## Project Goals
+Este projeto foi desenvolvido utilizando Create Next App por ter um ótimo SEO, SSR e o roteamento nativo do Next.js. Escolhi utilizar Styled-components para a estilização por já estar familiarizado.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor nisi et sollicitudin accumsan. Quisque fringilla sem a commodo varius. Morbi rutrum rutrum felis, id commodo sapien pretium porta. Integer at odio libero. Nam et suscipit tellus. Sed faucibus, erat ut lacinia congue, purus risus faucibus dolor, sed pretium nisl nisl sed diam. Mauris auctor sed neque non congue.
+As outras principais dependências que eu utilizei foram:
 
-Donec non aliquet nibh. Ut rutrum, est sed sodales porta, lorem lacus elementum urna, vel tincidunt nisl felis quis nunc. Pellentesque pulvinar orci ac sapien blandit, ut vulputate magna vehicula. Nulla facilisi. Nunc condimentum est a ipsum malesuada interdum ac et dui. Suspendisse tincidunt aliquet rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam purus orci, sagittis et eros ut, tempus euismod leo. Etiam vehicula felis vitae mollis vestibulum.
+- mongoDB como banco de dados para registro de pedidos e cardápios.
+- Mongoose para modelagem de objetos para o mongoDB.
+- Stripe como gateway de pagamento.
 
-> ## Spotlight
+> ## Desafios
 
-### First Hackathon With 12 Hour Time-Zone Difference & Tight Time
+Este projeto explorou bastante a utilização da Context API para fornecer globalmente informações como o pedido do cliente e informações para entrega.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor nisi et sollicitudin accumsan. Quisque fringilla sem a commodo varius. Morbi rutrum rutrum felis, id commodo sapien pretium porta. Integer at odio libero. Nam et suscipit tellus. Sed faucibus, erat ut lacinia congue, purus risus faucibus dolor, sed pretium nisl nisl sed diam. Mauris auctor sed neque non congue.
+Aproveitei a API routes do Next.js para criar esta aplicacação full-stack, as api's para o POST do pedido e GET, POST, DELETE e PUT do cardápio foram criadas na mesma aplicação do Front-end.
 
-Donec non aliquet nibh. Ut rutrum, est sed sodales porta, lorem lacus elementum urna, vel tincidunt nisl felis quis nunc. Pellentesque pulvinar orci ac sapien blandit, ut vulputate magna vehicula. Nulla facilisi. Nunc condimentum est a ipsum malesuada interdum ac et dui. Suspendisse tincidunt aliquet rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam purus orci, sagittis et eros ut, tempus euismod leo. Etiam vehicula felis vitae mollis vestibulum.
+> ## Aprendizado
+
+Aprendi muito com este projeto, por conta de ser o primeiro após eu estudar o banco de dados MongoDB. A implementação do checkout transparente foi de grande aprendizado também.

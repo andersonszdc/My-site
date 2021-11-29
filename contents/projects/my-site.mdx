@@ -1,6 +1,6 @@
 ---
 title: 'My-site'
-description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+description: 'Web App portfólio e blog.'
 publishedAt: '2021-02-24'
 techs: 'nextjs,styledComponents,firebase'
 cover: 'my-site-cover.png'
@@ -8,22 +8,30 @@ github: 'https://github.com/andersonszdc/My-site'
 link: 'https://andersonszdc.com'
 ---
 
-> ## Short Explanation
+> ## Introdução
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor nisi et sollicitudin accumsan. Quisque fringilla sem a commodo varius. Morbi rutrum rutrum felis, id commodo sapien pretium porta. Integer at odio libero. Nam et suscipit tellus. Sed faucibus, erat ut lacinia congue, purus risus faucibus dolor, sed pretium nisl nisl sed diam. Mauris auctor sed neque non congue.
+Este projeto web foi desenvolvido para apresentar meus projetos como freelancer e registrar snippets interessantes e features das tecnologias que eu utilizo. 
 
-Donec non aliquet nibh. Ut rutrum, est sed sodales porta, lorem lacus elementum urna, vel tincidunt nisl felis quis nunc. Pellentesque pulvinar orci ac sapien blandit, ut vulputate magna vehicula. Nulla facilisi. Nunc condimentum est a ipsum malesuada interdum ac et dui. Suspendisse tincidunt aliquet rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam purus orci, sagittis et eros ut, tempus euismod leo. Etiam vehicula felis vitae mollis vestibulum.
+<blockquote className="with-icons">
+    ## Tecnologias utilizadas
+    <TechIcons techs={['nextjs', 'styledComponents', 'firebase']}/>
+</blockquote>
 
-> ## Project Goals
+Este projeto foi desenvolvido utilizando Create Next App por ter um ótimo SEO, SSR e o roteamento nativo do Next.js. Escolhi utilizar Styled-components para a estilização por já estar familiarizado.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor nisi et sollicitudin accumsan. Quisque fringilla sem a commodo varius. Morbi rutrum rutrum felis, id commodo sapien pretium porta. Integer at odio libero. Nam et suscipit tellus. Sed faucibus, erat ut lacinia congue, purus risus faucibus dolor, sed pretium nisl nisl sed diam. Mauris auctor sed neque non congue.
+As outras principais dependências que eu utilizei foram:
 
-Donec non aliquet nibh. Ut rutrum, est sed sodales porta, lorem lacus elementum urna, vel tincidunt nisl felis quis nunc. Pellentesque pulvinar orci ac sapien blandit, ut vulputate magna vehicula. Nulla facilisi. Nunc condimentum est a ipsum malesuada interdum ac et dui. Suspendisse tincidunt aliquet rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam purus orci, sagittis et eros ut, tempus euismod leo. Etiam vehicula felis vitae mollis vestibulum.
+- firebase para hospedar imagens, cloud functions e também utilizo a integração dele com o Analytics 
+- nodemailer para envio de emails automáticos
+- handlebars para adicionar variáveis no corpo do email
+- mdx-bundler para compilar os arquivos MDX com os componentes React.
 
-> ## Spotlight
+> ## Desafios
 
-### First Hackathon With 12 Hour Time-Zone Difference & Tight Time
+O desenvolvimento de um motor de leitura de MDX (como este que você está lendo rs) foi bem desafiador, com a biblioteca mdx-bundler e algumas funções nativas do Node.js consigo escrever em MDX, que é bem mais simples do que HTML, e adicionar componentes React, e então compilá-lo automaticamente.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor nisi et sollicitudin accumsan. Quisque fringilla sem a commodo varius. Morbi rutrum rutrum felis, id commodo sapien pretium porta. Integer at odio libero. Nam et suscipit tellus. Sed faucibus, erat ut lacinia congue, purus risus faucibus dolor, sed pretium nisl nisl sed diam. Mauris auctor sed neque non congue.
+Há também um outro motor de leitura HTML onde eu envio e-mails automáticos para quem me envia mensagem na aba Contatos, este foi desenvolvido antes do leitor de MDX, por isso eu ainda não o refatorei.
 
-Donec non aliquet nibh. Ut rutrum, est sed sodales porta, lorem lacus elementum urna, vel tincidunt nisl felis quis nunc. Pellentesque pulvinar orci ac sapien blandit, ut vulputate magna vehicula. Nulla facilisi. Nunc condimentum est a ipsum malesuada interdum ac et dui. Suspendisse tincidunt aliquet rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam purus orci, sagittis et eros ut, tempus euismod leo. Etiam vehicula felis vitae mollis vestibulum.
+> ## Aprendizado
+
+Aprendi muito com este projeto, por conta de ser o primeiro após eu estudar a teoria do Next.js e Typescript. Este projeto continua sendo mantido para adicionar novas features. 

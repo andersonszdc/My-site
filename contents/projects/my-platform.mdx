@@ -1,6 +1,6 @@
 ---
 title: 'My-platform'
-description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+description: 'Plataforma de infoprodutos.'
 publishedAt: '2021-02-24'
 techs: 'nextjs,styledComponents,firebase'
 cover: 'my-platform-cover.png'
@@ -8,22 +8,29 @@ github: 'https://github.com/andersonszdc/My-platform'
 link: 'https://andersonszdc.com'
 ---
 
-> ## Short Explanation
+> ## Introdução
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor nisi et sollicitudin accumsan. Quisque fringilla sem a commodo varius. Morbi rutrum rutrum felis, id commodo sapien pretium porta. Integer at odio libero. Nam et suscipit tellus. Sed faucibus, erat ut lacinia congue, purus risus faucibus dolor, sed pretium nisl nisl sed diam. Mauris auctor sed neque non congue.
+Esta plataforma web foi desenvolvida para a venda de assinaturas e infoprodutos. 
 
-Donec non aliquet nibh. Ut rutrum, est sed sodales porta, lorem lacus elementum urna, vel tincidunt nisl felis quis nunc. Pellentesque pulvinar orci ac sapien blandit, ut vulputate magna vehicula. Nulla facilisi. Nunc condimentum est a ipsum malesuada interdum ac et dui. Suspendisse tincidunt aliquet rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam purus orci, sagittis et eros ut, tempus euismod leo. Etiam vehicula felis vitae mollis vestibulum.
+<blockquote className="with-icons">
+    ## Tecnologias utilizadas
+    <TechIcons techs={['nextjs', 'styledComponents', 'firebase']}/>
+</blockquote>
 
-> ## Project Goals
+Este projeto foi desenvolvido utilizando Create Next App por ter um ótimo SEO, SSR e o roteamento nativo do Next.js. Escolhi utilizar Styled-components para a estilização por já estar familiarizado.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor nisi et sollicitudin accumsan. Quisque fringilla sem a commodo varius. Morbi rutrum rutrum felis, id commodo sapien pretium porta. Integer at odio libero. Nam et suscipit tellus. Sed faucibus, erat ut lacinia congue, purus risus faucibus dolor, sed pretium nisl nisl sed diam. Mauris auctor sed neque non congue.
+As outras principais dependências que eu utilizei foram:
 
-Donec non aliquet nibh. Ut rutrum, est sed sodales porta, lorem lacus elementum urna, vel tincidunt nisl felis quis nunc. Pellentesque pulvinar orci ac sapien blandit, ut vulputate magna vehicula. Nulla facilisi. Nunc condimentum est a ipsum malesuada interdum ac et dui. Suspendisse tincidunt aliquet rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam purus orci, sagittis et eros ut, tempus euismod leo. Etiam vehicula felis vitae mollis vestibulum.
+- Firebase Authentication para cadastro de usuários.
+- Firebase Firestore como banco de dados dos usuários e produtos.
+- Firebase Cloud Functions para disparo de funções automáticas como a integração do Firebase com o Stripe.
+- Youtube e Vimeo para hospedar vídeos.
+- Stripe como gateway de pagamento.
 
-> ## Spotlight
+> ## Desafios
 
-### First Hackathon With 12 Hour Time-Zone Difference & Tight Time
+Por ser primeira vez no universo Firebase, tive bastantes consultas ao stackoverflow e documentação hehe, inclusive a doc do Firebase é bem clara e objetiva (recomendo).
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempor nisi et sollicitudin accumsan. Quisque fringilla sem a commodo varius. Morbi rutrum rutrum felis, id commodo sapien pretium porta. Integer at odio libero. Nam et suscipit tellus. Sed faucibus, erat ut lacinia congue, purus risus faucibus dolor, sed pretium nisl nisl sed diam. Mauris auctor sed neque non congue.
+> ## Aprendizado
 
-Donec non aliquet nibh. Ut rutrum, est sed sodales porta, lorem lacus elementum urna, vel tincidunt nisl felis quis nunc. Pellentesque pulvinar orci ac sapien blandit, ut vulputate magna vehicula. Nulla facilisi. Nunc condimentum est a ipsum malesuada interdum ac et dui. Suspendisse tincidunt aliquet rhoncus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam purus orci, sagittis et eros ut, tempus euismod leo. Etiam vehicula felis vitae mollis vestibulum.
+Este projeto fez eu estudar bastante o Firebase, aprendi na prática sobre computação em nuvem. Consegui explorar mais sobre clean code nete projeto, por já não ser o primeiro.
