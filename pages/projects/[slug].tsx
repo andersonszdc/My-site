@@ -113,7 +113,7 @@ const ProjectPage: React.FC = ({code, frontmatter}: any) => {
                                 }
                                 href={frontmatter.github}
                                 >
-                                Repository
+                                Repositório
                             </CustomLink>
                         </FrontItem>
                     )}
@@ -126,7 +126,7 @@ const ProjectPage: React.FC = ({code, frontmatter}: any) => {
                                     console.log('clicou')
                                 }
                                 >
-                                Open Live Site
+                                Projeto no ar
                             </CustomLink>
                         </FrontItem>
                     )}
