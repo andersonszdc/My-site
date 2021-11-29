@@ -60,10 +60,10 @@
 .prose hr {
   border-style: solid;
   border-width: 0 0 1px 0;
-  border-color: #16D3E4;
+  border-color: red;
 }
 
-.mdx.prose :where(h1, h2, h3, 4) {
+.mdx.prose :where(h1, h2, h3, h4) {
   scroll-margin-top: 100px;
   position: relative;
   display: block;
@@ -76,13 +76,20 @@
   border-bottom: none;
 }
 
+.mdx.prose strong {
+  font-weight: 600;
+  letter-spacing: .1rem;
+}
+
 /* Custom Heading Style for Projects */
 .mdx.prose.projects blockquote {
   font-style: normal;
 }
+
 .mdx.prose.projects blockquote:first-of-type h2 {
   margin-top: 0;
 }
+
 .mdx.prose.projects blockquote.with-icons h2 {
   margin-bottom: 0;
 }
