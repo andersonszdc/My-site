@@ -73,6 +73,19 @@ const Wrapper = styled.footer`
   .logo {
     width: 2.5rem;
   }
+
+  @media (max-width: 560px) {
+    .footer__abas {
+      flex-direction: column;
+      align-items: center;
+      gap: 3.2rem;
+      margin-bottom: 3.2rem;
+    }
+
+    .redes__title {
+      display: none;
+    }
+  }
 `
 
 const Footer: React.FC = () => {
@@ -85,7 +98,7 @@ const Footer: React.FC = () => {
         <li className="abas__item">Sobre mim</li>
       </ul>
       <div>
-        <h3 className="redes__title">Minhas redes</h3>
+        <h3 className="redes__title">Minhas redes!</h3>
         <ul className="footer__icons">
           <li><FaInstagram className="icon" /></li>
           <li><FaTwitter className="icon" /></li>
