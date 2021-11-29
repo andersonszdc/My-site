@@ -13,6 +13,7 @@ import {
   SiReact,
   SiRedux,
   SiSass,
+  SiStyledComponents,
   SiTailwindcss,
   SiTypescript,
 } from 'react-icons/si';
@@ -56,6 +57,10 @@ export default function TechIcons({className, techs}: TechIconsProps) {
 }
 
 const techList = {
+    styledComponents: {
+      icon: SiStyledComponents,
+      name: 'Styled-components'
+    },
     react: {
       icon: SiReact,
       name: 'React',

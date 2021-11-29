@@ -33,7 +33,7 @@ const Wrapper = styled.div<MenuProps>`
         font-size: 20px;
         font-weight: 500;
         transition: color .35s ease-out;
-        : hover {
+        :hover {
             color: ${props => props.theme.colors.blue}
         }
     }
