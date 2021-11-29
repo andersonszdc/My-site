@@ -57,7 +57,7 @@ const FrontItem = styled.div`
 const ProjectAside = styled.aside`
     .wrapper__table {
         position: sticky;
-        top: 3.6rem;
+        top: 10rem;
     }
 
     @media (max-width: 1024px) {
