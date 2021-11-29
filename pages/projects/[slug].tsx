@@ -9,7 +9,6 @@ import styled from 'styled-components';
 import CustomLink from '../../components/links/CustomLink';
 import { SiGithub } from 'react-icons/si';
 import { HiLink } from 'react-icons/hi';
-import Image from 'next/image';
 import { FirebaseImg } from '../../components/images/firebaseImg';
 
 const StyledSection = styled.section`
