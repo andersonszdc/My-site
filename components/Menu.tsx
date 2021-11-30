@@ -8,24 +8,24 @@ interface MenuProps {
 }
 
 const Wrapper = styled.div<MenuProps>`
-    opacity: 0;
-    visibility: hidden;
+    background-color: ${props => props.theme.colors.white};
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    height: 0;
+    width: 100vw;
+    border-radius: 3.2rem;
     z-index: 5;
     display: flex;
     flex-direction: column;
     gap: 24px;
     align-items: center;
     justify-content: center;
-    transition: .25s ease-out;
+    transition: .4s ease-in-out;
     
     ${({isClicked}) => isClicked && `
-        opacity: 1;
-        transition: .25s ease-out .25s;
-        visibility: visible;
+        height: 100vh;
     `}
     a {
         color: ${props => props.theme.colors.text};
@@ -44,14 +44,13 @@ const Overlay = styled.div<MenuProps>`
     height: 0;
     width: 0;
     top: 0;
-    right: 0;
+    left: 0;
     z-index: 5;
-    background: #FAF8F8;
+    border-radius: 30vw;
     transition: .5s cubic-bezier(.3,0,.5,1);
-    border-bottom-left-radius: 100%;
     ${({isClicked}) => isClicked && `
-        height: 130vh;
-        width: 160vw;
+        height: 100vh;
+        width: 100vw;
     `}
 `
 
@@ -59,18 +58,18 @@ const Menu = ({ isClicked, handleClick }: MenuProps) => {
 
     return (
         <>
-            <Overlay isClicked={isClicked} />
-            <Wrapper isClicked={isClicked}>
-                <Link href='/sobreMim'>
-                    <a onClick={handleClick}>Sobre mim</a>
-                </Link>
-                <Link  href="/blog">
-                    <a onClick={handleClick}>Blog</a>
-                </Link>
-                <Link href='/contatos'>
-                    <a onClick={handleClick}>Contatos</a>
-                </Link>
-            </Wrapper>
+        {/* <Overlay isClicked={isClicked}/> */}
+        <Wrapper isClicked={isClicked}>
+            <Link href='/sobreMim'>
+                <a onClick={handleClick}>Sobre mim</a>
+            </Link>
+            <Link  href="/blog">
+                <a onClick={handleClick}>Blog</a>
+            </Link>
+            <Link href='/contatos'>
+                <a onClick={handleClick}>Contatos</a>
+            </Link>
+        </Wrapper>
         </>
     )
 }

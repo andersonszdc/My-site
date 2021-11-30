@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components';
 
-interface LogoProps {
-  color: string
-}
-
 const Wrapper = styled.svg`
   display: flex;
   #path-fill {
     transition: fill .5s cubic-bezier(.3,0,.5,1);
   }
 `
+
+interface LogoProps {
+  color: string
+}
 
 const Logo = ({color}: LogoProps) => {
   return (
