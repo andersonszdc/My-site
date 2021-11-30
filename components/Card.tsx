@@ -10,13 +10,17 @@ const Wrapper = styled.div`
     flex-direction: column;
     width: 100%;
     height: 100%;
-    padding: 1.6rem;
+    padding: 2rem;
     cursor: pointer;
     border-radius: .8rem;
-    border: 1px solid white;
     transition: .1s ease-in-out;
+    box-shadow: 2px 2px 4px 0px #16D3E4, -2px -2px 4px 0px #16D3E4;
+
     :hover {
         transform: scale(1.015);
+        .card__ver {
+            background-size: 100% 2px;
+        }
     }
 
     .card__title {
@@ -53,7 +57,7 @@ const Card = ({data}: any) => {
                     <p className="card__description">{data.description}</p>
                     <TechIcons techs={data.techs.split(',') as Array<TechListType>} />
                     <FirebaseImg fileName={data.cover} classname="card__image" width={1300} height={650} layout='responsive' />
-                    <p className="card__ver">Ver mais<FaAngleRight/></p>
+                    <p className="card__ver animated-underline">Ver mais<FaAngleRight/></p>
             </Wrapper>
         </Link>
     );

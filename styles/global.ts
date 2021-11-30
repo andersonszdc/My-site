@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components"
 import pattern from './themes/pattern'
-import styled from 'styled-components';
 
 interface GlobalProps {
     theme: typeof pattern
@@ -15,10 +14,6 @@ const Global = createGlobalStyle<GlobalProps>`
     html {
         font-size: 10px;
         scroll-behavior: smooth;
-    }
-
-    li {
-        list-style: none;
     }
 
     body {
@@ -39,6 +34,20 @@ const Global = createGlobalStyle<GlobalProps>`
             border-radius: 20px;
             }
     }
+
+    li {
+        list-style: none;
+    }
+
+    .animated-underline {
+        transition: 0.2s ease-in-out;
+        width: max-content;
+        background-size: 0 2px;
+        background-position: 0% 100%;
+        background-image: linear-gradient(to right, #16D3E4, #16D3E4);
+        background-repeat: no-repeat;
+    }
+
 `
 
 export default Global
