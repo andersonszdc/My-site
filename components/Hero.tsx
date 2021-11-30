@@ -1,16 +1,48 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 import { VscGithub } from 'react-icons/vsc'
 import { FaLinkedin } from 'react-icons/fa'
 import { GrInstagram } from 'react-icons/gr'
 import anderson from '../assets/hero-anderson.png'
 import Image from 'next/image'
+import InView from '../lib/inView'
 
-const Wrapper = styled.div`
+type WrapperProps = {
+  inView: boolean
+}
+
+const Wrapper = styled.div<WrapperProps>`
   display: grid;
   grid-template-columns: auto 1fr;
   padding: 0 4% 80px 4%;
   align-items: center;
+  [data-fade] {
+    transition: 400ms ease-out;
+    transform: translateY(6rem);
+    opacity: 0;
+  }
+  ${props => props.inView && `
+    [data-fade] {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    [data-fade='1'] {
+      transition-delay: 100ms;
+    }
+
+    [data-fade='2'] {
+      transition-delay: 200ms;
+    }
+
+    [data-fade='3'] {
+      transition-delay: 300ms;
+    }
+
+    [data-fade='4'] {
+      transition-delay: 400ms;
+    }
+  `}
   
   @media (orientation: landscape) {
     min-height: calc(100vh - 80px);
@@ -108,29 +140,33 @@ const HeroImage = styled.div`
 
 const Hero: React.FC = () => {
     return (
-        <Wrapper>
-          <HeroInfo>
-            <h2 className='name'>Anderson Souza</h2>
-            <h1 className='function'>Desenvolvedor Front-end e<br/>User Interface Designer</h1>
-            <p className='description'>Um estudante que relata sua trajetória e<br/>descobertas por este mundo.</p>
-            <div className='hero_icons'>
-              <a title='Ir para o Instagram (link externo)' target='_blank' rel='noreferrer' href="https://www.instagram.com/andersonszdc/">
-                <GrInstagram title='ícone Github' />
-              </a>
-              <a title='Ir para o Github (link externo)' target='_blank' rel='noreferrer' href="https://github.com/andersonszdc">
-                <VscGithub title='ícone Github' />
-              </a>
-              <a title='Ir para o Linkedin (link externo)' target='_blank' rel='noreferrer' href="https://www.linkedin.com/in/anderson-souza-b28431198/">
-                <FaLinkedin title='ícone Github' />
-              </a>
-            </div>
-          </HeroInfo>
-          <HeroImage>
-            <div>
-              <Image alt="img" src={anderson}  />
-            </div>
-          </HeroImage>
-      </Wrapper>
+      <InView>
+        {(inView) => (
+          <Wrapper id="hero" inView={inView}>
+            <HeroInfo>
+              <h2 className='name' data-fade="1">Anderson Souza</h2>
+              <h1 className='function' data-fade="2">Desenvolvedor Front-end e<br/>User Interface Designer</h1>
+              <p className='description' data-fade="3">Um estudante que relata sua trajetória e<br/>descobertas por este mundo.</p>
+              <div className='hero_icons' data-fade="4">
+                <a title='Ir para o Instagram (link externo)' target='_blank' rel='noreferrer' href="https://www.instagram.com/andersonszdc/">
+                  <GrInstagram title='ícone Instagram' />
+                </a>
+                <a title='Ir para o Github (link externo)' target='_blank' rel='noreferrer' href="https://github.com/andersonszdc">
+                  <VscGithub title='ícone Github' />
+                </a>
+                <a title='Ir para o Linkedin (link externo)' target='_blank' rel='noreferrer' href="https://www.linkedin.com/in/anderson-souza-b28431198/">
+                  <FaLinkedin title='ícone Linkedin' />
+                </a>
+              </div>
+            </HeroInfo>
+            <HeroImage>
+              <div data-fade="3">
+                <Image alt="img" src={anderson}  />
+              </div>
+            </HeroImage>
+          </Wrapper>
+        )}
+      </InView>
     );
 }
 
