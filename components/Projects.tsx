@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
+import InView from '../lib/inView'
 import Card from './Card'
 
-interface StyledProps {
-    rightIsActive?: boolean,
-    leftIsActive?: boolean
+type WrapperProps = {
+    inView: boolean
 }
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<WrapperProps>`
     padding: 40px 4%;
 
     .projects_title {
@@ -20,6 +20,34 @@ const Wrapper = styled.div`
         grid-template-columns: repeat(3, 1fr);
         gap: 2.4rem;
     }
+
+    [data-fade] {
+        transition: 400ms ease-out;
+        transform: translateY(6rem);
+        opacity: 0;
+    }
+    ${props => props.inView && `
+    [data-fade] {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    [data-fade='1'] {
+      transition-delay: 100ms;
+    }
+
+    [data-fade='2'] {
+      transition-delay: 200ms;
+    }
+
+    [data-fade='3'] {
+      transition-delay: 300ms;
+    }
+
+    [data-fade='4'] {
+      transition-delay: 400ms;
+    }
+  `}
 
     @media (max-width: 800px) {
         .projects__cards {
@@ -44,14 +72,18 @@ const Wrapper = styled.div`
 const Projects = ({projects}: any) => {
 
     return (
-        <Wrapper>
-            <h2 className="projects_title">Projetos</h2>
-            <div className="projects__cards">
-                {projects.map((project: any, index: number) => (
-                    <Card data={project} key={index} />
-                ))}
-            </div>
-        </Wrapper>
+        <InView>
+            {(inView) => (
+                <Wrapper id="projects" inView={inView}>
+                    <h2 data-fade="1" className="projects_title">Projetos</h2>
+                    <div data-fade="2" className="projects__cards">
+                        {projects.map((project: any, index: number) => (
+                            <Card data={project} key={index} />
+                            ))}
+                    </div>
+                </Wrapper>
+            )}
+        </InView>
     );
 }
 
