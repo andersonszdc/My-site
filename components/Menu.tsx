@@ -39,26 +39,10 @@ const Wrapper = styled.div<MenuProps>`
     }
 `
 
-const Overlay = styled.div<MenuProps>`
-    position: fixed;
-    height: 0;
-    width: 0;
-    top: 0;
-    left: 0;
-    z-index: 5;
-    border-radius: 30vw;
-    transition: .5s cubic-bezier(.3,0,.5,1);
-    ${({isClicked}) => isClicked && `
-        height: 100vh;
-        width: 100vw;
-    `}
-`
-
 const Menu = ({ isClicked, handleClick }: MenuProps) => {
 
     return (
         <>
-        {/* <Overlay isClicked={isClicked}/> */}
         <Wrapper isClicked={isClicked}>
             <Link href='/sobreMim'>
                 <a onClick={handleClick}>Sobre mim</a>
