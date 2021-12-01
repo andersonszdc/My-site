@@ -38,6 +38,7 @@ const Wrapper = styled.div<WrapperProps>`
       font-family: 'Montserrat';
       font-size: 1.4rem;
       background-color: transparent;
+      color: ${props => props.theme.colors.text};
     }
     
     .send {
