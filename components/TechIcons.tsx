@@ -1,42 +1,50 @@
-import { IoLogoVercel } from 'react-icons/io5';
 import {
+  SiFigma,
   SiFirebase,
-  SiGit,
+  SiExpress,
   SiGoogleanalytics,
   SiJavascript,
-  SiMarkdown,
   SiMongodb,
-  SiNextDotJs,
-  SiNodeDotJs,
-  SiNotion,
-  SiPrettier,
+  SiNextdotjs,
+  SiNodedotjs,
   SiReact,
   SiRedux,
-  SiSass,
-  SiStyledComponents,
+  SiStyledcomponents,
   SiTailwindcss,
   SiTypescript,
+  SiGatsby,
+  SiGraphql,
+  SiAmazonaws,
 } from 'react-icons/si';
 import styled from 'styled-components';
 import Tooltip from './Tooltip';
 
+type iconLiProps = {
+  size: string
+  padding: string
+}
+
 const TechsUl = styled.ul`
-    display: flex;
-    gap: .5rem;
+    display: inline-block;
+    overflow: hidden;
 `
 
-const IconLi = styled.li`
-    font-size: 2.4rem;
-    padding: 1rem 0;
+const IconLi = styled.li<iconLiProps>`
+    display: inline-block;
+    font-size: ${props => props.size};
+    padding: ${props => props.padding};
 `
 
 export type TechListType = keyof typeof techList;
 
 export type TechIconsProps = {
+    gap?: string;
+    size?: string;
+    padding?: string;
     techs: Array<TechListType>;
 } & React.ComponentPropsWithoutRef<'ul'>;
 
-export default function TechIcons({className, techs}: TechIconsProps) {
+export default function TechIcons({className, techs, size, padding}: TechIconsProps) {
     return (
         <TechsUl>
             {techs.map((tech) => {
@@ -46,7 +54,7 @@ export default function TechIcons({className, techs}: TechIconsProps) {
 
                 return (
                     <Tooltip key={current.name} content={<p>{current.name}</p>}>
-                        <IconLi>
+                        <IconLi padding={padding?? '.5rem'} size={size ?? '2.4rem'}>
                             <current.icon />
                         </IconLi>
                     </Tooltip>
@@ -58,7 +66,7 @@ export default function TechIcons({className, techs}: TechIconsProps) {
 
 const techList = {
     styledComponents: {
-      icon: SiStyledComponents,
+      icon: SiStyledcomponents,
       name: 'Styled-components'
     },
     react: {
@@ -66,16 +74,12 @@ const techList = {
       name: 'React',
     },
     nextjs: {
-      icon: SiNextDotJs,
+      icon: SiNextdotjs,
       name: 'Next.js',
     },
     tailwindcss: {
       icon: SiTailwindcss,
       name: 'Tailwind CSS',
-    },
-    scss: {
-      icon: SiSass,
-      name: 'SCSS',
     },
     javascript: {
       icon: SiJavascript,
@@ -86,7 +90,7 @@ const techList = {
       name: 'TypeScript',
     },
     nodejs: {
-      icon: SiNodeDotJs,
+      icon: SiNodedotjs,
       name: 'Node.js',
     },
     firebase: {
@@ -97,32 +101,32 @@ const techList = {
       icon: SiMongodb,
       name: 'MongoDB',
     },
-    swr: {
-      icon: IoLogoVercel,
-      name: 'SWR',
-    },
     redux: {
       icon: SiRedux,
       name: 'Redux',
-    },
-    mdx: {
-      icon: SiMarkdown,
-      name: 'MDX',
-    },
-    prettier: {
-      icon: SiPrettier,
-      name: 'Prettier',
     },
     analytics: {
       icon: SiGoogleanalytics,
       name: 'Google Analytics',
     },
-    git: {
-      icon: SiGit,
-      name: 'Git',
+    figma: {
+      icon: SiFigma,
+      name: 'Figma'
     },
-    notion: {
-      icon: SiNotion,
-      name: 'Notion API',
+    express: {
+      icon: SiExpress,
+      name: 'Express'
     },
+    gatsby: {
+      icon: SiGatsby,
+      name: 'Gatsby'
+    },
+    graphql: {
+      icon: SiGraphql,
+      name: 'Gatsby'
+    },
+    aws: {
+      icon: SiAmazonaws,
+      name: 'AWS'
+    }
   };

@@ -18,9 +18,7 @@ const Wrapper = styled.div`
 
   .about_skills {
     margin-top: 4.8rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6.4rem;
+    width: 100%;
   }
 
   @media (max-width: 800px) {
@@ -83,9 +81,9 @@ const sobreMim: React.FC = () => {
             </p>
           </div>
         </Intro>
+        <h2>Minha stack</h2>
         <div className="about_skills">
-          <Skill title="Front-end" skills={['React', 'NextJS']} active={true} />
-          <Skill title="Back-end" skills={['NodeJS', 'NextJS', 'Prismic/Shopify']} active={false} />
+          <Skill />
         </div>
       </Wrapper>
   )
