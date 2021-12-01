@@ -102,6 +102,11 @@ const HeroInfo = styled.div`
       display: inline-flex;
       color: ${props => props.theme.colors.blue};
       text-decoration: none;
+      transition: .2s ease-in-out;
+
+      :hover {
+        color: ${props => props.theme.colors.text};
+      }
     }
   }
 
