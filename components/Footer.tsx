@@ -3,6 +3,7 @@ import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 import styled from 'styled-components'
 import Logo from './Logo';
+import Link from 'next/link';
 
 const Wrapper = styled.footer`
   display: flex;
@@ -100,11 +101,11 @@ const Footer: React.FC = () => {
       <div>
         <h3 className="redes__title">Minhas redes!</h3>
         <ul className="footer__icons">
-          <li><FaInstagram className="icon" /></li>
-          <li><FaTwitter className="icon" /></li>
-          <li><HiOutlineMail className="icon" /></li>
-          <li><FaLinkedin className="icon" /></li>
-          <li><FaGithub className="icon" /></li>
+          <li><Link passHref href="https://www.instagram.com/andersonszdc/"><FaInstagram className="icon" /></Link></li>
+          <li><Link passHref href="https://twitter.com/Andersonszdc"><FaTwitter className="icon" /></Link></li>
+          <li><Link passHref href="mailto: contato@andersonszdc.com"><HiOutlineMail className="icon" /></Link></li>
+          <li><Link passHref href="https://www.linkedin.com/in/andersonszdc/"><FaLinkedin className="icon" /></Link></li>
+          <li><Link passHref href="https://github.com/andersonszdc"><FaGithub className="icon" /></Link></li>
         </ul>
       </div>
       <div className='credit'>
