@@ -9,7 +9,7 @@ const Home: NextPage = ({ featuredProjects }: any) => {
   return (
     <>
       <Head>
-        <title>Andersonszdc</title>
+        <title>Home - Andersonszdc</title>
       </Head>
       <Hero />
       <Projects projects={featuredProjects} />

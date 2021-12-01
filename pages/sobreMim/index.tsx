@@ -3,6 +3,7 @@ import aboutImg from '../../assets/aboutme.png'
 import Image from 'next/image'
 import styled from 'styled-components'
 import Skill from '../../components/Skill'
+import Head from 'next/head'
 
 const Wrapper = styled.div`
   display: flex;
@@ -58,6 +59,10 @@ const Intro = styled.div`
 
 const sobreMim: React.FC = () => {
   return (
+    <>
+      <Head>
+        <title>Sobre Mim - Andersonszdc</title>
+      </Head>
       <Wrapper>
         <h2>Sobre mim</h2>
         <Intro>
@@ -86,6 +91,7 @@ const sobreMim: React.FC = () => {
           <Skill />
         </div>
       </Wrapper>
+    </>
   )
 }
 

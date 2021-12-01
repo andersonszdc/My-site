@@ -3,6 +3,7 @@ import { BsTelephone } from 'react-icons/bs'
 import { HiOutlineLocationMarker, HiOutlineMail } from 'react-icons/hi'
 import styled from 'styled-components'
 import Forms from '../../components/Forms'
+import Head from 'next/head'
 
 const Wrapper = styled.div`
   display: flex;
@@ -73,26 +74,31 @@ const Infos = styled.ul`
 const Contatos: React.FC = () => {
 
   return (
-    <Wrapper>
-      <Infos>
-        <li className="infos_item">
-          <HiOutlineMail className="icon" />
-          <h2>E-mail</h2>
-          <h3>andersonszdc@gmail.com</h3>
-        </li>
-        <li className="infos_item">
-          <BsTelephone className="icon" />
-          <h2>Celular</h2>
-          <h3>+55 (21) 97351-2104</h3>
-        </li>
-        <li className="infos_item">
-          <HiOutlineLocationMarker className="icon" />
-          <h2>Cidade</h2>
-          <h3>Rio de Janeiro - RJ</h3>
-        </li>
-      </Infos>
-      <Forms />
-    </Wrapper>
+    <>
+      <Head>
+        <title>Contatos - Andersonszdc</title>
+      </Head>
+      <Wrapper>
+        <Infos>
+          <li className="infos_item">
+            <HiOutlineMail className="icon" />
+            <h2>E-mail</h2>
+            <h3>andersonszdc@gmail.com</h3>
+          </li>
+          <li className="infos_item">
+            <BsTelephone className="icon" />
+            <h2>Celular</h2>
+            <h3>+55 (21) 97351-2104</h3>
+          </li>
+          <li className="infos_item">
+            <HiOutlineLocationMarker className="icon" />
+            <h2>Cidade</h2>
+            <h3>Rio de Janeiro - RJ</h3>
+          </li>
+        </Infos>
+        <Forms />
+      </Wrapper>
+    </>
   )
 }
 
