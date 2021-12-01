@@ -12,14 +12,32 @@ const slide = keyframes`
 `
 
 const Container = styled.div`
-white-space: nowrap;
-overflow: hidden;
+    white-space: nowrap;
+    overflow: hidden;
     .slide-wrapper {
         display: inline-block;
         white-space: nowrap;
         overflow: hidden;
         animation: ${slide} 80s linear infinite;
-    }   
+    }
+
+    @media (max-width: 900px) {
+        .slide-wrapper {
+            animation: ${slide} 60s linear infinite;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .slide-wrapper {
+            animation: ${slide} 40s linear infinite;
+        }
+    }
+    
+    @media (max-width: 400px) {
+        .slide-wrapper {
+            animation: ${slide} 20s linear infinite;
+        }
+    }
 `
 
 const Skill: React.FC = () => {
