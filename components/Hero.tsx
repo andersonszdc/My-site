@@ -6,6 +6,7 @@ import { GrInstagram } from 'react-icons/gr'
 import anderson from '../assets/hero-anderson.png'
 import Image from 'next/image'
 import InView from '../lib/inView'
+import { FaAngleDown } from 'react-icons/fa'
 
 type WrapperProps = {
   inView: boolean
@@ -13,14 +14,18 @@ type WrapperProps = {
 
 const Wrapper = styled.div<WrapperProps>`
   display: grid;
+  position: relative;
   grid-template-columns: auto 1fr;
   padding: 0 4% 80px 4%;
   align-items: center;
+  min-height: calc(100vh - 80px);
+
   [data-fade] {
     transition: 400ms ease-out;
     transform: translateY(6rem);
     opacity: 0;
   }
+
   ${props => props.inView && `
     [data-fade] {
       transform: translateY(0);
@@ -43,9 +48,17 @@ const Wrapper = styled.div<WrapperProps>`
       transition-delay: 400ms;
     }
   `}
-  
-  @media (orientation: landscape) {
-    min-height: calc(100vh - 80px);
+
+  .icon__down {
+    display: flex;
+    justify-content: center;
+    font-size: 4rem;
+    position: absolute;
+    bottom: 6.4rem;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: ${props => props.theme.colors.blue};
   }
 
   @media (max-width: 1000px) {
@@ -53,7 +66,7 @@ const Wrapper = styled.div<WrapperProps>`
     align-items: normal;
     flex-direction: column;
     gap: 3.2rem;
-    margin-top: 3.2rem;
+    padding-top: 15vh;
     padding-bottom: 0;
   }
 `
@@ -131,6 +144,12 @@ const HeroImage = styled.div`
     width: 350px;
   }
 
+  @media (max-width: 1000px) {
+    div {
+      width: 275px;
+    }
+  }
+
   @media (max-width: 500px) {
     div {
       width: 200px;
@@ -164,6 +183,9 @@ const Hero: React.FC = () => {
                 <Image alt="img" src={anderson}  />
               </div>
             </HeroImage>
+            <div className="icon__down">
+              <FaAngleDown className="bounce-animation" />
+            </div>
           </Wrapper>
         )}
       </InView>

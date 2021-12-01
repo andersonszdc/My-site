@@ -1,9 +1,22 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle, keyframes } from "styled-components"
 import pattern from './themes/pattern'
 
 interface GlobalProps {
     theme: typeof pattern
 }
+
+const bounce = keyframes`
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(2.4rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+`
+
 const Global = createGlobalStyle<GlobalProps>`
     * {
         padding: 0;
@@ -46,6 +59,10 @@ const Global = createGlobalStyle<GlobalProps>`
         background-position: 0% 100%;
         background-image: linear-gradient(to right, #16D3E4, #16D3E4);
         background-repeat: no-repeat;
+    }
+
+    .bounce-animation {
+        animation: 1s ${bounce} infinite ease-in-out;
     }
 
 `
