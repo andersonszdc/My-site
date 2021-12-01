@@ -8,17 +8,20 @@ interface WrapperProps {
 const Wrapper = styled.div<WrapperProps>`
     display: flex;
     flex-direction: column;
-    padding: 4.5rem;
     width: 100%;
-    max-width: 55rem;
-    background-color: #2B2323;
-    border-radius: 2rem;
-    box-shadow: 6px 6px 12px 0px rgba(0, 0, 0, 1), -6px -6px 12px 0px rgba(255, 255, 255, 0.3);
+    padding: 0 10%;
 
     h2 {
-      font-size: 3.2rem;
-      margin-bottom: 3rem;
-      text-align: center;
+      font-size: 2.4rem;
+    }
+
+    p {
+      font-size: 1.6rem;
+      margin: 1.8rem 0;
+      font-weight: 400;
+    }
+
+    .contrast {
       color: ${props => props.theme.colors.blue};
     }
 
@@ -30,15 +33,15 @@ const Wrapper = styled.div<WrapperProps>`
 
     .inputs {
       border-radius: .8rem;
-      border: none;
+      border: 1px solid ${props => props.theme.colors.text};
       padding: 1.4rem;
       font-family: 'Montserrat';
       font-size: 1.4rem;
-      box-shadow: 6px 6px 12px 0px rgba(43, 35, 35, 0.7) inset;
+      background-color: transparent;
     }
     
     .send {
-      width: 50%;
+      width: 100%;
       border: none;
       padding: 1.2rem;
       border-radius: .8rem;
@@ -47,7 +50,6 @@ const Wrapper = styled.div<WrapperProps>`
       font-weight: 600;
       background-color: ${props => props.theme.colors.blue};
       cursor: pointer;
-      box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, 1), -3px -3px 6px 0px rgba(255, 255, 255, 0.3);
       ${({loading}) => loading ? 'opacity: 0.5' : 'opacity: 1'};
     }
     
@@ -65,7 +67,11 @@ const Wrapper = styled.div<WrapperProps>`
 
     @media (max-width: 400px) {
       h2 {
-        font-size: 2.4rem;
+        font-size: 2.0rem;
+      }
+
+      p {
+        font-size: 1.4rem;
       }
     }
 `
@@ -114,6 +120,7 @@ const Forms: React.FC = () => {
     return (
         <Wrapper loading={loading} >
             <h2>Fale comigo!</h2>
+            <p>Se preferir, envie uma mensagem direta para <span className="contrast">contato@andersonszdc.com</span></p>
             <form onSubmit={handleSubmit}>
               <input
               className='inputs'
