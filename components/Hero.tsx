@@ -169,7 +169,7 @@ const Hero: React.FC = () => {
           <Wrapper id="hero" inView={inView}>
             <HeroInfo>
               <h2 className='name' data-fade="1">Anderson Souza</h2>
-              <h1 className='function' data-fade="2">Desenvolvedor Front-end e<br/>User Interface Designer</h1>
+              <h1 className='function' data-fade="2">Desenvolvedor Full Stack e<br/>User Interface Designer</h1>
               <p className='description' data-fade="3">Um estudante que relata sua trajetória e<br/>descobertas por este mundo.</p>
               <div className='hero_icons' data-fade="4">
                 <a title='Ir para o Instagram (link externo)' target='_blank' rel='noreferrer' href="https://www.instagram.com/andersonszdc/">

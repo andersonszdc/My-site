@@ -149,7 +149,7 @@ const Header = ({ toggleTheme }: HeaderProps) => {
                         </div>
                         <div>
                             <h1 className="title">Anderson Souza</h1>
-                            <h2 className="subtitle">Front-End & UI Designer</h2>
+                            <h2 className="subtitle">Full Stack & UI Designer</h2>
                         </div>
                     </Me>
                 </Link>
