@@ -83,7 +83,7 @@ const Contatos: React.FC = () => {
           <li className="infos_item">
             <HiOutlineMail className="icon" />
             <h2>E-mail</h2>
-            <h3>andersonszdc@gmail.com</h3>
+            <h3>contato@andersonszdc.com</h3>
           </li>
           <li className="infos_item">
             <BsTelephone className="icon" />

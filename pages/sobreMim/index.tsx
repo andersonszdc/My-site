@@ -18,7 +18,6 @@ const Wrapper = styled.div`
   }
 
   .about_skills {
-    margin-top: 4.8rem;
     width: 100%;
   }
 
@@ -44,7 +43,7 @@ const Intro = styled.div`
 
   .about_card {
     display: flex;
-    box-shadow: rgb(0 0 0) 4px 4px 8px 0px, rgb(255 255 255 / 30%) -4px -4px 8px 0px;
+    border: 1px solid ${props => props.theme.colors.blue};
     border-radius: 16px;
   }
 

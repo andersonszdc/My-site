@@ -25,12 +25,10 @@ type iconLiProps = {
 }
 
 const TechsUl = styled.ul`
-    display: inline-block;
-    overflow: hidden;
+    display: flex;
 `
 
 const IconLi = styled.li<iconLiProps>`
-    display: inline-block;
     font-size: ${props => props.size};
     padding: ${props => props.padding};
 `
@@ -44,20 +42,18 @@ export type TechIconsProps = {
     techs: Array<TechListType>;
 } & React.ComponentPropsWithoutRef<'ul'>;
 
-export default function TechIcons({className, techs, size, padding}: TechIconsProps) {
+export default function TechIcons({techs, size, padding}: TechIconsProps) {
     return (
         <TechsUl>
-            {techs.map((tech) => {
+            {techs.map((tech, index) => {
                 if(!techList[tech]) return;
 
                 const current = techList[tech];
 
                 return (
-                    <Tooltip key={current.name} content={<p>{current.name}</p>}>
-                        <IconLi padding={padding?? '.5rem'} size={size ?? '2.4rem'}>
+                        <IconLi key={index} padding={padding?? '.5rem'} size={size ?? '2.4rem'}>
                             <current.icon />
                         </IconLi>
-                    </Tooltip>
                 )
             })}
         </TechsUl>
