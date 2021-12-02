@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import throttle from 'lodash/throttle';
+import Throttle from "../utils/throttle";
 
 export default function useScrollSpy() {
     const [activeSection, setActiveSection] = useState<string | null>(null)
     const throttleMs = 100
     
-    const actionSectionScrollSpy = throttle(() => {
+    const actionSectionScrollSpy = Throttle(() => {
         const sections = document.getElementsByClassName('hash-anchor')
 
         let prevBBox = null
@@ -36,8 +36,6 @@ export default function useScrollSpy() {
 
     useEffect(() => {
         window.addEventListener('scroll', actionSectionScrollSpy)
-
-        actionSectionScrollSpy()
 
         return () => {
             window.removeEventListener('scroll', actionSectionScrollSpy)

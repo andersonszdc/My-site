@@ -77,21 +77,16 @@ const ProjectPage: React.FC = ({code, frontmatter}: any) => {
     const Component = useMemo(() => getMDXComponent(code), [code])
     const activeSection = useScrollSpy();
     const [toc, setToc] = React.useState<HeadingScrollSpy>();
-    const minLevel =
-    toc?.reduce((min, item) => (item.level < min ? item.level : min), 10) ?? 0;
 
     useEffect(() => {
         const headings = document.querySelectorAll('.mdx h1, .mdx h2, .mdx h3')
-
         const headingArr: HeadingScrollSpy = []
         headings.forEach((heading) => {
             const id = heading.id
-            const level = +heading.tagName.replace('H', '')
             const text = heading.textContent + ''
-
-            headingArr.push({ id, level, text })
+            headingArr.push({ id, text })
         })
-
+        console.log(headingArr)
         setToc(headingArr)
     }, [])
 
@@ -148,7 +143,6 @@ const ProjectPage: React.FC = ({code, frontmatter}: any) => {
                     <div className="wrapper__table">
                         <TableOfContents
                             toc={toc}
-                            minLevel={minLevel}
                             activeSection={activeSection}
                             />
                     </div>

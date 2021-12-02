@@ -17,60 +17,27 @@ const TableDiv = styled.div`
 
 export type HeadingScrollSpy = Array<{
     id: string;
-    level: number;
     text: string;
   }>;  
 
 type TableOfContentsProps = {
     toc?: HeadingScrollSpy;
     activeSection: string | null;
-    minLevel: number;
   };
 
-const TableOfContent = ({toc, activeSection, minLevel}: TableOfContentsProps) => {
-
-    const lastPosition = useRef<number>(0)
-
-    useEffect(() => {
-        const container = document.getElementById('toc-container')
-        const activeLink = document.getElementById(`link-${activeSection}`)
-
-        if (container && activeLink) {
-            const cTop = container.scrollTop
-            const cBottom = cTop + container.clientHeight
-
-            const lTop = activeLink.offsetTop - container.offsetTop;
-            const lBottom = lTop + activeLink.clientHeight;
-
-            const isTotal = lTop >= cTop && lBottom <= cBottom;
-
-            const isScrollingUp = lastPosition.current > window.scrollY;
-            lastPosition.current = window.scrollY;
-
-            if (!isTotal) {
-                const offset = 25;
-                const top = isScrollingUp
-                ? lTop - container.clientHeight + offset
-                : lTop - offset;
-
-                container.scrollTo({ top, behavior: 'smooth' });
-            }
-        }
-    }, [activeSection])
+const TableOfContent = ({toc, activeSection}: TableOfContentsProps) => {
 
     return (
-        <TableDiv>
+        <TableDiv id="toc-container">
             <h3 className="title">Table of contents</h3>
             <TocsDiv>
                 {toc
-                ? toc.map(({ id, level, text}) => (
+                ? toc.map(({ id, text}) => (
                     <TOCLink
                         id={id}
                         key={id}
-                        activeSection={activeSection}
-                        level={level}
-                        minLevel={minLevel}
                         text={text}
+                        activeSection={activeSection}
                     />
                 ))
                 : null}

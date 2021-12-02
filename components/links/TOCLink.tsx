@@ -2,8 +2,6 @@ import UnstyledLink from "./UnstyledLink";
 
 type TOCLinkProps = {
     id: string;
-    level: number;
-    minLevel: number;
     text: string;
     activeSection: string | null;
     isTableTitle?: boolean;
@@ -11,8 +9,6 @@ type TOCLinkProps = {
 
 export default function TOCLink({
     id,
-    level,
-    minLevel,
     text,
     activeSection,
     isTableTitle = true
@@ -21,7 +17,6 @@ export default function TOCLink({
         <UnstyledLink
             href={`#${id}`}
             id={`link-${id}`}
-            style={{ marginLeft: (level - minLevel) * 16 }}
             active={activeSection === id ? true : false}
             isTableTitle={isTableTitle}
         >
