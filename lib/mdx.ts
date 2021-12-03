@@ -23,7 +23,7 @@ export async function getFileBySlug(type: ContentType, slug: string) {
         'utf8'
     )
 
-    const {code, frontmatter} = await bundleMDX({
+    const {code, frontmatter}: any = await bundleMDX({
         source,
         xdmOptions(options) {
             options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm];
@@ -84,8 +84,4 @@ export function getFeatured<T extends Frontmatter>(
   return features.map(
     (feat) => contents.find((content) => content.slug === feat) as T
   );
-}
-
-export function getTeste() {
-  return 'oi'
 }

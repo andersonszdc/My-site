@@ -35,6 +35,7 @@ export type ProjectFrontmatter = {
     link?: string;
     github?: string;
     youtube?: string;
+    cover: string;
 };
 
 export type PickFrontmatter<T extends ContentType> = T extends 'blog'

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { FaAngleRight } from 'react-icons/fa'
 import Link from 'next/link'
 import TechIcons, { TechListType } from './TechIcons'
-import { FirebaseImg } from './images/firebaseImg'
+import Image from 'next/image'
 
 const Wrapper = styled.div`
     display: flex;
@@ -56,7 +56,7 @@ const Card = ({data}: any) => {
                     <p className="card__title">{data.title}</p>
                     <p className="card__description">{data.description}</p>
                     <TechIcons techs={data.techs.split(',') as Array<TechListType>} />
-                    <FirebaseImg fileName={data.cover} classname="card__image" width={1300} height={650} layout='responsive' />
+                    <Image alt="" src={data.cover} className="card__image" width={1300} height={650} layout='responsive' />
                     <p className="card__ver animated-underline">Ver mais<FaAngleRight/></p>
             </Wrapper>
         </Link>
