@@ -9,7 +9,11 @@ import styled from 'styled-components';
 import CustomLink from '../../components/links/CustomLink';
 import { SiGithub } from 'react-icons/si';
 import { HiLink } from 'react-icons/hi';
-import { FirebaseImg } from '../../components/images/firebaseImg';
+import { ProjectFrontmatter } from '../../types/frontmatters';
+import { storage } from '../../firebase/config';
+import { ref } from '@firebase/storage';
+import { getDownloadURL } from 'firebase/storage';
+import Image from 'next/image';
 
 const StyledSection = styled.section`
     display: grid;
@@ -73,8 +77,14 @@ const Divider = styled.hr`
     margin-top: 2.4rem;
 `
 
-const ProjectPage: React.FC = ({code, frontmatter}: any) => {
-    const Component = useMemo(() => getMDXComponent(code), [code])
+type ProjectPageProps = {
+    code: string
+    frontmatter: ProjectFrontmatter
+    cover: string
+}
+
+const ProjectPage = (props: ProjectPageProps) => {
+    const Component = useMemo(() => getMDXComponent(props.code), [props.code])
     const activeSection = useScrollSpy();
     const [toc, setToc] = React.useState<HeadingScrollSpy>();
 
@@ -86,37 +96,36 @@ const ProjectPage: React.FC = ({code, frontmatter}: any) => {
             const text = heading.textContent + ''
             headingArr.push({ id, text })
         })
-        console.log(headingArr)
         setToc(headingArr)
     }, [])
 
     return (
         <ProjectAll>
             <Frontmatter>
-                <FirebaseImg classname="cover__img" fileName={frontmatter.cover} layout="responsive" width={1300} height={650} />
-                <h1 className='front__title'>{frontmatter.title}</h1>
+                <Image alt="" src={props.cover} className="cover__img" layout="responsive" width={1300} height={650} />
+                <h1 className='front__title'>{props.frontmatter.title}</h1>
                 <p className='front__description'>
-                    {frontmatter.description}
+                    {props.frontmatter.description}
                 </p>
                 <div className='front__itens'>
-                    {frontmatter.github && (
+                    {props.frontmatter.github && (
                         <FrontItem>
                             <SiGithub className='front__icon' />
                             <CustomLink
                                 onClick={() =>
                                     console.log('clicou')
                                 }
-                                href={frontmatter.github}
+                                href={props.frontmatter.github}
                                 >
                                 Repositório
                             </CustomLink>
                         </FrontItem>
                     )}
-                    {frontmatter.link && (
+                    {props.frontmatter.link && (
                         <FrontItem>
                             <HiLink className='front__icon' />
                             <CustomLink
-                                href={frontmatter.link}
+                                href={props.frontmatter.link}
                                 onClick={() =>
                                     console.log('clicou')
                                 }
@@ -169,8 +178,11 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     const post = await getFileBySlug('projects', params?.slug as string)
+    const fileName = post.frontmatter.cover
+    const imageRef = ref(storage, fileName)
+    const cover = await getDownloadURL(imageRef)
 
     return {
-        props: {...post},
+        props: {cover, ...post},
     }
 }
