@@ -5,7 +5,7 @@ const Wrapper = styled.div`
   font-size: 3.2rem;
   margin: 3.2rem;
   text-align: center;
-  color: ${props => props.theme.colors.blue};
+  color: ${props => props.theme.colors.text};
 `
 
 const Index: React.FC = () => {
