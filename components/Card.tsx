@@ -56,7 +56,7 @@ const Card = ({data}: any) => {
                     <p className="card__title">{data.title}</p>
                     <p className="card__description">{data.description}</p>
                     <TechIcons techs={data.techs.split(',') as Array<TechListType>} />
-                    <Image alt="" src={data.cover} className="card__image" width={1300} height={650} layout='responsive' />
+                    <Image priority alt="cover-project" src={data.cover} className="card__image" width={1300} height={650} layout='responsive' />
                     <p className="card__ver animated-underline">Ver mais<FaAngleRight/></p>
             </Wrapper>
         </Link>

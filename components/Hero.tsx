@@ -185,7 +185,7 @@ const Hero: React.FC = () => {
             </HeroInfo>
             <HeroImage>
               <div data-fade="3">
-                <Image alt="img" src={anderson}  />
+                <Image priority alt="img" src={anderson}  />
               </div>
             </HeroImage>
             <div className="icon__down">
