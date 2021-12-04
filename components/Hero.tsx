@@ -1,12 +1,13 @@
 import React from 'react'
-import styled, { css, keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { VscGithub } from 'react-icons/vsc'
 import { FaLinkedin } from 'react-icons/fa'
 import { GrInstagram } from 'react-icons/gr'
-import anderson from '../assets/hero-anderson.png'
-import Image from 'next/image'
 import InView from '../lib/inView'
 import { FaAngleDown } from 'react-icons/fa'
+import HomeImage from '../assets/HeroImage'
+import Image from 'next/image'
+import anderson from '../assets/hero-anderson.png'
 
 type WrapperProps = {
   inView: boolean
@@ -185,7 +186,7 @@ const Hero: React.FC = () => {
             </HeroInfo>
             <HeroImage>
               <div data-fade="3">
-                <Image priority alt="img" src={anderson}  />
+                <HomeImage />
               </div>
             </HeroImage>
             <div className="icon__down">
