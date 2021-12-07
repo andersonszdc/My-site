@@ -93,10 +93,18 @@ const Footer: React.FC = () => {
   return (
     <Wrapper>
       <ul className="footer__abas">
-        <li className="abas__item">Contatos</li>
-        <li className="abas__item">Projetos</li>
-        <li className="abas__item">Blog</li>
-        <li className="abas__item">Sobre mim</li>
+        <Link passHref href="/contatos">
+          <li className="abas__item">Contatos</li>
+        </Link>
+        <Link passHref href="/projects">
+          <li className="abas__item">Projetos</li>
+        </Link>
+        <Link passHref href="/blog">
+          <li className="abas__item">Blog</li>
+        </Link>
+        <Link passHref href="/sobreMim">
+          <li className="abas__item">Sobre mim</li>
+        </Link>
       </ul>
       <div>
         <h3 className="redes__title">Minhas redes!</h3>
