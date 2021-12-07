@@ -11,14 +11,15 @@ const Wrapper = styled.div`
         font-weight: 600;
     }
     .call-two {
-        color: ${props => props.theme.colors.blue};
         display: inline-flex;
         flex-direction: column;
         justify-content: center;
         gap: .6rem;
         cursor: pointer;
-        :hover span {
-            width: 100%;
+        :hover {
+            .span-underline {
+                background-size: 100% 100%;
+            }
         }
     }
     .call-action {
@@ -30,15 +31,21 @@ const Wrapper = styled.div`
 
         font-size: 3.6rem;
         font-weight: 700;
+        .icon {
+            color: ${props => props.theme.colors.blue};
+        }
 
     }
-    span {
-        background-color: ${props => props.theme.colors.blue};
+    .span-underline {
         display: block;
-        width: 0%;
+        width: 100%;
         height: .5rem;
-        transition: .4s ease-in-out;
         border-radius: .6rem;
+        transition: 0.3s ease-in-out;
+        background-size: 0 100%;
+        background-position: 0% 100%;
+        background-image: linear-gradient(90deg,#00FFE0, #16D3E4);
+        background-repeat: no-repeat;
     }
 
     @media (max-width: 600px) {
@@ -66,9 +73,9 @@ const CallMe: React.FC = () => {
       <Wrapper>
           <h2 className='call-one'>Curtiu o meu trabalho?</h2>
           <Link href='/contatos' passHref>
-            <div className='call-two'>
-                <h2 className="call-action">Vamos trabalhar juntos<BsArrowRight/></h2>
-                <span/>
+            <div className='call-two bleen'>
+                <h2 className="call-action">Vamos trabalhar juntos<BsArrowRight className="icon"/></h2>
+                <span className="span-underline" />
             </div>
           </Link>
       </Wrapper>
