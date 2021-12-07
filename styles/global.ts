@@ -57,7 +57,7 @@ const Global = createGlobalStyle<GlobalProps>`
         width: max-content;
         background-size: 0 2px;
         background-position: 0% 100%;
-        background-image: linear-gradient(to right, #16D3E4, #16D3E4);
+        background-image: linear-gradient(90deg,#00FFE0, #16D3E4);
         background-repeat: no-repeat;
     }
 
@@ -65,6 +65,13 @@ const Global = createGlobalStyle<GlobalProps>`
         animation: 1s ${bounce} infinite ease-in-out;
     }
 
+    .bleen {
+        background-image: linear-gradient(90deg,#00FFE0, #16D3E4);
+        color: white;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 `
 
 export default Global
