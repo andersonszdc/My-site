@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react'
 import styled from 'styled-components'
 import InView from '../lib/inView'
 import Card from './Card'
+import Link from 'next/link'
+import { getStaticProps } from '../pages'
 
 type WrapperProps = {
     inView: boolean
@@ -13,6 +15,7 @@ const Wrapper = styled.div<WrapperProps>`
     .projects_title {
         font-size: 2.4rem;
         margin-bottom: 4rem;
+        color: ${props => props.theme.colors.blue};
     }
 
     .projects__cards {
@@ -69,6 +72,25 @@ const Wrapper = styled.div<WrapperProps>`
     }
 `
 
+const SeeMore = styled.button`
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 1.6rem;
+    margin-top: 3.2rem;
+    font-weight: 600;
+    font-family: 'Montserrat';
+    cursor: pointer;
+    transition: all .1s ease-out;
+    :hover {
+        border-color: ${props => props.theme.colors.blue};
+        color: ${props => props.theme.colors.blue};
+        transform: scale(1.03);
+    }
+`
+
 const Projects = ({projects}: any) => {
 
     return (
@@ -81,6 +103,11 @@ const Projects = ({projects}: any) => {
                             <Card data={project} key={index} />
                             ))}
                     </div>
+                    <Link passHref href='/projects'>
+                        <div data-fade="3">
+                            <SeeMore>Ver mais projetos</SeeMore>
+                        </div>
+                    </Link>
                 </Wrapper>
             )}
         </InView>
