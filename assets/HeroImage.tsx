@@ -15,9 +15,9 @@ const HeroImage: React.FC<HeroImageProps> = ({url}) => {
         </g>
         <defs>
             <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-            <use xlinkHref="#image0_337_85" transform="translate(-0.00100722) scale(0.000244632 0.000366166)"/>
+            <use href="#image0_337_85" transform="translate(-0.00100722) scale(0.000244632 0.000366166)"/>
             </pattern>
-            <image id="image0_337_85" width="3790" y="160" height="2500" xlinkHref={url}/>
+            <image id="image0_337_85" width="3790" y="160" height="2500" href={url} />
         </defs>
         </svg>
     );
