@@ -189,7 +189,7 @@ const Hero: React.FC<HeroProps> = () => {
             </HeroInfo>
             <HeroImage>
               <div data-fade="3">
-                <Image width="366" height="409" layout='responsive' alt="" src={HeroImg} />
+                <Image width="366" height="409" layout='responsive' alt="" priority src={HeroImg} />
               </div>
             </HeroImage>
             <div className="icon__down">
