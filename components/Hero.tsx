@@ -6,11 +6,13 @@ import { GrInstagram } from 'react-icons/gr'
 import InView from '../lib/inView'
 import { FaAngleDown } from 'react-icons/fa'
 import HomeImage from '../assets/HeroImage'
-import Image from 'next/image'
-import anderson from '../assets/hero-anderson.png'
 
 type WrapperProps = {
   inView: boolean
+}
+
+type HeroProps = {
+  heroImageUrl: string
 }
 
 const Wrapper = styled.div<WrapperProps>`
@@ -163,7 +165,7 @@ const HeroImage = styled.div`
   }
 `
 
-const Hero: React.FC = () => {
+const Hero: React.FC<HeroProps> = ({heroImageUrl}) => {
     return (
       <InView>
         {(inView) => (
@@ -186,7 +188,7 @@ const Hero: React.FC = () => {
             </HeroInfo>
             <HeroImage>
               <div data-fade="3">
-                <HomeImage />
+                <HomeImage url={heroImageUrl} />
               </div>
             </HeroImage>
             <div className="icon__down">

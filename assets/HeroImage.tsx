@@ -1,6 +1,10 @@
 import React from 'react';
 
-const HeroImage: React.FC = () => {
+type HeroImageProps = {
+    url: string
+}
+
+const HeroImage: React.FC<HeroImageProps> = ({url}) => {
     return (
         <svg width="100%" height="100%" viewBox="0 0 367 409" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
         <mask id="mask0_337_85" style={{maskType: 'alpha'}} maskUnits="userSpaceOnUse" x="0" y="0" width="367" height="409">
@@ -13,7 +17,7 @@ const HeroImage: React.FC = () => {
             <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
             <use xlinkHref="#image0_337_85" transform="translate(-0.00100722) scale(0.000244632 0.000366166)"/>
             </pattern>
-            <image id="image0_337_85" width="3790" y="160" height="2500" xlinkHref="https://firebasestorage.googleapis.com/v0/b/my-site-1aa62.appspot.com/o/hero-anderson.png?alt=media&token=5b8bebae-edf4-41f0-a8ad-7d96b754e1dc"/>
+            <image id="image0_337_85" width="3790" y="160" height="2500" xlinkHref={url}/>
         </defs>
         </svg>
     );

@@ -6,7 +6,6 @@ import { ContentType, Frontmatter, PickFrontmatter } from '../types/frontmatters
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrism from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
-import remarkGfm from 'remark-gfm';
 import matter from 'gray-matter';
 
 export async function getFiles(type: ContentType) {
@@ -26,7 +25,6 @@ export async function getFileBySlug(type: ContentType, slug: string) {
     const {code, frontmatter}: any = await bundleMDX({
         source,
         xdmOptions(options) {
-            options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm];
             options.rehypePlugins = [
               ...(options?.rehypePlugins ?? []),
               rehypeSlug,

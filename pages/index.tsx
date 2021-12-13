@@ -7,13 +7,13 @@ import { getAllFilesFrontmatter, getFeatured } from '../lib/mdx'
 import { getDownloadURL, ref } from '@firebase/storage'
 import { storage } from '../firebase/config'
 
-const Home: NextPage = ({ featuredProjects, projectsWithUrl }: any) => {
+const Home: NextPage = ({ projectsWithUrl, heroImageUrl }: any) => {
   return (
     <>
       <Head>
         <title>Home - Andersonszdc</title>
       </Head>
-      <Hero />
+      <Hero heroImageUrl={heroImageUrl} />
       <Projects projects={projectsWithUrl} />
       <CallMe />
     </>
@@ -45,7 +45,9 @@ export const getStaticProps: GetStaticProps = async () => {
     await searchUrl(project)
   }
 
+  const heroImageUrl = "https://firebasestorage.googleapis.com/v0/b/my-site-1aa62.appspot.com/o/hero-anderson.png?alt=media&token=5b8bebae-edf4-41f0-a8ad-7d96b754e1dc"
+
   return {
-    props: { featuredProjects, projectsWithUrl }
+    props: { projectsWithUrl, heroImageUrl }
   }
 }
