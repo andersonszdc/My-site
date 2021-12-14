@@ -7,6 +7,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrism from 'rehype-prism-plus';
 import rehypeSlug from 'rehype-slug';
 import matter from 'gray-matter';
+import { BlogFrontmatter } from '../types/frontmatters';
 
 export async function getFiles(type: ContentType) {
     return readdirSync(join(process.cwd(), 'contents', type))
@@ -82,4 +83,9 @@ export function getFeatured<T extends Frontmatter>(
   return features.map(
     (feat) => contents.find((content) => content.slug === feat) as T
   );
+}
+
+export function getTags<T extends Array<BlogFrontmatter>>(contents: T) {
+
+  return 'tags';
 }
