@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-document-import-in-page */
 /* eslint-disable react/display-name */
 import Document, { DocumentContext, DocumentInitialProps, Html,
   Head,
@@ -42,8 +43,9 @@ export default class MyDocument extends Document {
       <Html lang="pt-BR">
         <Head>
           <meta charSet="utf-8" />
-          <meta name="keyword" content="Desenvolvedor Front-end, Programador, Javascript, JS, CSS, UI Designer, UX Designer, UI/UX"/>
-          <meta name="description" content="Desenvolvedor Front-end e UI/UX Designer, conheça o meu trabalho" />
+          <meta name="keyword" content="Desenvolvedor Web, Front End, Full Stack, Programador, Javascript, JS, CSS, UI Designer, UX Designer, UI/UX."/>
+          <meta name="description" content="Desenvolvedor Full Stack e UI/UX Designer, compartilho meus projetos e faço posts sobre partes interessantes da tecnologia." />
+          <meta name="image" content="https://firebasestorage.googleapis.com/v0/b/my-site-1aa62.appspot.com/o/metatag.png?alt=media&token=6a4efdd5-ba48-48c0-aeee-dacc7e263f30" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
