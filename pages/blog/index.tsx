@@ -17,10 +17,3 @@ const Index: React.FC = () => {
 }
 
 export default Index;
-
-export const getStaticProps: GetStaticProps = async () => {
-  const files = await getAllFilesFrontmatter('blog')
-  // const tags = getTags(files)
-
-  return { props: files}
-}
