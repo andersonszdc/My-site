@@ -38,6 +38,7 @@ export default async function handler(
       email: "contato@andersonszdc.com",
       name: "SITE_FORMS",
     },
+    subject: "Mensagem do seu formulário!",
     html: `<h1>${name}</h1><h1>${to}</h1><p>${message}</p>`,
   };
 
@@ -48,10 +49,12 @@ export default async function handler(
         .send(msgToCustomer)
         .then(() => res.status(200).json({ sucess: "Mensagem enviada!" }))
         .catch((error) =>
-          res.status(400).json({ message: "Erro na mensagem de confirmação!", error })
+          res
+            .status(400)
+            .json({ message: "Erro na mensagem de confirmação!", error })
         )
     )
-    .catch((error) =>
-      res.status(400).json({ message: "Erro no aviso!", error })
-    );
+    .catch((error) => {
+      res.status(400).json({ message: "Erro no aviso!", error });
+    });
 }
