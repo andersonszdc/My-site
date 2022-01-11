@@ -6,9 +6,9 @@ import CustomList from './CustomList';
 
 const MDXComponents = {
     a: CustomLink,
-    Image,
-    pre: Pre,
-    code: CustomCode,
+    // Image,
+    // pre: Pre,
+    // code: CustomCode,
     TechIcons,
     ul: CustomList
 }

@@ -25,7 +25,7 @@ const List = styled.ul`
     }
 `
 
-const CustomList: React.FC = ({children}) => {
+const CustomList = ({children}: any) => {
   return (
       <List>
           {children}

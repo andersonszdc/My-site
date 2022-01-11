@@ -8,7 +8,7 @@ export default function CustomLink({
     children,
     className='',
     ...rest
-}: UnstyledLinkProps) {
+}: any) {
     return (
         <UnstyledLink
             {...rest}

@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import { getMDXComponent } from "mdx-bundler/client";
-import React, { useEffect, useMemo } from "react";
+import * as runtime from 'react/jsx-runtime.js'
+import React, { useEffect } from "react";
 import { getFileBySlug, getFiles } from "../../lib/mdx";
 import MDXComponents from "../../components/content/MDXComponent";
 import TableOfContents, {
@@ -16,6 +16,7 @@ import { storage } from "../../firebase/config";
 import { ref } from "@firebase/storage";
 import { getDownloadURL } from "firebase/storage";
 import Image from "next/image";
+import { runSync } from "@mdx-js/mdx";
 
 const StyledSection = styled.section`
   display: grid;
@@ -80,15 +81,16 @@ const Divider = styled.hr`
 `;
 
 type ProjectPageProps = {
-  code: string;
+  mdxSource: string;
   frontmatter: ProjectFrontmatter;
   cover: string;
 };
 
-const ProjectPage = (props: ProjectPageProps) => {
-  const Component = useMemo(() => getMDXComponent(props.code), [props.code]);
+const ProjectPage = ({ mdxSource, frontmatter, cover }: any) => {
   const activeSection = useScrollSpy();
   const [toc, setToc] = React.useState<HeadingScrollSpy>();
+
+  const {default: Content} = runSync(mdxSource, runtime)
 
   useEffect(() => {
     const headings = document.querySelectorAll(".mdx h1, .mdx h2, .mdx h3");
@@ -106,31 +108,31 @@ const ProjectPage = (props: ProjectPageProps) => {
       <Frontmatter>
         <Image
           alt=""
-          src={props.cover}
+          src={cover}
           className="cover__img"
           layout="responsive"
           width={1300}
           height={650}
         />
-        <h1 className="front__title">{props.frontmatter.title}</h1>
-        <p className="front__description">{props.frontmatter.description}</p>
+        <h1 className="front__title">{frontmatter.title}</h1>
+        <p className="front__description">{frontmatter.description}</p>
         <div className="front__itens">
-          {props.frontmatter.github && (
+          {frontmatter.github && (
             <FrontItem>
               <SiGithub className="front__icon" />
               <CustomLink
                 onClick={() => console.log("clicou")}
-                href={props.frontmatter.github}
+                href={frontmatter.github}
               >
                 Repositório
               </CustomLink>
             </FrontItem>
           )}
-          {props.frontmatter.link && (
+          {frontmatter.link && (
             <FrontItem>
               <HiLink className="front__icon" />
               <CustomLink
-                href={props.frontmatter.link}
+                href={frontmatter.link}
                 onClick={() => console.log("clicou")}
               >
                 Projeto no ar
@@ -142,13 +144,7 @@ const ProjectPage = (props: ProjectPageProps) => {
       <Divider />
       <StyledSection>
         <article className="mdx prose projects">
-          <Component
-            components={
-              {
-                ...MDXComponents,
-              } as any
-            }
-          />
+          <Content components={MDXComponents} />
         </article>
         <ProjectAside>
           <div className="wrapper__table">
@@ -176,12 +172,13 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const post = await getFileBySlug("projects", params?.slug as string);
-  const fileName = post.frontmatter.cover;
-  const imageRef = ref(storage, fileName);
-  const cover = await getDownloadURL(imageRef);
+  const slug = params?.slug;
+  const { mdxSource, data } = await getFileBySlug("projects", slug as string);
+  const fileName = data.cover
+  const imageRef = ref(storage, fileName)
+  const cover = await getDownloadURL(imageRef)
 
   return {
-    props: { cover, ...post },
+    props: { mdxSource, frontmatter: data, cover },
   };
 };

@@ -1,6 +1,3 @@
-import nodemailer from "nodemailer";
-import { readFile } from "fs";
-import handlebars from "handlebars";
 import isEmailValid from "../../utils/isEmailValid";
 import sgMail from "@sendgrid/mail";
 import type { NextApiRequest, NextApiResponse } from "next";
