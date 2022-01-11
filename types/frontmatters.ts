@@ -1,10 +1,7 @@
-import { ReadTimeResults } from "reading-time";
-
 export type ContentType = 'blog' | 'library' | 'projects';
 
 export type BlogFrontmatter = {
     wordCount?: number;
-    readingTime?: ReadTimeResults;
     slug?: string;
     title: string;
     description: string;
