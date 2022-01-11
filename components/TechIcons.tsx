@@ -17,7 +17,6 @@ import {
   SiAmazonaws,
 } from 'react-icons/si';
 import styled from 'styled-components';
-import Tooltip from './Tooltip';
 
 type iconLiProps = {
   size: string
