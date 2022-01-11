@@ -1,9 +1,9 @@
-import React from 'react'
-import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { HiOutlineMail } from 'react-icons/hi';
-import styled from 'styled-components'
-import Logo from './Logo';
-import Link from 'next/link';
+import React from "react";
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
+import styled from "styled-components";
+import Logo from "./Logo";
+import Link from "next/link";
 
 const Wrapper = styled.footer`
   display: flex;
@@ -29,10 +29,10 @@ const Wrapper = styled.footer`
     font-size: 1.6rem;
     font-weight: 600;
     cursor: pointer;
-    transition: .2s ease-out;
+    transition: 0.2s ease-out;
 
     :hover {
-      color: ${props => props.theme.colors.blue};
+      color: ${(props) => props.theme.colors.blue};
     }
   }
 
@@ -52,10 +52,10 @@ const Wrapper = styled.footer`
   .icon {
     font-size: 3rem;
     cursor: pointer;
-    transition: .2s ease-out;
+    transition: 0.2s ease-out;
 
     :hover {
-      color: ${props => props.theme.colors.blue};
+      color: ${(props) => props.theme.colors.blue};
     }
   }
 
@@ -64,10 +64,10 @@ const Wrapper = styled.footer`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .6rem;
+    gap: 0.6rem;
     p {
       font-size: 1.4rem;
-      color: ${props => props.theme.colors.blue};
+      color: ${(props) => props.theme.colors.blue};
     }
   }
 
@@ -87,9 +87,9 @@ const Wrapper = styled.footer`
       display: none;
     }
   }
-`
+`;
 
-const Footer: React.FC = () => {
+const Index = () => {
   return (
     <Wrapper>
       <ul className="footer__abas">
@@ -109,23 +109,45 @@ const Footer: React.FC = () => {
       <div>
         <h3 className="redes__title">Minhas redes!</h3>
         <ul className="footer__icons">
-          <li><Link passHref href="https://www.instagram.com/andersonszdc/"><FaInstagram className="icon" /></Link></li>
-          <li><Link passHref href="https://twitter.com/Andersonszdc"><FaTwitter className="icon" /></Link></li>
-          <li><Link passHref href="mailto: contato@andersonszdc.com"><HiOutlineMail className="icon" /></Link></li>
-          <li><Link passHref href="https://www.linkedin.com/in/andersonszdc/"><FaLinkedin className="icon" /></Link></li>
-          <li><Link passHref href="https://github.com/andersonszdc"><FaGithub className="icon" /></Link></li>
+          <li>
+            <Link passHref href="https://www.instagram.com/andersonszdc/">
+              <FaInstagram className="icon" />
+            </Link>
+          </li>
+          <li>
+            <Link passHref href="https://twitter.com/Andersonszdc">
+              <FaTwitter className="icon" />
+            </Link>
+          </li>
+          <li>
+            <Link passHref href="mailto: contato@andersonszdc.com">
+              <HiOutlineMail className="icon" />
+            </Link>
+          </li>
+          <li>
+            <Link passHref href="https://www.linkedin.com/in/andersonszdc/">
+              <FaLinkedin className="icon" />
+            </Link>
+          </li>
+          <li>
+            <Link passHref href="https://github.com/andersonszdc">
+              <FaGithub className="icon" />
+            </Link>
+          </li>
         </ul>
       </div>
-      <div className='credit'>
-        <div className='logo'>
+      <div className="credit">
+        <div className="logo">
           <Logo color="#FAF8F8" />
         </div>
         <p>
-        © 2021 Andersonszdc.<br/>Made for me in RJ, Brasil.
+          © 2021 Andersonszdc.
+          <br />
+          Made for me in RJ, Brasil.
         </p>
       </div>
     </Wrapper>
   );
-}
+};
 
-export default Footer;
+export default Index;

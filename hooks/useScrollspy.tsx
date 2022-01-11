@@ -2,46 +2,46 @@ import { useEffect, useState } from "react";
 import Throttle from "../utils/throttle";
 
 export default function useScrollSpy() {
-    const [activeSection, setActiveSection] = useState<string | null>(null)
-    const throttleMs = 100
-    
-    const actionSectionScrollSpy = Throttle(() => {
-        const sections = document.getElementsByClassName('hash-anchor')
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const throttleMs = 100;
 
-        let prevBBox = null
-        let currentSectionId = activeSection
+  const actionSectionScrollSpy = Throttle(() => {
+    const sections = document.getElementsByClassName("hash-anchor");
 
-        for (let i = 0; i < sections.length; ++i) {
-            const section = sections[i]
+    let prevBBox = null;
+    let currentSectionId = activeSection;
 
-            if (!currentSectionId) {
-                currentSectionId = section.getAttribute('href')?.split('#')[1] ?? null
-            }
-            const bbox = section.getBoundingClientRect()
-            const prevHeight = prevBBox ? bbox.top - prevBBox.bottom : 0
-            const offset = Math.max(200, prevHeight / 4)
+    for (let i = 0; i < sections.length; ++i) {
+      const section = sections[i];
 
-            if (bbox.top - offset < 0) {
-                currentSectionId = section.getAttribute('href')?.split('#')[1] ?? null
+      if (!currentSectionId) {
+        currentSectionId = section.getAttribute("href")?.split("#")[1] ?? null;
+      }
+      const bbox = section.getBoundingClientRect();
+      const prevHeight = prevBBox ? bbox.top - prevBBox.bottom : 0;
+      const offset = Math.max(200, prevHeight / 4);
 
-                prevBBox = bbox
-                continue;
-            }
+      if (bbox.top - offset < 0) {
+        currentSectionId = section.getAttribute("href")?.split("#")[1] ?? null;
 
-            break
-        }
+        prevBBox = bbox;
+        continue;
+      }
 
-        setActiveSection(currentSectionId)
-    }, throttleMs)
+      break;
+    }
 
-    useEffect(() => {
-        window.addEventListener('scroll', actionSectionScrollSpy)
+    setActiveSection(currentSectionId);
+  }, throttleMs);
 
-        return () => {
-            window.removeEventListener('scroll', actionSectionScrollSpy)
-        }
+  useEffect(() => {
+    window.addEventListener("scroll", actionSectionScrollSpy);
+
+    return () => {
+      window.removeEventListener("scroll", actionSectionScrollSpy);
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+  }, []);
 
-    return activeSection
+  return activeSection;
 }

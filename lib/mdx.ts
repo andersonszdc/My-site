@@ -1,10 +1,6 @@
 import { readdirSync, readFileSync } from "fs";
 import { join } from "path";
-import {
-  ContentType,
-  Frontmatter,
-  PickFrontmatter,
-} from "../types/frontmatters";
+import { ContentType, Frontmatter } from "../types/frontmatters";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrism from "rehype-prism-plus";
 import rehypeSlug from "rehype-slug";
@@ -16,7 +12,6 @@ export async function getFiles(type: ContentType) {
 }
 
 export async function getFileBySlug(type: ContentType, slug: string) {
-
   const source = readFileSync(
     join(process.cwd(), "contents", type, `${slug}.mdx`),
     "utf8"
@@ -39,7 +34,7 @@ export async function getFileBySlug(type: ContentType, slug: string) {
 export async function getAllFilesFrontmatter<T extends ContentType>(type: T) {
   const files = readdirSync(join(process.cwd(), "contents", type));
 
-  return files.reduce((allPosts: Array<PickFrontmatter<T>>, postSlug) => {
+  return files.reduce((allPosts: Array<Frontmatter>, postSlug) => {
     const source = readFileSync(
       join(process.cwd(), "contents", type, postSlug),
       "utf8"
@@ -48,7 +43,7 @@ export async function getAllFilesFrontmatter<T extends ContentType>(type: T) {
 
     const res = [
       {
-        ...(data as PickFrontmatter<T>),
+        ...(data as Frontmatter),
         slug: postSlug.replace(".mdx", ""),
       },
       ...allPosts,

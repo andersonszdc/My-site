@@ -77,7 +77,7 @@ const Wrapper = styled.div<WrapperProps>`
   }
 `;
 
-const Forms: React.FC = () => {
+const Index = () => {
   const [form, setForm] = useState({
     name: "",
     to: "",
@@ -159,4 +159,4 @@ const Forms: React.FC = () => {
   );
 };
 
-export default Forms;
+export default Index;

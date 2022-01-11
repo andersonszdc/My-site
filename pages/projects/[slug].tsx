@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from "next";
-import * as runtime from 'react/jsx-runtime.js'
+import * as runtime from "react/jsx-runtime.js";
 import React, { useEffect } from "react";
 import { getFileBySlug, getFiles } from "../../lib/mdx";
 import MDXComponents from "../../components/content/MDXComponent";
@@ -11,7 +11,7 @@ import styled from "styled-components";
 import CustomLink from "../../components/links/CustomLink";
 import { SiGithub } from "react-icons/si";
 import { HiLink } from "react-icons/hi";
-import { ProjectFrontmatter } from "../../types/frontmatters";
+import { Frontmatter } from "../../types/frontmatters";
 import { storage } from "../../firebase/config";
 import { ref } from "@firebase/storage";
 import { getDownloadURL } from "firebase/storage";
@@ -82,15 +82,15 @@ const Divider = styled.hr`
 
 type ProjectPageProps = {
   mdxSource: string;
-  frontmatter: ProjectFrontmatter;
+  frontmatter: Frontmatter;
   cover: string;
 };
 
-const ProjectPage = ({ mdxSource, frontmatter, cover }: any) => {
+const ProjectPage = ({ mdxSource, frontmatter, cover }: ProjectPageProps) => {
   const activeSection = useScrollSpy();
   const [toc, setToc] = React.useState<HeadingScrollSpy>();
 
-  const {default: Content} = runSync(mdxSource, runtime)
+  const { default: Content } = runSync(mdxSource, runtime);
 
   useEffect(() => {
     const headings = document.querySelectorAll(".mdx h1, .mdx h2, .mdx h3");
@@ -174,9 +174,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = params?.slug;
   const { mdxSource, data } = await getFileBySlug("projects", slug as string);
-  const fileName = data.cover
-  const imageRef = ref(storage, fileName)
-  const cover = await getDownloadURL(imageRef)
+  const fileName = data.cover;
+  const imageRef = ref(storage, fileName);
+  const cover = await getDownloadURL(imageRef);
 
   return {
     props: { mdxSource, frontmatter: data, cover },

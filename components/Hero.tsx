@@ -1,20 +1,16 @@
-import React from 'react'
-import styled from 'styled-components'
-import { VscGithub } from 'react-icons/vsc'
-import { FaLinkedin } from 'react-icons/fa'
-import { GrInstagram } from 'react-icons/gr'
-import InView from '../lib/inView'
-import { FaAngleDown } from 'react-icons/fa'
-import HeroImg from '../assets/hero-anderson.png'
-import Image from 'next/image'
+import React from "react";
+import styled from "styled-components";
+import { VscGithub } from "react-icons/vsc";
+import { FaLinkedin } from "react-icons/fa";
+import { GrInstagram } from "react-icons/gr";
+import InView from "../lib/inView";
+import { FaAngleDown } from "react-icons/fa";
+import HeroImg from "../assets/hero-anderson.png";
+import Image from "next/image";
 
 type WrapperProps = {
-  inView: boolean
-}
-
-type HeroProps = {
-  heroImageUrl: string
-}
+  inView: boolean;
+};
 
 const Wrapper = styled.div<WrapperProps>`
   display: grid;
@@ -30,7 +26,9 @@ const Wrapper = styled.div<WrapperProps>`
     opacity: 0;
   }
 
-  ${props => props.inView && `
+  ${(props) =>
+    props.inView &&
+    `
     [data-fade] {
       transform: translateY(0);
       opacity: 1;
@@ -62,7 +60,7 @@ const Wrapper = styled.div<WrapperProps>`
     left: 0;
     right: 0;
     margin: 0 auto;
-    color: ${props => props.theme.colors.blue};
+    color: ${(props) => props.theme.colors.blue};
   }
 
   @media (max-width: 1000px) {
@@ -73,16 +71,16 @@ const Wrapper = styled.div<WrapperProps>`
     padding-top: 15vh;
     padding-bottom: 0;
   }
-`
+`;
 
 const HeroInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
-  transition: .5s cubic-bezier(.3,0,.5,1);
+  transition: 0.5s cubic-bezier(0.3, 0, 0.5, 1);
 
   .name {
-    color: ${props => props.theme.colors.blue};
+    color: ${(props) => props.theme.colors.blue};
     font-size: 1.8rem;
     font-weight: 500;
   }
@@ -97,19 +95,19 @@ const HeroInfo = styled.div`
   }
 
   .hero_icons {
-    margin-top: .8rem;
+    margin-top: 0.8rem;
     font-size: 3.2rem;
     display: flex;
     gap: 3.2rem;
 
     a {
       display: inline-flex;
-      color: ${props => props.theme.colors.blue};
+      color: ${(props) => props.theme.colors.blue};
       text-decoration: none;
-      transition: .2s ease-in-out;
+      transition: 0.2s ease-in-out;
 
       :hover {
-        color: ${props => props.theme.colors.text};
+        color: ${(props) => props.theme.colors.text};
       }
     }
   }
@@ -143,7 +141,7 @@ const HeroInfo = styled.div`
       font-size: 2.4rem;
     }
   }
-`
+`;
 
 const HeroImage = styled.div`
   display: inline-flex;
@@ -164,41 +162,71 @@ const HeroImage = styled.div`
       width: 200px;
     }
   }
-`
+`;
 
-const Hero: React.FC<HeroProps> = () => {
-    return (
-      <InView>
-        {(inView) => (
-          <Wrapper id="hero" inView={inView}>
-            <HeroInfo>
-              <h2 className='name' data-fade="1">Anderson Souza</h2>
-              <h1 className='function' data-fade="2">Desenvolvedor Full Stack e<br/>User Interface Designer</h1>
-              <p className='description' data-fade="3">Um estudante que relata sua trajetória e<br/>descobertas por este mundo.</p>
-              <div className='hero_icons' data-fade="4">
-                <a title='Ir para o Instagram (link externo)' target='_blank' rel='noreferrer' href="https://www.instagram.com/andersonszdc/">
-                  <GrInstagram title='ícone Instagram' />
-                </a>
-                <a title='Ir para o Github (link externo)' target='_blank' rel='noreferrer' href="https://github.com/andersonszdc">
-                  <VscGithub title='ícone Github' />
-                </a>
-                <a title='Ir para o Linkedin (link externo)' target='_blank' rel='noreferrer' href="https://www.linkedin.com/in/anderson-souza-b28431198/">
-                  <FaLinkedin title='ícone Linkedin' />
-                </a>
-              </div>
-            </HeroInfo>
-            <HeroImage>
-              <div data-fade="3">
-                <Image width="366" height="409" layout='responsive' alt="" priority src={HeroImg} />
-              </div>
-            </HeroImage>
-            <div className="icon__down">
-              <FaAngleDown className="bounce-animation" />
+const Index = () => {
+  return (
+    <InView>
+      {(inView) => (
+        <Wrapper id="hero" inView={inView}>
+          <HeroInfo>
+            <h2 className="name" data-fade="1">
+              Anderson Souza
+            </h2>
+            <h1 className="function" data-fade="2">
+              Desenvolvedor Full Stack e<br />
+              User Interface Designer
+            </h1>
+            <p className="description" data-fade="3">
+              Um estudante que relata sua trajetória e<br />
+              descobertas por este mundo.
+            </p>
+            <div className="hero_icons" data-fade="4">
+              <a
+                title="Ir para o Instagram (link externo)"
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.instagram.com/andersonszdc/"
+              >
+                <GrInstagram title="ícone Instagram" />
+              </a>
+              <a
+                title="Ir para o Github (link externo)"
+                target="_blank"
+                rel="noreferrer"
+                href="https://github.com/andersonszdc"
+              >
+                <VscGithub title="ícone Github" />
+              </a>
+              <a
+                title="Ir para o Linkedin (link externo)"
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.linkedin.com/in/anderson-souza-b28431198/"
+              >
+                <FaLinkedin title="ícone Linkedin" />
+              </a>
             </div>
-          </Wrapper>
-        )}
-      </InView>
-    );
-}
+          </HeroInfo>
+          <HeroImage>
+            <div data-fade="3">
+              <Image
+                width="366"
+                height="409"
+                layout="responsive"
+                alt=""
+                priority
+                src={HeroImg}
+              />
+            </div>
+          </HeroImage>
+          <div className="icon__down">
+            <FaAngleDown className="bounce-animation" />
+          </div>
+        </Wrapper>
+      )}
+    </InView>
+  );
+};
 
-export default Hero;
+export default Index;

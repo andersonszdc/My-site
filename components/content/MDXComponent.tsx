@@ -1,15 +1,15 @@
-import Image from 'next/image';
-import TechIcons from '../TechIcons';
-import CustomLink from '../links/CustomLink';
-import CustomList from './CustomList';
+import Image from "next/image";
+import TechIcons from "../TechIcons";
+import CustomLink from "../links/CustomLink";
+import CustomList from "./CustomList";
 
 const MDXComponents = {
-    a: CustomLink,
-    // Image,
-    // pre: Pre,
-    // code: CustomCode,
-    TechIcons,
-    ul: CustomList
-}
+  a: CustomLink,
+  // Image,
+  // pre: Pre,
+  // code: CustomCode,
+  TechIcons,
+  ul: CustomList,
+};
 
-export default MDXComponents
+export default MDXComponents;

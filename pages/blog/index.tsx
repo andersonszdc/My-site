@@ -1,19 +1,15 @@
-import { GetStaticProps } from 'next';
-import React from 'react';
-import styled from 'styled-components';
-import { getAllFilesFrontmatter } from '../../lib/mdx';
+import React from "react";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   font-size: 3.2rem;
   margin: 3.2rem;
   text-align: center;
-  color: ${props => props.theme.colors.text};
-`
+  color: ${(props) => props.theme.colors.text};
+`;
 
-const Index: React.FC = () => {
-  return (
-    <Wrapper>Em breve...</Wrapper>
-  );
-}
+const Index = () => {
+  return <Wrapper>Em breve...</Wrapper>;
+};
 
 export default Index;

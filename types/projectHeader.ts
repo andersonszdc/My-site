@@ -1,11 +1,15 @@
 type headerProps = {
-    infos: infosProps
+  infos: infosProps;
+};
+
+type project = {
+    
 }
 
 type infosProps = {
-    year: string,
-    customer: string,
-    title: string
-}
+  year: string;
+  customer: string;
+  title: string;
+};
 
-export default headerProps
+export default headerProps;

@@ -71,7 +71,7 @@ const Infos = styled.ul`
   }
 `
 
-const Contatos: React.FC = () => {
+const Contatos = () => {
 
   return (
     <>
