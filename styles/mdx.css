@@ -21,13 +21,13 @@
 
 .prose blockquote p:first-of-type::before,
 .prose blockquote p:last-of-type::after {
-  content: '';
+  content: "";
 }
 
 .prose blockquote {
   border-style: solid;
   border-width: 0 0 0 0.5rem;
-  border-color: #16D3E4;
+  border-color: #16d3e4;
   margin-bottom: 1.6rem;
   padding-left: 1rem;
 }
@@ -78,7 +78,7 @@
 
 .mdx.prose strong {
   font-weight: 600;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
 }
 
 /* Custom Heading Style for Projects */
@@ -103,8 +103,8 @@
 }
 
 .hash-anchor:hover {
-  background-image: linear-gradient(to right, #16D3E4, #16D3E4);
-  transition: .5s;
+  background-image: linear-gradient(to right, #16d3e4, #16d3e4);
+  transition: 0.5s;
 }
 
 .hash-anchor:hover:after,
@@ -116,8 +116,8 @@
   position: absolute;
   visibility: hidden;
   font-size: 2rem;
-  color: #16D3E4;
+  color: #16d3e4;
   top: 10%;
   right: -2rem;
-  content: '#';
+  content: "#";
 }

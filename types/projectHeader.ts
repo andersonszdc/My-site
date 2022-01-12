@@ -2,10 +2,6 @@ type headerProps = {
   infos: infosProps;
 };
 
-type project = {
-    
-}
-
 type infosProps = {
   year: string;
   customer: string;

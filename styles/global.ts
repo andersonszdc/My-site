@@ -1,8 +1,8 @@
-import { createGlobalStyle, keyframes } from "styled-components"
-import pattern from './themes/pattern'
+import { createGlobalStyle, keyframes } from "styled-components";
+import pattern from "./themes/pattern";
 
 interface GlobalProps {
-    theme: typeof pattern
+  theme: typeof pattern;
 }
 
 const bounce = keyframes`
@@ -15,7 +15,7 @@ const bounce = keyframes`
     100% {
         transform: translateY(0);
     }
-`
+`;
 
 const Global = createGlobalStyle<GlobalProps>`
     * {
@@ -31,7 +31,7 @@ const Global = createGlobalStyle<GlobalProps>`
 
     body {
         background-color: #2B2323;
-        color: ${props => props.theme.colors.white};
+        color: ${(props) => props.theme.colors.white};
         font-family: 'Montserrat', sans-serif;
         max-width: 1200px;
         margin: 0 auto;
@@ -43,7 +43,7 @@ const Global = createGlobalStyle<GlobalProps>`
             background: transparent;
         }
         ::-webkit-scrollbar-thumb {
-            background-color: ${props => props.theme.colors.blue};
+            background-color: ${(props) => props.theme.colors.blue};
             border-radius: 20px;
             }
     }
@@ -72,6 +72,6 @@ const Global = createGlobalStyle<GlobalProps>`
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
-`
+`;
 
-export default Global
+export default Global;
