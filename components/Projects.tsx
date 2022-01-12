@@ -18,6 +18,7 @@ const Wrapper = styled.div<WrapperProps>`
     width: max-content;
     font-size: 2.4rem;
     margin-bottom: 4rem;
+    scroll-margin-top: 100px;
   }
 
   .projects__cards {
@@ -104,7 +105,7 @@ const Projects = ({ projects }: ProjectsProps) => {
     <InView>
       {(inView) => (
         <Wrapper id="projects" inView={inView}>
-          <h2 data-fade="1" className="projects_title">
+          <h2 data-fade="1" id="projects_title" className="projects_title">
             Projetos
           </h2>
           <div data-fade="2" className="projects__cards">

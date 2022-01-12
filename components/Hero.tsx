@@ -238,7 +238,9 @@ const Index = () => {
             </div>
           </HeroImage>
           <div className="icon__down">
-            <FaAngleDown className="bounce-animation" />
+            <a href="#projects_title">
+              <FaAngleDown className="bounce-animation" />
+            </a>
           </div>
         </Wrapper>
       )}

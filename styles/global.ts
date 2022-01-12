@@ -48,6 +48,10 @@ const Global = createGlobalStyle<GlobalProps>`
             }
     }
 
+    a {
+        color: inherit;
+    }
+
     li {
         list-style: none;
     }
