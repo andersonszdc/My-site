@@ -2,6 +2,7 @@ import React from "react";
 import { BsArrowRight } from "react-icons/bs";
 import styled from "styled-components";
 import Link from "next/link";
+import { bleen } from "../styles/global";
 
 const Wrapper = styled.div`
   text-align: center;
@@ -11,6 +12,7 @@ const Wrapper = styled.div`
     font-weight: 600;
   }
   .call-two {
+    ${bleen};
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
@@ -72,7 +74,7 @@ const Index = () => {
     <Wrapper>
       <h2 className="call-one">Curtiu o meu trabalho?</h2>
       <Link href="/contatos" passHref>
-        <div className="call-two bleen">
+        <div className="call-two">
           <h2 className="call-action">
             Vamos trabalhar juntos
             <BsArrowRight className="icon" />

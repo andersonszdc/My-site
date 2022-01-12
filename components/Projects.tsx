@@ -4,6 +4,7 @@ import InView from "../lib/inView";
 import Card from "./Card";
 import Link from "next/link";
 import { Frontmatter } from "../types/frontmatters";
+import { bleen } from "../styles/global";
 
 type WrapperProps = {
   inView: boolean;
@@ -13,9 +14,10 @@ const Wrapper = styled.div<WrapperProps>`
   padding: 40px 4%;
 
   .projects_title {
+    ${bleen};
+    width: max-content;
     font-size: 2.4rem;
     margin-bottom: 4rem;
-    color: ${(props) => props.theme.colors.blue};
   }
 
   .projects__cards {

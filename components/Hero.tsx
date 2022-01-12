@@ -7,6 +7,7 @@ import InView from "../lib/inView";
 import { FaAngleDown } from "react-icons/fa";
 import HeroImg from "../assets/hero-anderson.png";
 import Image from "next/image";
+import { bleen } from "../styles/global";
 
 type WrapperProps = {
   inView: boolean;
@@ -80,9 +81,11 @@ const HeroInfo = styled.div`
   transition: 0.5s cubic-bezier(0.3, 0, 0.5, 1);
 
   .name {
+    width: max-content;
+    ${bleen};
     color: ${(props) => props.theme.colors.blue};
     font-size: 1.8rem;
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .function {
@@ -92,6 +95,10 @@ const HeroInfo = styled.div`
   .description {
     font-size: 1.8rem;
     font-weight: 400;
+  }
+
+  .highlight {
+    ${bleen};
   }
 
   .hero_icons {
@@ -174,8 +181,8 @@ const Index = () => {
               Anderson Souza
             </h2>
             <h1 className="function" data-fade="2">
-              Desenvolvedor Full Stack e<br />
-              User Interface Designer
+              Desenvolvedor <span className="highlight">Full Stack<br />
+              & UI</span> Designer
             </h1>
             <p className="description" data-fade="3">
               Um estudante que relata sua trajetória e<br />

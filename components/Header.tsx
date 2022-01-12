@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Logo from "./Logo";
 import Menu from "./Menu";
 import Link from "next/link";
+import { bleen } from "../styles/global";
 
 interface StyledProps {
   isClicked: boolean;
@@ -19,7 +20,7 @@ const Wrapper = styled.div<StyledProps>`
   background-color: ${(props) => props.theme.colors.black};
 `;
 
-const Me = styled.div`
+const Me = styled.div<StyledProps>`
   display: flex;
   align-items: center;
   gap: 0.8rem;
@@ -36,9 +37,9 @@ const Me = styled.div`
     color: ${(props) => props.theme.colors.text};
   }
   .subtitle {
+    color: ${({ theme }) => theme.colors.blue};
     font-size: 1.2rem;
-    font-weight: 500;
-    color: #16d3e4;
+    font-weight: 600;
   }
   @media (max-width: 400px) {
     .logo {
@@ -148,7 +149,7 @@ const Index = ({ toggleTheme }: HeaderProps) => {
     <>
       <Wrapper isClicked={isClicked}>
         <Link passHref href="/">
-          <Me onClick={handleLogoClick}>
+          <Me isClicked={isClicked} onClick={handleLogoClick}>
             <div className="logo">
               <Logo color={color} />
             </div>

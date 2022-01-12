@@ -1,4 +1,4 @@
-import { createGlobalStyle, keyframes } from "styled-components";
+import { createGlobalStyle, css, keyframes } from "styled-components";
 import pattern from "./themes/pattern";
 
 interface GlobalProps {
@@ -57,21 +57,31 @@ const Global = createGlobalStyle<GlobalProps>`
         width: max-content;
         background-size: 0 2px;
         background-position: 0% 100%;
-        background-image: linear-gradient(90deg,#00FFE0, #16D3E4);
+        background-image: linear-gradient(
+            270deg,
+            hsl(173deg 100% 50%) 0%,
+            hsl(179deg 91% 49%) 50%,
+            hsl(185deg 82% 49%) 100%
+        );
         background-repeat: no-repeat;
     }
 
     .bounce-animation {
         animation: 1s ${bounce} infinite ease-in-out;
     }
+`;
 
-    .bleen {
-        background-image: linear-gradient(90deg,#00FFE0, #16D3E4);
-        color: white;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+export const bleen = css`
+  background-image: linear-gradient(
+    90deg,
+    hsl(173deg 100% 50%) 0%,
+    hsl(179deg 91% 49%) 50%,
+    hsl(185deg 82% 49%) 100%
+  );
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
 export default Global;
