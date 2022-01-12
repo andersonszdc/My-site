@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { VscGithub } from "react-icons/vsc";
-import { FaLinkedin } from "react-icons/fa";
-import { GrInstagram } from "react-icons/gr";
 import InView from "../lib/inView";
 import { FaAngleDown } from "react-icons/fa";
 import HeroImg from "../assets/hero-anderson.png";
 import Image from "next/image";
 import { bleen } from "../styles/global";
+import Link from "next/link";
 
 type WrapperProps = {
   inView: boolean;
@@ -74,6 +72,41 @@ const Wrapper = styled.div<WrapperProps>`
   }
 `;
 
+const Button = styled.button`
+  color: ${({ theme }) => theme.colors.white};
+  background: none;
+  padding: 8px;
+  font-family: "Montserrat";
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  transition: 0.1s ease-out;
+
+  :hover {
+    transform: scale(1.03);
+  }
+`;
+
+const HGLButton = styled(Button)`
+  border: none;
+  padding: 2px;
+  background: linear-gradient(
+    90deg,
+    hsl(173deg 100% 50%) 0%,
+    hsl(179deg 91% 49%) 50%,
+    hsl(185deg 82% 49%) 100%
+  );
+
+  .module {
+    border-radius: 4px;
+    background-color: ${({ theme }) => theme.colors.black};
+    padding: 8px;
+  }
+`;
+
 const HeroInfo = styled.div`
   display: flex;
   flex-direction: column;
@@ -101,22 +134,9 @@ const HeroInfo = styled.div`
     ${bleen};
   }
 
-  .hero_icons {
-    margin-top: 0.8rem;
-    font-size: 3.2rem;
+  .hero_action {
     display: flex;
-    gap: 3.2rem;
-
-    a {
-      display: inline-flex;
-      color: ${(props) => props.theme.colors.blue};
-      text-decoration: none;
-      transition: 0.2s ease-in-out;
-
-      :hover {
-        color: ${(props) => props.theme.colors.text};
-      }
-    }
+    gap: 16px;
   }
 
   @media (max-width: 700px) {
@@ -181,38 +201,28 @@ const Index = () => {
               Anderson Souza
             </h2>
             <h1 className="function" data-fade="2">
-              Desenvolvedor <span className="highlight">Full Stack<br />
-              & UI</span> Designer
+              Desenvolvedor{" "}
+              <span className="highlight">
+                Full Stack
+                <br />& UI
+              </span>{" "}
+              Designer
             </h1>
             <p className="description" data-fade="3">
               Um estudante que relata sua trajetória e<br />
               descobertas por este mundo.
             </p>
-            <div className="hero_icons" data-fade="4">
-              <a
-                title="Ir para o Instagram (link externo)"
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.instagram.com/andersonszdc/"
-              >
-                <GrInstagram title="ícone Instagram" />
-              </a>
-              <a
-                title="Ir para o Github (link externo)"
-                target="_blank"
-                rel="noreferrer"
-                href="https://github.com/andersonszdc"
-              >
-                <VscGithub title="ícone Github" />
-              </a>
-              <a
-                title="Ir para o Linkedin (link externo)"
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.linkedin.com/in/anderson-souza-b28431198/"
-              >
-                <FaLinkedin title="ícone Linkedin" />
-              </a>
+            <div className="hero_action" data-fade="4">
+              <Link passHref href="/contatos">
+                <HGLButton>
+                  <div className="module">
+                    <p className="highlight">Falar comigo</p>
+                  </div>
+                </HGLButton>
+              </Link>
+              <Link passHref href="/sobreMim">
+                <Button>Sobre mim</Button>
+              </Link>
             </div>
           </HeroInfo>
           <HeroImage>
