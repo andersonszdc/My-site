@@ -16,6 +16,14 @@ const ProjectsGrid = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 2.4rem;
   margin: 2.4rem 0;
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const Wrapper = styled.div`
