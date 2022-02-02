@@ -1,5 +1,5 @@
 import React from "react";
-import aboutImg from "../../assets/aboutme.png";
+import aboutImg from "../../../assets/aboutme.png";
 import Image from "next/image";
 import styled from "styled-components";
 import Skill from "../../components/Skill";

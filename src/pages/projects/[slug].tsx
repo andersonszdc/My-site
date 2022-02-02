@@ -12,7 +12,7 @@ import CustomLink from "../../components/links/CustomLink";
 import { SiGithub } from "react-icons/si";
 import { HiLink } from "react-icons/hi";
 import { Frontmatter } from "../../types/frontmatters";
-import { storage } from "../../firebase/config";
+import { storage } from "../../../firebase/config";
 import { ref } from "@firebase/storage";
 import { getDownloadURL } from "firebase/storage";
 import Image from "next/image";

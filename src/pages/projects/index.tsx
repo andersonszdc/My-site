@@ -4,7 +4,7 @@ import { getAllFilesFrontmatter } from "../../lib/mdx";
 import { Frontmatter } from "../../types/frontmatters";
 import Card from "../../components/Card";
 import { getDownloadURL, ref } from "@firebase/storage";
-import { storage } from "../../firebase/config";
+import { storage } from "../../../firebase/config";
 import styled from "styled-components";
 
 type IndexProps = {

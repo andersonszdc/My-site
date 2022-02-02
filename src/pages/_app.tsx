@@ -8,7 +8,7 @@ import menu from "../styles/themes/menu";
 import "../styles/mdx.css";
 import { useRouter } from "next/dist/client/router";
 import { getAnalytics, logEvent } from "firebase/analytics";
-import app from "../firebase/config";
+import app from "../../firebase/config";
 
 interface Itheme {
   title: string;

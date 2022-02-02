@@ -5,7 +5,7 @@ import Projects from "../components/Projects";
 import Head from "next/head";
 import { getAllFilesFrontmatter, getFeatured } from "../lib/mdx";
 import { getDownloadURL, ref } from "@firebase/storage";
-import { storage } from "../firebase/config";
+import { storage } from "../../firebase/config";
 import { Frontmatter } from "../types/frontmatters";
 
 type HomeProps = {
