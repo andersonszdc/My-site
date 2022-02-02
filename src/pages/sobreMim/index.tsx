@@ -1,5 +1,4 @@
 import React from "react";
-import aboutImg from "../../../assets/aboutme.png";
 import Image from "next/image";
 import styled from "styled-components";
 import Skill from "../../components/Skill";
@@ -67,7 +66,11 @@ const sobreMim = () => {
         <Intro>
           <div>
             <div className="about_card">
-              <Image className="about_img" alt="Anderson" src={aboutImg} />
+              <Image
+                className="about_img"
+                alt="Anderson"
+                src="/assets/aboutme.png"
+              />
             </div>
           </div>
           <div className="about_text">

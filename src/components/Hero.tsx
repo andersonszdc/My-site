@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import InView from "../lib/inView";
 import { FaAngleDown } from "react-icons/fa";
-import HeroImg from "../../assets/hero-anderson.png";
 import Image from "next/image";
 import { bleen } from "../styles/global";
 import Link from "next/link";
@@ -233,7 +232,7 @@ const Index = () => {
                 layout="responsive"
                 alt=""
                 priority
-                src={HeroImg}
+                src="/assets/hero-anderson.png"
               />
             </div>
           </HeroImage>
