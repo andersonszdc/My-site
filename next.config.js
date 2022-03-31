@@ -6,4 +6,7 @@ module.exports = {
   experimental: {
     nftTracing: true,
   },
+  compiler: {
+    styledComponents: true,
+  },
 };
