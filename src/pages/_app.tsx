@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
-import Layout from "../components/Layout";
+import Layout from "../HOC/Layout";
 import Global from "../styles/global";
 import pattern from "../styles/themes/pattern";
 import menu from "../styles/themes/menu";

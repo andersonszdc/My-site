@@ -1,7 +1,7 @@
 import type { GetStaticProps, NextPage } from "next";
-import CallMe from "../components/Call";
-import Hero from "../components/Hero";
-import Projects from "../components/Projects";
+import CallMe from "../sections/callToAction";
+import Hero from "../sections/hero";
+import Projects from "../sections/projects";
 import Head from "next/head";
 import { getAllFilesFrontmatter, getFeatured } from "../lib/mdx";
 import { getDownloadURL, ref } from "@firebase/storage";

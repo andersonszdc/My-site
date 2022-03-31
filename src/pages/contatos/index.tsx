@@ -2,7 +2,7 @@ import React from 'react'
 import { BsTelephone } from 'react-icons/bs'
 import { HiOutlineLocationMarker, HiOutlineMail } from 'react-icons/hi'
 import styled from 'styled-components'
-import Forms from '../../components/Forms'
+import Forms from '../../sections/contactMe'
 import Head from 'next/head'
 
 const Wrapper = styled.div`

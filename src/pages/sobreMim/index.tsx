@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import Skill from "../../components/Skill";
+import Skill from "../../sections/skills";
 import Head from "next/head";
 
 const Wrapper = styled.div`
@@ -67,6 +67,8 @@ const sobreMim = () => {
           <div>
             <div className="about_card">
               <Image
+                width={3200}
+                height={1100}
                 className="about_img"
                 alt="Anderson"
                 src="/assets/aboutme.png"

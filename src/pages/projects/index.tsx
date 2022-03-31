@@ -2,7 +2,7 @@ import { GetStaticProps } from "next";
 import React from "react";
 import { getAllFilesFrontmatter } from "../../lib/mdx";
 import { Frontmatter } from "../../types/frontmatters";
-import Card from "../../components/Card";
+import Card from "../../components/project/Card";
 import { getDownloadURL, ref } from "@firebase/storage";
 import { storage } from "../../../firebase/config";
 import styled from "styled-components";
