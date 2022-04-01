@@ -8,7 +8,6 @@ export const Wrapper = styled.div<WrapperProps>`
   .projects_title {
     ${bleen};
     width: max-content;
-    font-size: 2.4rem;
     margin-bottom: 4rem;
     scroll-margin-top: 100px;
   }

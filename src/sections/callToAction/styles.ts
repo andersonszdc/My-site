@@ -4,10 +4,6 @@ import { bleen } from "../../styles/global";
 export const Wrapper = styled.div`
   text-align: center;
   margin: 9rem 0;
-  .call-one {
-    font-size: 1.6rem;
-    font-weight: 600;
-  }
   .call-two {
     ${bleen};
     display: inline-flex;
@@ -25,11 +21,7 @@ export const Wrapper = styled.div`
     display: inline-flex;
     align-items: center;
     gap: 1.2rem;
-
     margin-top: 1.2rem;
-
-    font-size: 3.6rem;
-    font-weight: 700;
     .icon {
       color: ${(props) => props.theme.colors.blue};
     }

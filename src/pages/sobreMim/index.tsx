@@ -12,7 +12,6 @@ const Wrapper = styled.div`
   gap: 48px;
 
   h2 {
-    font-size: 2.4rem;
     color: ${(props) => props.theme.colors.blue};
   }
 
@@ -36,8 +35,6 @@ const Intro = styled.div`
     display: flex;
     flex-direction: column;
     gap: 16px;
-    font-size: 1.6rem;
-    line-height: 133%;
   }
 
   .about_card {
@@ -62,7 +59,7 @@ const sobreMim = () => {
         <title>Sobre Mim - Andersonszdc</title>
       </Head>
       <Wrapper>
-        <h2>Sobre mim</h2>
+        <h2 className="h3">Sobre mim</h2>
         <Intro>
           <div>
             <div className="about_card">
@@ -75,7 +72,7 @@ const sobreMim = () => {
               />
             </div>
           </div>
-          <div className="about_text">
+          <div className="about_text p1">
             <p>
               Iniciei no desenvolvimento web em 2020, criando sites com o famoso
               Wordpress kkk e Shopify. Porém, eu me sentia muito limitado no
@@ -100,7 +97,7 @@ const sobreMim = () => {
             </p>
           </div>
         </Intro>
-        <h2>Minha stack</h2>
+        <h2 className="h3">Minha stack</h2>
         <div className="about_skills">
           <Skill />
         </div>

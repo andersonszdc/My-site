@@ -21,8 +21,6 @@ export const Wrapper = styled.footer`
   }
 
   .abas__item {
-    font-size: 1.6rem;
-    font-weight: 600;
     cursor: pointer;
     transition: 0.2s ease-out;
 
@@ -32,8 +30,6 @@ export const Wrapper = styled.footer`
   }
 
   .redes__title {
-    font-size: 1.6rem;
-    font-weight: 600;
     text-align: center;
     margin-top: 3.2rem;
     margin-bottom: 1.6rem;

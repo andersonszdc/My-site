@@ -18,29 +18,25 @@ export const Me = styled.div<StyledProps>`
   gap: 0.8rem;
   z-index: 10;
   cursor: pointer;
-  .logo {
+  .me__logo {
     width: 4rem;
   }
-  .title {
-    font-size: 1.8rem;
-    font-weight: 700;
+  .me__title {
     margin-bottom: 0.6rem;
     transition: 0.5s cubic-bezier(0.3, 0, 0.5, 1);
     color: ${(props) => props.theme.colors.text};
   }
-  .subtitle {
+  .me__subtitle {
     color: ${({ theme }) => theme.colors.blue};
-    font-size: 1.2rem;
-    font-weight: 600;
   }
   @media (max-width: 400px) {
-    .logo {
+    .me__logo {
       width: 2.4rem;
     }
-    .title {
+    .me__title {
       font-size: 1.2rem;
     }
-    .subtitle {
+    .me__subtitle {
       font-size: 0.9rem;
     }
   }

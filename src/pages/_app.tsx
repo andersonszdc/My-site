@@ -9,6 +9,7 @@ import "../styles/mdx.css";
 import { useRouter } from "next/dist/client/router";
 import { getAnalytics, logEvent } from "firebase/analytics";
 import app from "../../firebase/config";
+import { Typography } from "../styles/typography";
 
 interface Itheme {
   title: string;
@@ -34,6 +35,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <ThemeProvider theme={colors}>
+        <Typography />
         <Global />
         <Layout toggleColors={toggleColors}>
           <Component {...pageProps} />

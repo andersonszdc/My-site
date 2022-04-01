@@ -6,10 +6,10 @@ import { Wrapper } from "./styles";
 const Index = () => {
   return (
     <Wrapper>
-      <h2 className="call-one">Curtiu o meu trabalho?</h2>
+      <h2 className="call-one h6">Curtiu o meu trabalho?</h2>
       <Link href="/contatos" passHref>
         <div className="call-two">
-          <h2 className="call-action">
+          <h2 className="call-action h3">
             Vamos trabalhar juntos
             <BsArrowRight className="icon" />
           </h2>

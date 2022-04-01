@@ -48,8 +48,8 @@ const Index = () => {
 
   return (
     <Wrapper loading={loading}>
-      <h2>Fale comigo!</h2>
-      <p>
+      <h2 className="h5">Fale comigo!</h2>
+      <p className="p2">
         Se preferir, envie uma mensagem direta para{" "}
         <span className="contrast">contato@andersonszdc.com</span>
       </p>

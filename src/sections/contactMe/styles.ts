@@ -7,14 +7,8 @@ export const Wrapper = styled.div<WrapperProps>`
   width: 100%;
   padding: 0 10%;
 
-  h2 {
-    font-size: 2.4rem;
-  }
-
   p {
-    font-size: 1.6rem;
     margin: 1.8rem 0;
-    font-weight: 400;
   }
 
   .contrast {

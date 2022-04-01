@@ -15,10 +15,10 @@ const Index = () => {
       {(inView) => (
         <Wrapper id="hero" inView={inView}>
           <HeroInfo>
-            <h2 className="name" data-fade="1">
+            <h2 className="name h5" data-fade="1">
               Anderson Souza
             </h2>
-            <h1 className="function" data-fade="2">
+            <h1 className="function h3" data-fade="2">
               Desenvolvedor{" "}
               <span className="highlight">
                 Full Stack
@@ -26,7 +26,7 @@ const Index = () => {
               </span>{" "}
               Designer
             </h1>
-            <p className="description" data-fade="3">
+            <p className="description p2" data-fade="3">
               Um estudante que relata sua trajetória e<br />
               descobertas por este mundo.
             </p>

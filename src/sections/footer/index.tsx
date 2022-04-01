@@ -10,20 +10,20 @@ const Index = () => {
     <Wrapper>
       <ul className="footer__abas">
         <Link passHref href="/contatos">
-          <li className="abas__item">Contatos</li>
+          <li className="abas__item h6">Contatos</li>
         </Link>
         <Link passHref href="/projects">
-          <li className="abas__item">Projetos</li>
+          <li className="abas__item h6">Projetos</li>
         </Link>
         <Link passHref href="/blog">
-          <li className="abas__item">Blog</li>
+          <li className="abas__item h6">Blog</li>
         </Link>
         <Link passHref href="/sobreMim">
-          <li className="abas__item">Sobre mim</li>
+          <li className="abas__item h6">Sobre mim</li>
         </Link>
       </ul>
       <div>
-        <h3 className="redes__title">Minhas redes!</h3>
+        <h3 className="redes__title h6">Minhas redes!</h3>
         <ul className="footer__icons">
           <li>
             <Link passHref href="https://www.instagram.com/andersonszdc/">

@@ -43,12 +43,12 @@ const Index = ({ toggleColors }: HeaderProps) => {
       <Wrapper isClicked={isClicked}>
         <Link passHref href="/">
           <Me isClicked={isClicked} onClick={handleLogoClick}>
-            <div className="logo">
+            <div className="me__logo">
               <Logo color={color} />
             </div>
             <div>
-              <h1 className="title">Anderson Souza</h1>
-              <h2 className="subtitle">Full Stack & UI Designer</h2>
+              <h1 className="me__title h5">Anderson Souza</h1>
+              <h2 className="me__subtitle p2">Full Stack & UI/UX Designer</h2>
             </div>
           </Me>
         </Link>

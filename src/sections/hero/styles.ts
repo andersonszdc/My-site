@@ -108,17 +108,6 @@ export const HeroInfo = styled.div`
     width: max-content;
     ${bleen};
     color: ${(props) => props.theme.colors.blue};
-    font-size: 1.8rem;
-    font-weight: 600;
-  }
-
-  .function {
-    font-size: 3.6rem;
-  }
-
-  .description {
-    font-size: 1.8rem;
-    font-weight: 400;
   }
 
   .highlight {
