@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Typography />
         <Global />
         {startIntro && (
-          <Intro startIntro={startIntro} setStartIntro={setStartIntro} />
+          <Intro setStartIntro={setStartIntro} />
         )}
         <Layout toggleColors={toggleColors}>
           <Component {...pageProps} />

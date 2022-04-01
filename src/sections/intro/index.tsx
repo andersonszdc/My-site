@@ -31,9 +31,8 @@ const variants3 = {
 };
 
 const Wrapper = styled(motion.div)<any>`
-  position: absolute;
+  position: fixed;
   left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
   background-color: ${({ theme }) => theme.colors.black};
@@ -44,16 +43,15 @@ const Wrapper = styled(motion.div)<any>`
 `;
 
 const Overlay = styled(motion.div)<any>`
-  position: absolute;
+  position: fixed;
   left: 0;
-  top: 100%;
   width: 100%;
   height: 100%;
   background-color: #424444;
   z-index: 20;
 `;
 
-const Intro = ({ setStartIntro, startIntro }: any) => {
+const Intro = ({ setStartIntro }: any) => {
   const [startAnimation, setStartAnimation] = useState(false);
   const [upOverlay, setUpOverlay] = useState(false);
   useEffect(() => {
@@ -106,6 +104,7 @@ const Intro = ({ setStartIntro, startIntro }: any) => {
         variants={variants2}
         initial="hidden"
         animate={upOverlay ? "visible" : "hidden"}
+        onAnimationComplete={() => setStartIntro(false)}
       />
     </>
   );
