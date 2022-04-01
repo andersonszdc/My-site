@@ -44,12 +44,18 @@ export const Typography = createGlobalStyle`
  }
 
  .p2 {
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 500;
     line-height: 150%;
  }
 
  .p3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 150%;
+ }
+
+ .p4 {
     font-size: 1.2rem;
     font-weight: 500;
     line-height: 150%;

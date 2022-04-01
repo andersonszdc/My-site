@@ -56,6 +56,7 @@ export const HeroInfo = styled.div`
   flex-direction: column;
   gap: 1.6rem;
   transition: 0.5s cubic-bezier(0.3, 0, 0.5, 1);
+  max-width: 505px;
 
   .name {
     width: max-content;

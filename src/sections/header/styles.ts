@@ -30,7 +30,9 @@ export const Me = styled.div<StyledProps>`
   .me__subtitle {
     background-color: black;
     ${bleen}
-    font-weight: 600;
+  }
+  .destaqui {
+    ${bleen}
   }
   @media (max-width: 400px) {
     .me__logo {

@@ -28,8 +28,7 @@ const Index = () => {
               Designer
             </h1>
             <p className="description p2" data-fade="3">
-              Um estudante que relata sua trajetória e<br />
-              descobertas por este mundo.
+            Fascinado por desenvolvimento Web, design e animações.
             </p>
             <div className="hero_action" data-fade="4">
               <Link passHref href="/contatos">
