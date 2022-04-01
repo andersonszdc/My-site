@@ -41,18 +41,6 @@ export const Wrapper = styled.div<WrapperProps>`
     }
   `}
 
-  .icon__down {
-    display: flex;
-    justify-content: center;
-    font-size: 4rem;
-    position: absolute;
-    bottom: 6.4rem;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    color: ${(props) => props.theme.colors.blue};
-  }
-
   @media (max-width: 1000px) {
     display: flex;
     align-items: normal;
@@ -73,6 +61,10 @@ export const HeroInfo = styled.div`
     width: max-content;
     ${bleen};
     color: ${(props) => props.theme.colors.blue};
+  }
+
+  .highlight {
+    ${bleen}
   }
 
   .hero_action {

@@ -23,9 +23,10 @@ export const Wrapper = styled.footer`
   .abas__item {
     cursor: pointer;
     transition: 0.2s ease-out;
+    color: ${(props) => props.theme.colors.blue};
 
     :hover {
-      color: ${(props) => props.theme.colors.blue};
+      color: ${(props) => props.theme.colors.white};
     }
   }
 
@@ -44,9 +45,10 @@ export const Wrapper = styled.footer`
     font-size: 3rem;
     cursor: pointer;
     transition: 0.2s ease-out;
+    color: ${(props) => props.theme.colors.blue};
 
     :hover {
-      color: ${(props) => props.theme.colors.blue};
+      color: ${(props) => props.theme.colors.white};
     }
   }
 
@@ -58,7 +60,7 @@ export const Wrapper = styled.footer`
     gap: 0.6rem;
     p {
       font-size: 1.4rem;
-      color: ${(props) => props.theme.colors.blue};
+      color: ${(props) => props.theme.colors.white};
     }
   }
 

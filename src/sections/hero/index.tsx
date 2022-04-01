@@ -23,7 +23,7 @@ const Index = () => {
               Desenvolvedor{" "}
               <span className="highlight">
                 Full Stack
-                <br />& UI
+                <br />& UI/UX
               </span>{" "}
               Designer
             </h1>
@@ -53,11 +53,6 @@ const Index = () => {
               />
             </div>
           </HeroImage>
-          <div className="icon__down">
-            <a href="#projects_title">
-              <FaAngleDown className="bounce-animation" />
-            </a>
-          </div>
         </Wrapper>
       )}
     </InView>
