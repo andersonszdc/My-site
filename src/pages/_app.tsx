@@ -10,6 +10,7 @@ import { useRouter } from "next/dist/client/router";
 import { getAnalytics, logEvent } from "firebase/analytics";
 import app from "../../firebase/config";
 import { Typography } from "../styles/typography";
+import Intro from "../sections/intro";
 
 interface Itheme {
   title: string;
@@ -23,6 +24,7 @@ interface Itheme {
 function MyApp({ Component, pageProps }: AppProps) {
   const route = useRouter();
   const [colors, setColors] = useState<Itheme>(pattern);
+  const [startIntro, setStartIntro] = useState(true);
 
   const toggleColors = () => {
     setColors(colors.title === "pattern" ? menu : pattern);
@@ -37,6 +39,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={colors}>
         <Typography />
         <Global />
+        {startIntro && (
+          <Intro startIntro={startIntro} setStartIntro={setStartIntro} />
+        )}
         <Layout toggleColors={toggleColors}>
           <Component {...pageProps} />
         </Layout>
