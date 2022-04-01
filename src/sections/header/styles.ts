@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { StyledProps } from ".";
+import { bleen } from "../../styles/global";
 
 export const Wrapper = styled.div<StyledProps>`
   display: flex;
@@ -27,7 +28,9 @@ export const Me = styled.div<StyledProps>`
     color: ${(props) => props.theme.colors.text};
   }
   .me__subtitle {
-    color: ${({ theme }) => theme.colors.blue};
+    background-color: black;
+    ${bleen}
+    font-weight: 600;
   }
   @media (max-width: 400px) {
     .me__logo {

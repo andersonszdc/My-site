@@ -3,6 +3,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import Skill from "../../sections/skills";
 import Head from "next/head";
+import { bleen } from "../../styles/global";
 
 const Wrapper = styled.div`
   display: flex;
@@ -12,7 +13,7 @@ const Wrapper = styled.div`
   gap: 48px;
 
   h2 {
-    color: ${(props) => props.theme.colors.blue};
+    ${bleen}
   }
 
   .about_skills {
@@ -74,26 +75,10 @@ const sobreMim = () => {
           </div>
           <div className="about_text p1">
             <p>
-              Iniciei no desenvolvimento web em 2020, criando sites com o famoso
-              Wordpress kkk e Shopify. Porém, eu me sentia muito limitado no
-              quesito design, então aprendi HTML e CSS. E, simplesmente, fiquei
-              fascinado pelo mundo da programação - eu sei que HTML e CSS não
-              são linguagens de programação kkkk, mas foram eles que me abriram
-              a porta para este mundo.
-            </p>
-            <p>
-              Logo em seguida, decidi que seria um desenvolvedor front-end.
-              Depois de muitas pesquisas sobre roadmaps, aprendi em sequência:
-              Javascript, React, Node.js, TypeScript, Next.js, GraphQL e sigo
-              estudando e aprendendo tecnologias novas.
-            </p>
-            <p>
-              Sei trabalhar como full-stack, porém meu foco, hoje em dia, é
-              maior em front-end.
-            </p>
-            <p>
-              Bom, essa foi minha apresentação. Já deu uma olhada nos meus
-              projetos?
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vel dui
+              vitae, urna duis ut gravida placerat. Nunc rhoncus id ornare neque
+              sed sagittis. Eget leo leo fermentum, velit. Varius habitant sit
+              convallis viverra non dolor massa augue.
             </p>
           </div>
         </Intro>

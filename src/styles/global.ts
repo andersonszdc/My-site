@@ -5,18 +5,6 @@ interface GlobalProps {
   theme: typeof pattern;
 }
 
-const bounce = keyframes`
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(2.4rem);
-    }
-    100% {
-        transform: translateY(0);
-    }
-`;
-
 const Global = createGlobalStyle<GlobalProps>`
     * {
         padding: 0;
@@ -73,18 +61,14 @@ const Global = createGlobalStyle<GlobalProps>`
         );
         background-repeat: no-repeat;
     }
-
-    .bounce-animation {
-        animation: 1s ${bounce} infinite ease-in-out;
-    }
 `;
 
 export const bleen = css`
   background-image: linear-gradient(
     90deg,
-    hsl(173deg 100% 50%) 0%,
+    hsl(185deg 82% 49%) 0%,
     hsl(179deg 91% 49%) 50%,
-    hsl(185deg 82% 49%) 100%
+    hsl(173deg 100% 50%) 100%
   );
   color: transparent;
   background-clip: text;
