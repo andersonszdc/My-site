@@ -48,6 +48,10 @@ const Global = createGlobalStyle<GlobalProps>`
             }
     }
 
+    button {
+        font-family: inherit;
+    }
+
     a {
         color: inherit;
     }

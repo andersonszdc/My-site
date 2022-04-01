@@ -63,41 +63,6 @@ export const Wrapper = styled.div<WrapperProps>`
   }
 `;
 
-export const Button = styled.button`
-  color: ${({ theme }) => theme.colors.white};
-  background: none;
-  padding: 8px;
-  font-family: "Montserrat";
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 4px;
-  transition: 0.1s ease-out;
-
-  :hover {
-    transform: scale(1.03);
-  }
-`;
-
-export const HGLButton = styled(Button)`
-  border: none;
-  padding: 2px;
-  background: linear-gradient(
-    90deg,
-    hsl(173deg 100% 50%) 0%,
-    hsl(179deg 91% 49%) 50%,
-    hsl(185deg 82% 49%) 100%
-  );
-
-  .module {
-    border-radius: 4px;
-    background-color: ${({ theme }) => theme.colors.black};
-    padding: 8px;
-  }
-`;
-
 export const HeroInfo = styled.div`
   display: flex;
   flex-direction: column;
@@ -110,12 +75,9 @@ export const HeroInfo = styled.div`
     color: ${(props) => props.theme.colors.blue};
   }
 
-  .highlight {
-    ${bleen};
-  }
-
   .hero_action {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 

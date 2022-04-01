@@ -3,7 +3,8 @@ import InView from "../../lib/inView";
 import { FaAngleDown } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
-import { Button, HeroImage, HeroInfo, HGLButton, Wrapper } from "./styles";
+import { HeroImage, HeroInfo, Wrapper } from "./styles";
+import { Btn, HGLBtn } from "../../components/button/styles";
 
 export type WrapperProps = {
   inView: boolean;
@@ -32,14 +33,11 @@ const Index = () => {
             </p>
             <div className="hero_action" data-fade="4">
               <Link passHref href="/contatos">
-                <HGLButton>
-                  <div className="module">
-                    <p className="highlight">Falar comigo</p>
-                  </div>
-                </HGLButton>
+                <HGLBtn>Falar comigo</HGLBtn>
               </Link>
               <Link passHref href="/sobreMim">
-                <Button>Sobre mim</Button>
+                {/* <Button>Sobre mim</Button> */}
+                <Btn>Sobre mim</Btn>
               </Link>
             </div>
           </HeroInfo>

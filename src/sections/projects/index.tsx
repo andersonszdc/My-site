@@ -3,7 +3,8 @@ import InView from "../../lib/inView";
 import Card from "../../components/project/Card";
 import Link from "next/link";
 import { Frontmatter } from "../../types/frontmatters";
-import { SeeMore, Wrapper } from "./styles";
+import { Wrapper } from "./styles";
+import Button from "../../components/button";
 
 export type WrapperProps = {
   inView: boolean;
@@ -28,7 +29,7 @@ const Projects = ({ projects }: ProjectsProps) => {
           </div>
           <Link passHref href="/projects">
             <div data-fade="3">
-              <SeeMore>Ver mais projetos</SeeMore>
+              <Button>Ver mais projetos</Button>
             </div>
           </Link>
         </Wrapper>

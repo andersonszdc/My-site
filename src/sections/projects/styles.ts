@@ -16,6 +16,7 @@ export const Wrapper = styled.div<WrapperProps>`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.4rem;
+    margin-bottom: 3.2rem;
   }
 
   [data-fade] {
@@ -65,24 +66,5 @@ export const Wrapper = styled.div<WrapperProps>`
       font-size: 1.8rem;
       margin-bottom: 2.4rem;
     }
-  }
-`;
-
-export const SeeMore = styled.button`
-  background-color: transparent;
-  color: white;
-  border: 1px solid white;
-  border-radius: 4px;
-  padding: 8px;
-  font-size: 1.6rem;
-  margin-top: 3.2rem;
-  font-weight: 600;
-  font-family: "Montserrat";
-  cursor: pointer;
-  transition: all 0.1s ease-out;
-  :hover {
-    border-color: ${(props) => props.theme.colors.blue};
-    color: ${(props) => props.theme.colors.blue};
-    transform: scale(1.03);
   }
 `;

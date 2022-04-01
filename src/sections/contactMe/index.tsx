@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Btn, HGLBtn } from "../../components/button/styles";
 import { Wrapper } from "./styles";
 
 export interface WrapperProps {
@@ -81,7 +82,7 @@ const Index = () => {
         />
         {error && <p className="error">{error}</p>}
         {sucess && <p className="sucess">{sucess}</p>}
-        <input className="send" type="submit" value={valueInput} />
+        <HGLBtn>{valueInput}</HGLBtn>
       </form>
     </Wrapper>
   );
