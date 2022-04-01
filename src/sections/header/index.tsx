@@ -9,24 +9,24 @@ export interface StyledProps {
 }
 
 interface HeaderProps {
-  toggleTheme: () => void;
+  toggleColors: () => void;
 }
 
-const Index = ({ toggleTheme }: HeaderProps) => {
+const Index = ({ toggleColors }: HeaderProps) => {
   const [isClicked, setIsClicked] = useState(false);
   const [color, setColor] = useState("#FAF8F8");
 
   function handleClick() {
     setIsClicked(isClicked ? false : true);
     setColor(color === "#FAF8F8" ? "#2B2323" : "#FAF8F8");
-    toggleTheme();
+    toggleColors();
   }
 
   function handleLogoClick() {
     if (isClicked === true) {
       setIsClicked(false);
       setColor(color === "#FAF8F8" ? "#2B2323" : "#FAF8F8");
-      toggleTheme();
+      toggleColors();
     }
   }
 

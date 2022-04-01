@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import Layout from "../HOC/Layout";
 import Global from "../styles/global";
-import pattern from "../styles/themes/pattern";
-import menu from "../styles/themes/menu";
+import pattern from "../styles/themes/light";
+import menu from "../styles/themes/dark";
 import "../styles/mdx.css";
 import { useRouter } from "next/dist/client/router";
 import { getAnalytics, logEvent } from "firebase/analytics";
@@ -21,10 +21,10 @@ interface Itheme {
 
 function MyApp({ Component, pageProps }: AppProps) {
   const route = useRouter();
-  const [theme, setTheme] = useState<Itheme>(pattern);
+  const [colors, setColors] = useState<Itheme>(pattern);
 
-  const toggleTheme = () => {
-    setTheme(theme.title === "pattern" ? menu : pattern);
+  const toggleColors = () => {
+    setColors(colors.title === "pattern" ? menu : pattern);
   };
   useEffect(() => {
     const analytics = getAnalytics(app);
@@ -33,9 +33,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={colors}>
         <Global />
-        <Layout toggleTheme={toggleTheme}>
+        <Layout toggleColors={toggleColors}>
           <Component {...pageProps} />
         </Layout>
       </ThemeProvider>

@@ -3,14 +3,14 @@ import Footer from "../sections/footer";
 import Header from "../sections/header";
 
 interface LayoutProps {
-  toggleTheme: () => void;
+  toggleColors: () => void;
   children: React.ReactNode;
 }
 
-const Layout = ({ children, toggleTheme }: LayoutProps) => {
+const Layout = ({ children, toggleColors }: LayoutProps) => {
   return (
     <>
-      <Header toggleTheme={toggleTheme} />
+      <Header toggleColors={toggleColors} />
       <main>{children}</main>
       <Footer />
     </>

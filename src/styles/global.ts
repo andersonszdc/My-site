@@ -1,5 +1,5 @@
 import { createGlobalStyle, css, keyframes } from "styled-components";
-import pattern from "./themes/pattern";
+import pattern from "./themes/light";
 
 interface GlobalProps {
   theme: typeof pattern;
