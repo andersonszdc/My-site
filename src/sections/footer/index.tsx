@@ -26,29 +26,49 @@ const Index = () => {
         <h3 className="redes__title h6">Minhas redes!</h3>
         <ul className="footer__icons">
           <li>
-            <Link passHref href="https://www.instagram.com/andersonszdc/">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.instagram.com/andersonszdc/"
+            >
               <FaInstagram className="icon" />
-            </Link>
+            </a>
           </li>
           <li>
-            <Link passHref href="https://twitter.com/Andersonszdc">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://twitter.com/Andersonszdc"
+            >
               <FaTwitter className="icon" />
-            </Link>
+            </a>
           </li>
           <li>
-            <Link passHref href="mailto: contato@andersonszdc.com">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="mailto: contato@andersonszdc.com"
+            >
               <HiOutlineMail className="icon" />
-            </Link>
+            </a>
           </li>
           <li>
-            <Link passHref href="https://www.linkedin.com/in/andersonszdc/">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.linkedin.com/in/andersonszdc/"
+            >
               <FaLinkedin className="icon" />
-            </Link>
+            </a>
           </li>
           <li>
-            <Link passHref href="https://github.com/andersonszdc">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://github.com/andersonszdc"
+            >
               <FaGithub className="icon" />
-            </Link>
+            </a>
           </li>
         </ul>
       </div>
