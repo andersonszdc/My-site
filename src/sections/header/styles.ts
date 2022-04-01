@@ -25,14 +25,17 @@ export const Me = styled.div<StyledProps>`
   .me__title {
     margin-bottom: 0.6rem;
     transition: 0.5s cubic-bezier(0.3, 0, 0.5, 1);
-    color: ${(props) => props.theme.colors.text};
+    color: ${({ theme }) => theme.colors.text};
   }
-  .me__subtitle {
-    background-color: black;
-    ${bleen}
+  .subtitle__full {
+    color: ${({ theme }) => theme.colors.green};
   }
-  .destaqui {
-    ${bleen}
+  .subtitle__and {
+    transition: 0.5s cubic-bezier(0.3, 0, 0.5, 1);
+    color: ${({ theme }) => theme.colors.text};
+  }
+  .subtitle__designer {
+    color: ${({ theme }) => theme.colors.blue};
   }
   @media (max-width: 400px) {
     .me__logo {

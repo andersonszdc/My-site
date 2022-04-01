@@ -48,9 +48,11 @@ const Index = ({ toggleColors }: HeaderProps) => {
             </div>
             <div>
               <h1 className="me__title h5">Anderson Souza</h1>
-              <span className="destaqui">
-                <h2 className="me__subtitle p3">Full Stack & UI/UX Designer</h2>
-              </span>
+              <h2 className="p3">
+                <span className="subtitle__full">Full Stack</span>
+                <span className="subtitle__and"> & </span>
+                <span className="subtitle__designer">UI/UX Designer</span>
+              </h2>
             </div>
           </Me>
         </Link>

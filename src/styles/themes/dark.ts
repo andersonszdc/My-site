@@ -9,6 +9,7 @@ const menu = {
     black: "#2B2323",
     white: "#FAF8F8",
     gray: "#CCC",
+    green: "#00FFE0",
   },
 };
 
