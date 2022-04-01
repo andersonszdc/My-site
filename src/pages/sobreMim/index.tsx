@@ -39,17 +39,25 @@ const Intro = styled.div`
   }
 
   .about_card {
+    position: relative;
     display: flex;
-    border: 1px solid ${(props) => props.theme.colors.blue};
     border-radius: 16px;
+    aspect-ratio: 4/5;
   }
 
   .about_img {
+    display: block;
     border-radius: 16px;
   }
 
   @media (max-width: 1000px) {
     grid-template-columns: 1fr;
+
+    @media (max-width: 1000px) {
+      .about_card {
+        aspect-ratio: 21/9;
+      }
+    }
   }
 `;
 
@@ -65,15 +73,14 @@ const sobreMim = () => {
           <div>
             <div className="about_card">
               <Image
-                width={3200}
-                height={1100}
+                layout="fill"
                 className="about_img"
                 alt="Anderson"
-                src="/assets/aboutme.png"
+                src="/assets/aboutme-example.png"
               />
             </div>
           </div>
-          <div className="about_text p1">
+          <div className="about_text p2">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vel dui
               vitae, urna duis ut gravida placerat. Nunc rhoncus id ornare neque
