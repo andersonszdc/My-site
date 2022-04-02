@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import { bleen } from "../../styles/global";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(motion.div)`
   display: grid;
   position: relative;
   grid-template-columns: auto 1fr;

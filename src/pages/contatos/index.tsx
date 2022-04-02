@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Forms from "../../sections/forms";
 import Head from "next/head";
 import { bleen } from "../../styles/global";
+import { motion } from "framer-motion";
 
 const Contatos = () => {
   return (
@@ -12,7 +13,11 @@ const Contatos = () => {
       <Head>
         <title>Contatos - Andersonszdc</title>
       </Head>
-      <Wrapper>
+      <Wrapper
+        initial={{ x: "100vw" }}
+        animate={{ x: 0 }}
+        exit={{ x: "-100vw" }}
+      >
         <h2 className="title h3">Fale comigo!</h2>
         <p className="p2">
           Sinta-se livre para me enviar uma mensagem sobre qualquer coisa.
@@ -39,7 +44,7 @@ const Contatos = () => {
 
 export default Contatos;
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,6 +80,6 @@ const Infos = styled.ul`
 
   .icon {
     font-size: 4.8rem;
-    color: ${({theme}) => theme.colors.blue};
+    color: ${({ theme }) => theme.colors.blue};
   }
 `;

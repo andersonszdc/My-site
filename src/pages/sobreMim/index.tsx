@@ -4,8 +4,9 @@ import styled from "styled-components";
 import Skill from "../../sections/skills";
 import Head from "next/head";
 import { bleen } from "../../styles/global";
+import { motion } from "framer-motion";
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   margin: 3.2rem 4% 9rem 4%;
@@ -67,7 +68,11 @@ const sobreMim = () => {
       <Head>
         <title>Sobre Mim - Andersonszdc</title>
       </Head>
-      <Wrapper>
+      <Wrapper
+        initial={{ x: "100vw" }}
+        animate={{ x: 0 }}
+        exit={{ x: "-100vw" }}
+      >
         <h2 className="h3">Sobre mim</h2>
         <Intro>
           <div>

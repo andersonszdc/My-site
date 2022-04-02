@@ -11,6 +11,7 @@ import { getAnalytics, logEvent } from "firebase/analytics";
 import app from "../../firebase/config";
 import { Typography } from "../styles/typography";
 import Intro from "../sections/intro";
+import { AnimatePresence } from "framer-motion";
 
 interface Itheme {
   title: string;
@@ -39,12 +40,12 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={colors}>
         <Typography />
         <Global />
-        {startIntro && (
-          <Intro setStartIntro={setStartIntro} />
-        )}
-        <Layout toggleColors={toggleColors}>
-          <Component {...pageProps} />
-        </Layout>
+        {startIntro && <Intro setStartIntro={setStartIntro} />}
+        <AnimatePresence>
+          <Layout toggleColors={toggleColors}>
+            <Component {...pageProps} />
+          </Layout>
+        </AnimatePresence>
       </ThemeProvider>
     </>
   );

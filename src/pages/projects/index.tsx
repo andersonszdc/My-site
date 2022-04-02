@@ -6,6 +6,7 @@ import Card from "../../components/project/Card";
 import { getDownloadURL, ref } from "@firebase/storage";
 import { storage } from "../../../firebase/config";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 type IndexProps = {
   projects: Frontmatter[];
@@ -26,7 +27,7 @@ const ProjectsGrid = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   margin: 3.2rem 4%;
@@ -45,7 +46,7 @@ const Wrapper = styled.div`
 
 const Index = ({ projects }: IndexProps) => {
   return (
-    <Wrapper>
+    <Wrapper initial={{ x: "100vw" }} animate={{ x: 0 }} exit={{ x: "-100vw" }}>
       <h1 className="projects__title">Projetos</h1>
       <h2 className="projects__subtitle">
         Projetos pessoais, de clientes e estudos de caso.

@@ -7,6 +7,7 @@ import { getAllFilesFrontmatter, getFeatured } from "../lib/mdx";
 import { getDownloadURL, ref } from "@firebase/storage";
 import { storage } from "../../firebase/config";
 import { Frontmatter } from "../types/frontmatters";
+import { motion } from "framer-motion";
 
 type HomeProps = {
   projectsWithUrl: Frontmatter[];
@@ -19,9 +20,15 @@ const Home = ({ projectsWithUrl, heroImageUrl }: HomeProps) => {
       <Head>
         <title>Home - Andersonszdc</title>
       </Head>
-      <Hero />
-      <Projects projects={projectsWithUrl} />
-      <CallMe />
+      <motion.div
+        initial={{ x: "100vw" }}
+        animate={{ x: 0 }}
+        exit={{ x: "-100vw" }}
+      >
+        <Hero />
+        <Projects projects={projectsWithUrl} />
+        <CallMe />
+      </motion.div>
     </>
   );
 };
