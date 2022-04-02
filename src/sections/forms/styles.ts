@@ -16,9 +16,23 @@ export const Wrapper = styled.div<WrapperProps>`
   }
 
   form {
-    display: flex;
-    gap: 0.8rem;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+    padding: 4rem;
+    background-color: ${({ theme }) => theme.colors.gray4};
+    border-radius: 1.6rem;
+  }
+
+  .input-message {
+    grid-row: 1/4;
+    grid-column: 2/3;
+  }
+
+  .form__action {
+    display: grid;
+    padding: 0 25%;
+    grid-column: 1/3;
   }
 
   .inputs {

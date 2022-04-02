@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Btn, HGLBtn } from "../../components/button/styles";
+import { HGLBtn } from "../../components/button/styles";
+import Input from "../../components/form/Input";
+import Text from "../../components/form/Text";
 import { Wrapper } from "./styles";
 
 export interface WrapperProps {
@@ -49,40 +51,31 @@ const Index = () => {
 
   return (
     <Wrapper loading={loading}>
-      <h2 className="h5">Fale comigo!</h2>
-      <p className="p2">
-        Se preferir, envie uma mensagem direta para{" "}
-        <span className="contrast">contato@andersonszdc.com</span>
-      </p>
       <form onSubmit={handleSubmit}>
-        <input
-          className="inputs"
-          placeholder="nome"
-          type="text"
+        <Input
+          field="name"
           name="name"
           value={form.name}
           onChange={handleInputChange}
         />
-        <input
-          className="inputs"
-          placeholder="e-mail"
-          type="text"
+        <Input
+          field="email"
           name="to"
           value={form.to}
           onChange={handleInputChange}
         />
-        <textarea
-          style={{ resize: "none" }}
-          className="inputs"
-          placeholder="mensagem"
+        <Input field="number" />
+        <Text
+          className="input-message"
           name="message"
           value={form.message}
-          rows={7}
           onChange={handleInputChange}
         />
         {error && <p className="error">{error}</p>}
         {sucess && <p className="sucess">{sucess}</p>}
-        <HGLBtn>{valueInput}</HGLBtn>
+        <div className="form__action">
+          <HGLBtn>{valueInput}</HGLBtn>
+        </div>
       </form>
     </Wrapper>
   );

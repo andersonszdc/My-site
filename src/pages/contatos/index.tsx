@@ -2,67 +2,9 @@ import React from "react";
 import { BsTelephone } from "react-icons/bs";
 import { HiOutlineLocationMarker, HiOutlineMail } from "react-icons/hi";
 import styled from "styled-components";
-import Forms from "../../sections/contactMe";
+import Forms from "../../sections/forms";
 import Head from "next/head";
-
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 4%;
-  margin: 4.8rem 0 9rem 0;
-
-  @media (max-width: 1000px) {
-    flex-direction: column-reverse;
-    gap: 4.8rem;
-  }
-
-  @media (max-width: 400px) {
-    margin-bottom: 3.2rem;
-  }
-`;
-
-const Infos = styled.ul`
-  display: flex;
-  flex-direction: column;
-  gap: 3.2rem;
-  padding: 4rem;
-  border-radius: 3.2rem;
-  border: 2px solid ${(props) => props.theme.colors.blue};
-
-  .infos_item {
-    display: grid;
-    grid-template-columns: 2.4rem auto;
-    list-style: none;
-    gap: 0.8rem;
-  }
-
-  .icon {
-    font-size: 2.4rem;
-    color: ${(props) => props.theme.colors.blue};
-  }
-
-  h3 {
-    grid-column: 2/3;
-  }
-
-  @media (max-width: 400px) {
-    padding: 1.6rem;
-    border-radius: 1.2rem;
-
-    .icon {
-      font-size: 1.6rem;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-    }
-
-    h3 {
-      font-size: 1.2rem;
-    }
-  }
-`;
+import { bleen } from "../../styles/global";
 
 const Contatos = () => {
   return (
@@ -71,21 +13,22 @@ const Contatos = () => {
         <title>Contatos - Andersonszdc</title>
       </Head>
       <Wrapper>
+        <h2 className="title h3">Fale comigo!</h2>
+        <p className="p2">
+          Sinta-se livre para me enviar uma mensagem sobre qualquer coisa.
+        </p>
         <Infos>
-          <li className="infos_item">
+          <li className="infos__item">
             <HiOutlineMail className="icon" />
-            <h2 className="h5">E-mail</h2>
-            <h3 className="p2">contato@andersonszdc.com</h3>
+            <h3 className="p3">contato@andersonszdc.com</h3>
           </li>
-          <li className="infos_item">
+          <li className="infos__item">
             <BsTelephone className="icon" />
-            <h2 className="h5">Celular</h2>
-            <h3 className="p2">+55 (21) 97351-2104</h3>
+            <h3 className="p3">+55 (21) 97351-2104</h3>
           </li>
-          <li className="infos_item">
+          <li className="infos__item">
             <HiOutlineLocationMarker className="icon" />
-            <h2 className="h5">Cidade</h2>
-            <h3 className="p2">Rio de Janeiro - RJ</h3>
+            <h3 className="p3">Rio de Janeiro - RJ</h3>
           </li>
         </Infos>
         <Forms />
@@ -95,3 +38,43 @@ const Contatos = () => {
 };
 
 export default Contatos;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4%;
+  margin: 4.8rem 0 9rem 0;
+
+  .title {
+    ${bleen}
+    margin-bottom: 1.6rem;
+  }
+`;
+
+const Infos = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 4rem;
+
+  .infos__item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.8rem;
+    border-radius: 0.8rem;
+    padding: 2.4rem;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+
+    :hover {
+      background-color: ${({ theme }) => theme.colors.gray4};
+    }
+  }
+
+  .icon {
+    font-size: 4.8rem;
+    color: ${({theme}) => theme.colors.blue};
+  }
+`;
