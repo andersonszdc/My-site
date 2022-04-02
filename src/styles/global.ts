@@ -61,6 +61,10 @@ const Global = createGlobalStyle<GlobalProps>`
         );
         background-repeat: no-repeat;
     }
+
+    .layout-main {
+        overflow-x: hidden;
+    }
 `;
 
 export const bleen = css`

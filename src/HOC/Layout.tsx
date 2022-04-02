@@ -11,7 +11,7 @@ const Layout = ({ children, toggleColors }: LayoutProps) => {
   return (
     <>
       <Header toggleColors={toggleColors} />
-      <main>{children}</main>
+      <main className="layout-main">{children}</main>
       <Footer />
     </>
   );
