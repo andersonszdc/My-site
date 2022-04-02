@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-const variants = {
+const lineVariants = {
   visible: (i: number) => ({
     opacity: 1,
     transition: {
@@ -12,7 +12,7 @@ const variants = {
   hidden: { opacity: 0, x: 100 },
 };
 
-const variants2 = {
+const overlayVariants = {
   visible: {
     top: "-100%",
   },
@@ -21,7 +21,7 @@ const variants2 = {
   },
 };
 
-const variants3 = {
+const wrapperVariants = {
   visible: {
     top: "0",
   },
@@ -61,7 +61,7 @@ const Intro = ({ setStartIntro }: any) => {
     <>
       <Wrapper
         startWrapper={startAnimation}
-        variants={variants3}
+        variants={wrapperVariants}
         initial="visible"
         animate={upOverlay ? "hidden" : "visible"}
         transition={{ duration: 1, delay: 1, ease: "easeOut" }}
@@ -69,7 +69,7 @@ const Intro = ({ setStartIntro }: any) => {
         <p className="h2">
           <motion.span
             custom={1}
-            variants={variants}
+            variants={lineVariants}
             initial="hidden"
             animate="visible"
             transition={{ duration: 1 }}
@@ -79,7 +79,7 @@ const Intro = ({ setStartIntro }: any) => {
           <br />
           <motion.span
             custom={3}
-            variants={variants}
+            variants={lineVariants}
             initial="hidden"
             animate="visible"
             transition={{ duration: 1 }}
@@ -89,7 +89,7 @@ const Intro = ({ setStartIntro }: any) => {
           <br />
           <motion.span
             custom={5}
-            variants={variants}
+            variants={lineVariants}
             initial="hidden"
             animate="visible"
             transition={{ duration: 1 }}
@@ -101,7 +101,7 @@ const Intro = ({ setStartIntro }: any) => {
       </Wrapper>
       <Overlay
         transition={{ duration: 2, ease: "easeInOut" }}
-        variants={variants2}
+        variants={overlayVariants}
         initial="hidden"
         animate={upOverlay ? "visible" : "hidden"}
         onAnimationComplete={() => setStartIntro(false)}
