@@ -36,7 +36,7 @@ const Global = createGlobalStyle<GlobalProps>`
             }
     }
 
-    button {
+    button, input, textarea {
         font-family: inherit;
     }
 
