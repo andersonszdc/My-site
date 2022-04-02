@@ -1,45 +1,14 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
-import { WrapperProps } from ".";
 import { bleen } from "../../styles/global";
 
-export const Wrapper = styled.div<WrapperProps>`
+export const Wrapper = styled.div`
   display: grid;
   position: relative;
   grid-template-columns: auto 1fr;
   padding: 0 4% 80px 4%;
   align-items: center;
   min-height: calc(100vh - 80px);
-
-  [data-fade] {
-    transition: 400ms ease-out;
-    transform: translateY(6rem);
-    opacity: 0;
-  }
-
-  ${(props) =>
-    props.inView &&
-    `
-    [data-fade] {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    [data-fade='1'] {
-      transition-delay: 100ms;
-    }
-
-    [data-fade='2'] {
-      transition-delay: 200ms;
-    }
-
-    [data-fade='3'] {
-      transition-delay: 300ms;
-    }
-
-    [data-fade='4'] {
-      transition-delay: 400ms;
-    }
-  `}
 
   @media (max-width: 1000px) {
     display: flex;
@@ -105,7 +74,7 @@ export const HeroInfo = styled.div`
   }
 `;
 
-export const HeroImage = styled.div`
+export const HeroImage = styled(motion.div)`
   display: inline-flex;
   justify-content: center;
 
