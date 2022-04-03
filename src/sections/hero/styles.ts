@@ -43,7 +43,15 @@ export const HeroInfo = styled.div`
     gap: 16px;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 600px) {
+    --text-multiplier: 0.75;
+  }
+
+  @media (max-width: 420px) {
+    --text-multiplier: 0.6;
+  }
+
+  /* @media (max-width: 700px) {
     .name {
       font-size: 1.2rem;
     }
@@ -71,7 +79,7 @@ export const HeroInfo = styled.div`
     .hero_icons {
       font-size: 2.4rem;
     }
-  }
+  } */
 `;
 
 export const HeroImage = styled(motion.div)`

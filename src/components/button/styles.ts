@@ -9,13 +9,18 @@ export const Btn = styled.button`
   color: ${({ theme }) => theme.colors.white};
   border: 2px solid ${({ theme }) => theme.colors.white};
   cursor: pointer;
-  padding: 0 40px;
+  padding: 0 clamp(0px, 5vw, 40px);
   transition: 0.1s ease-out;
 
   :hover {
     transform: scale(1.05);
     color: ${({ theme }) => theme.colors.blue};
     border-color: ${({ theme }) => theme.colors.blue};
+  }
+
+  @media (max-width: 420px) {
+    font-size: 1.2rem;
+    height: 30px;
   }
 `;
 
@@ -37,5 +42,10 @@ export const HGLBtn = styled.button`
 
   :hover {
     transform: scale(1.05);
+  }
+
+  @media (max-width: 420px) {
+    font-size: 1.2rem;
+    height: 30px;
   }
 `;
