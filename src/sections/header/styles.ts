@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { StyledProps } from ".";
-import { bleen } from "../../styles/global";
 
 export const Wrapper = styled.div<StyledProps>`
   display: flex;
@@ -38,14 +37,12 @@ export const Me = styled.div<StyledProps>`
     color: ${({ theme }) => theme.colors.blue};
   }
   @media (max-width: 400px) {
+    --text-multiplier: 0.75;
     .me__logo {
-      width: 2.4rem;
+      width: 3rem;
     }
     .me__title {
-      font-size: 1.2rem;
-    }
-    .me__subtitle {
-      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
     }
   }
 `;
@@ -56,7 +53,7 @@ export const MenuBtn = styled.div<StyledProps>`
   gap: 0.8rem;
   cursor: pointer;
   z-index: 10;
-  p {
+  .label {
     color: ${(props) => props.theme.colors.text};
     transition: 0.5s cubic-bezier(0.3, 0, 0.5, 1);
     font-size: 2rem;
@@ -76,11 +73,13 @@ export const MenuBtn = styled.div<StyledProps>`
     border-radius: 0.1rem;
     transition: all 0.3s linear;
   }
+
   @media (pointer: fine) {
     :hover {
       opacity: 0.8;
     }
   }
+
   ${({ isClicked }) =>
     !isClicked &&
     `
@@ -90,6 +89,7 @@ export const MenuBtn = styled.div<StyledProps>`
             }
         }
     `}
+
   ${({ isClicked }) =>
     isClicked &&
     `
@@ -109,4 +109,9 @@ export const MenuBtn = styled.div<StyledProps>`
             }
         }
     `}
+    @media (max-width: 400px) {
+    .label {
+      display: none;
+    }
+  }
 `;

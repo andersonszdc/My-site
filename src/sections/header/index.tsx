@@ -57,7 +57,7 @@ const Index = ({ toggleColors }: HeaderProps) => {
           </Me>
         </Link>
         <MenuBtn isClicked={isClicked} onClick={handleClick}>
-          <p>menu</p>
+          <p className="label">menu</p>
           <div className="burger">
             <span className="one" />
             <span className="two" />
