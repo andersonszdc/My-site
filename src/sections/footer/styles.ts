@@ -42,7 +42,7 @@ export const Wrapper = styled.footer`
   }
 
   .icon {
-    font-size: 3rem;
+    font-size: calc(3rem * var(--text-multiplier));
     cursor: pointer;
     transition: 0.2s ease-out;
     color: ${(props) => props.theme.colors.blue};
@@ -66,6 +66,10 @@ export const Wrapper = styled.footer`
 
   .logo {
     width: 2.5rem;
+  }
+
+  @media (max-width: 400px) {
+    --text-multiplier: 0.75;
   }
 
   @media (max-width: 560px) {
