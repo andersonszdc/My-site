@@ -15,8 +15,8 @@ export const Wrapper = styled(motion.div)`
     align-items: normal;
     flex-direction: column;
     gap: 3.2rem;
-    padding-top: 15vh;
-    padding-bottom: 0;
+    padding-top: 90px;
+    padding-bottom: 90px;
   }
 `;
 
@@ -50,36 +50,6 @@ export const HeroInfo = styled.div`
   @media (max-width: 420px) {
     --text-multiplier: 0.6;
   }
-
-  /* @media (max-width: 700px) {
-    .name {
-      font-size: 1.2rem;
-    }
-    .function {
-      font-size: 2.4rem;
-    }
-    .description {
-      font-size: 1.2rem;
-    }
-    .hero_icons {
-      font-size: 2.4rem;
-    }
-  }
-
-  @media (max-width: 400px) {
-    .name {
-      font-size: 1rem;
-    }
-    .function {
-      font-size: 2rem;
-    }
-    .description {
-      font-size: 1.2rem;
-    }
-    .hero_icons {
-      font-size: 2.4rem;
-    }
-  } */
 `;
 
 export const HeroImage = styled(motion.div)`
@@ -92,13 +62,7 @@ export const HeroImage = styled(motion.div)`
 
   @media (max-width: 1000px) {
     div {
-      width: 275px;
-    }
-  }
-
-  @media (max-width: 500px) {
-    div {
-      width: 200px;
+      width: clamp(0px, 80vw, 450px);
     }
   }
 `;

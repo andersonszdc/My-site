@@ -26,15 +26,20 @@ export const Wrapper = styled(motion.div)`
   }
 
   @media (max-width: 600px) {
+    --text-multiplier: 0.75;
     .projects__cards {
       grid-template-columns: 1fr;
     }
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 420px) {
+    --text-multiplier: 0.6;
+  }
+
+  /* @media (max-width: 400px) {
     .projects_title {
       font-size: 1.8rem;
       margin-bottom: 2.4rem;
     }
-  }
+  } */
 `;
