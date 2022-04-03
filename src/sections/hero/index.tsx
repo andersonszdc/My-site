@@ -25,6 +25,7 @@ const Index = () => {
           variants={variants}
           initial="hidden"
           whileInView="visible"
+          viewport={{ margin: "-120px 0px 0px 0px" }}
           className="name h5"
         >
           Anderson Souza
@@ -52,6 +53,7 @@ const Index = () => {
       <HeroImage
         initial={{ opacity: 0, x: 80 }}
         whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ margin: "-120px 0px 0px 0px" }}
         transition={{ duration: 0.75 }}
       >
         <div>
