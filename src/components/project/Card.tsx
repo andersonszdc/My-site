@@ -25,13 +25,15 @@ const Wrapper = styled.div`
   }
 
   .card__title {
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: clamp(1.6rem, 1.692vw, 2.2rem);
+    font-weight: 700;
+    line-height: 120%;
   }
 
   .card__description {
-    font-size: 1.4rem;
-    font-weight: 400;
+    font-size: clamp(1.2rem, 1.231vw, 1.6rem);
+    font-weight: 500;
+    line-height: 150%;
     margin-top: 0.4rem;
     margin-bottom: auto;
   }
@@ -45,8 +47,9 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    font-size: 1.6rem;
-    font-weight: 600;
+    font-size: clamp(1.2rem, 1.231vw, 1.6rem);
+    font-weight: 700;
+    line-height: 120%;
   }
 `;
 

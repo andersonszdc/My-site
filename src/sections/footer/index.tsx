@@ -76,10 +76,10 @@ const Index = () => {
         <div className="logo">
           <Logo color="#FAF8F8" />
         </div>
-        <p>
+        <p className="p4">
           © 2021 Andersonszdc.
           <br />
-          Made for me in RJ, Brasil.
+          Made for me in RJ, Brazil.
         </p>
       </div>
     </Wrapper>

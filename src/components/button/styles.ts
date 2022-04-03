@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Btn = styled.button`
-  font-size: 1.6rem;
+  font-size: clamp(1.2rem, 1.231vw, 1.6rem);
   font-weight: 600;
   height: 40px;
   border-radius: 4px;
@@ -19,7 +19,6 @@ export const Btn = styled.button`
   }
 
   @media (max-width: 420px) {
-    font-size: 1.2rem;
     height: 30px;
   }
 `;
@@ -31,7 +30,7 @@ export const HGLBtn = styled.button`
     hsl(179deg 91% 49%) 50%,
     hsl(185deg 82% 49%) 100%
   );
-  font-size: 1.6rem;
+  font-size: clamp(1.2rem, 1.231vw, 1.6rem);
   font-weight: 600;
   height: 40px;
   border-radius: 4px;
@@ -45,7 +44,6 @@ export const HGLBtn = styled.button`
   }
 
   @media (max-width: 420px) {
-    font-size: 1.2rem;
     height: 30px;
   }
 `;

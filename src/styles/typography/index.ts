@@ -24,21 +24,21 @@ export const Typography = createGlobalStyle`
 
  .h4 {
     /* font-size: calc(2.8rem * var(--text-multiplier)); */
-    font-size: clamp(1.4rem, 2.154vw, 2.8rem);
+    font-size: clamp(2rem, 2.154vw, 2.8rem);
     font-weight: 700;
     line-height: 120%;
  }
 
  .h5 {
     /* font-size: calc(2.2rem * var(--text-multiplier)); */
-    font-size: clamp(1.1rem, 1.692vw, 2.2rem);
+    font-size: clamp(1.2rem, 1.692vw, 2.2rem);
     font-weight: 700;
     line-height: 120%;
  }
 
  .h6 {
     /* font-size: calc(1.6rem * var(--text-multiplier)); */
-    font-size: clamp(.8rem, 1.231vw, 1.6rem);
+    font-size: clamp(1.2rem, 1.231vw, 1.6rem);
     font-weight: 700;
     line-height: 120%;
  }
@@ -52,21 +52,21 @@ export const Typography = createGlobalStyle`
 
  .p2 {
     /* font-size: calc(2rem * var(--text-multiplier)); */
-    font-size: clamp(1rem, 1.538vw, 2rem);
+    font-size: clamp(1.2rem, 1.538vw, 2rem);
     font-weight: 500;
     line-height: 150%;
  }
 
  .p3 {
     /* font-size: calc(1.6rem * var(--text-multiplier)); */
-    font-size: clamp(.8rem, 1.231vw, 1.6rem);
+    font-size: clamp(1rem, 1.231vw, 1.6rem);
     font-weight: 500;
     line-height: 150%;
  }
 
  .p4 {
     /* font-size: calc(1.2rem * var(--text-multiplier)); */
-    font-size: clamp(.6rem, 0.923vw, 1.2rem);
+    font-size: clamp(.8rem, 0.923vw, 1.2rem);
     font-weight: 500;
     line-height: 150%;
  }
