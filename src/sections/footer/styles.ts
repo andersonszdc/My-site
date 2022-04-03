@@ -42,7 +42,6 @@ export const Wrapper = styled.footer`
   }
 
   .icon {
-    font-size: calc(3rem * var(--text-multiplier));
     cursor: pointer;
     transition: 0.2s ease-out;
     color: ${(props) => props.theme.colors.blue};

@@ -31,7 +31,7 @@ const Index = () => {
               target="_blank"
               href="https://www.instagram.com/andersonszdc/"
             >
-              <FaInstagram className="icon" />
+              <FaInstagram className="icon h4" />
             </a>
           </li>
           <li>
@@ -40,7 +40,7 @@ const Index = () => {
               target="_blank"
               href="https://twitter.com/Andersonszdc"
             >
-              <FaTwitter className="icon" />
+              <FaTwitter className="icon h4" />
             </a>
           </li>
           <li>
@@ -49,7 +49,7 @@ const Index = () => {
               target="_blank"
               href="mailto: contato@andersonszdc.com"
             >
-              <HiOutlineMail className="icon" />
+              <HiOutlineMail className="icon h4" />
             </a>
           </li>
           <li>
@@ -58,7 +58,7 @@ const Index = () => {
               target="_blank"
               href="https://www.linkedin.com/in/andersonszdc/"
             >
-              <FaLinkedin className="icon" />
+              <FaLinkedin className="icon h4" />
             </a>
           </li>
           <li>
@@ -67,7 +67,7 @@ const Index = () => {
               target="_blank"
               href="https://github.com/andersonszdc"
             >
-              <FaGithub className="icon" />
+              <FaGithub className="icon h4" />
             </a>
           </li>
         </ul>

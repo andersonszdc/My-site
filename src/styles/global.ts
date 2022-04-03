@@ -12,12 +12,8 @@ const Global = createGlobalStyle<GlobalProps>`
         box-sizing: border-box;
     }
 
-    :root {
-        --text-multiplier: 1;
-    }
-
     html {
-        font-size: 10px;
+        font-size: 62.5%;
         scroll-behavior: smooth;
     }
 
