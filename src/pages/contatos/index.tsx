@@ -19,7 +19,7 @@ const Contatos = () => {
         exit={{ x: "-100vw" }}
       >
         <h2 className="title h3">Fale comigo!</h2>
-        <p className="p2">
+        <p className="subtitle p2">
           Sinta-se livre para me enviar uma mensagem sobre qualquer coisa.
         </p>
         <Infos>
@@ -55,6 +55,10 @@ const Wrapper = styled(motion.div)`
   .title {
     ${bleen}
     margin-bottom: 1.6rem;
+  }
+
+  .subtitle {
+    text-align: center;
   }
 `;
 
