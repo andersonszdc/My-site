@@ -13,14 +13,14 @@ const Projects = ({ projects }: ProjectsProps) => {
   return (
     <Wrapper
       id="projects"
-      initial={{ opacity: 0, y: "100" }}
-      whileInView={{ opacity: 1, y: "0" }}
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: .75 }}
     >
-      <h2 data-fade="1" id="projects_title" className="projects_title h3">
+      <h2 id="projects_title" className="projects_title h3">
         Projetos
       </h2>
-      <div data-fade="2" className="projects__cards">
+      <div className="projects__cards">
         {projects.map((project: any, index: number) => (
           <Card data={project} key={index} />
         ))}

@@ -23,7 +23,7 @@ const overlayVariants = {
 
 const wrapperVariants = {
   visible: {
-    top: "0",
+    top: 0,
   },
   hidden: {
     top: "-100%",

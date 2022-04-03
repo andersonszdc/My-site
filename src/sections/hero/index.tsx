@@ -8,12 +8,12 @@ import { motion } from "framer-motion";
 const variants = {
   visible: (i: number) => ({
     opacity: 1,
-    x: "0",
+    x: 0,
     transition: {
       delay: i * 0.3,
     },
   }),
-  hidden: { opacity: 0, x: "-100" },
+  hidden: { opacity: 0, x: -100 },
 };
 
 const Index = () => {
@@ -50,8 +50,8 @@ const Index = () => {
         </div>
       </HeroInfo>
       <HeroImage
-        initial={{ opacity: 0, x: "80" }}
-        whileInView={{ opacity: 1, x: "0" }}
+        initial={{ opacity: 0, x: 80 }}
+        whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.75 }}
       >
         <div>
