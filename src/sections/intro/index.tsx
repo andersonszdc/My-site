@@ -14,23 +14,23 @@ const lineVariants = {
 
 const overlayVariants = {
   visible: {
-    top: "-100%",
+    y: "-100%",
   },
   hidden: {
-    top: "100%",
+    y: "100%",
   },
 };
 
 const wrapperVariants = {
   visible: {
-    top: 0,
+    y: 0,
   },
   hidden: {
-    top: "-100%",
+    y: "-100%",
   },
 };
 
-const Wrapper = styled(motion.div)<any>`
+const Wrapper = styled(motion.div)`
   position: fixed;
   left: 0;
   width: 100%;
@@ -42,7 +42,7 @@ const Wrapper = styled(motion.div)<any>`
   justify-content: center;
 `;
 
-const Overlay = styled(motion.div)<any>`
+const Overlay = styled(motion.div)`
   position: fixed;
   left: 0;
   width: 100%;
@@ -60,7 +60,6 @@ const Intro = ({ setStartIntro }: any) => {
   return (
     <>
       <Wrapper
-        startWrapper={startAnimation}
         variants={wrapperVariants}
         initial="visible"
         animate={upOverlay ? "hidden" : "visible"}
