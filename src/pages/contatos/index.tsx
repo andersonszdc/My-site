@@ -24,16 +24,16 @@ const Contatos = () => {
         </p>
         <Infos>
           <li className="infos__item">
-            <HiOutlineMail className="icon" />
-            <h3 className="p3">contato@andersonszdc.com</h3>
+            <HiOutlineMail className="icon h1" />
+            <h3 className="p2">contato@andersonszdc.com</h3>
           </li>
           <li className="infos__item">
-            <BsTelephone className="icon" />
-            <h3 className="p3">+55 (21) 97351-2104</h3>
+            <BsTelephone className="icon h1" />
+            <h3 className="p2">+55 (21) 97351-2104</h3>
           </li>
           <li className="infos__item">
-            <HiOutlineLocationMarker className="icon" />
-            <h3 className="p3">Rio de Janeiro - RJ</h3>
+            <HiOutlineLocationMarker className="icon h1" />
+            <h3 className="p2">Rio de Janeiro - RJ</h3>
           </li>
         </Infos>
         <Forms />
@@ -79,7 +79,10 @@ const Infos = styled.ul`
   }
 
   .icon {
-    font-size: 4.8rem;
     color: ${({ theme }) => theme.colors.blue};
+  }
+
+  @media (max-width: 750px) {
+    grid-template-columns: 1fr;
   }
 `;

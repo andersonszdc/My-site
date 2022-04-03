@@ -17,7 +17,7 @@ export const Wrapper = styled.div<WrapperProps>`
 
   form {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 2.4rem;
     padding: 4rem;
     background-color: ${({ theme }) => theme.colors.gray4};
@@ -70,13 +70,16 @@ export const Wrapper = styled.div<WrapperProps>`
     color: #f21e0c;
   }
 
-  @media (max-width: 400px) {
-    h2 {
-      font-size: 2rem;
+  @media (max-width: 750px) {
+    form {
+      grid-template-columns: 1fr;
     }
-
-    p {
-      font-size: 1.4rem;
+    .input-message {
+      grid-column: 1/2;
+      grid-row: 4;
+    }
+    .form__action {
+      grid-column: 1/2;
     }
   }
 `;
